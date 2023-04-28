@@ -1,0 +1,206 @@
+@charset "UTF-8";
+/**
+ * @author: Laurie Martineau
+ */
+
+/* IMPORTER D'ABORD LES POLICES DE CARACTÈRES */
+@import url('https://fonts.googleapis.com/css2?family=Manrope&family=Playfair+Display&display=swap');
+/* IMPORTER LES FICHIERS CSS */
+@import url(normalize.css);
+@import url(utilitaires.css);
+@import url(base.css);
+@import url(typo.css);
+
+/* AJOUTER UNE TABLE DES MATIÈRES POUR POUVOIR NAVIGUER LA CSS*/
+
+
+.cache {
+    display: none;
+}
+
+fieldset {
+    border: none;
+}
+
+.ChoixReponses {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.imgCarte {
+    display: flex;
+    justify-content: center;
+}
+
+.imgQ {
+    display: inline-block;
+    padding-top: 2.5em;
+    padding-bottom: 2em;
+}
+
+h3 {
+    text-align: center;
+    border: solid 3px black;
+    border-radius: 25px;
+    padding: 5%;
+}
+
+label {
+    position: relative;
+    display: block;
+    text-align: center;
+
+}
+
+.ChoixReponses label span {
+    display: block;
+    position: absolute;
+    width: 10em;
+    left: calc(50% - 5em);
+    border: solid 2px black;
+    border-radius: 20px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+body {
+    background-image: url(./assets/images/DegradeFond.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.question {
+    margin-top: 2em;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 4px solid black;
+    border-radius: 40px;
+    background-color: white;
+}
+
+/*.rectangle {
+    display:flex;
+    height: 50px;
+    width: 340px;
+    background-color: #4DB857;
+    border-bottom: 4px solid black;
+    border-radius: 40px 40px 0 0;
+}*/
+
+.question .rectangle {
+    height: 50px;
+    border-bottom: 4px solid black;
+    border-radius: 35px 35px 0 0;
+    background-color: #4DB857;
+    max-width: 100%;
+}
+
+
+.boutonRésultat {
+    margin-top: 1em;
+    background: linear-gradient(90deg, #4DB857 -11.67%, rgba(77, 184, 87, 0) 131.67%);
+    border-radius: 20px;
+
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    background-color: #A2D390;
+    display: flex;
+    align-items: center;
+    margin-top: 2em;
+}
+
+a:link,
+a:visited {
+    color: #03580c;
+    text-decoration: none;
+}
+
+a:hover,
+a:active {
+    color: rgb(60, 60, 60);
+}
+
+
+/*** Rétroaction Bonne Réponse ***/
+
+.bonneReponse {
+    color: #4DB857;
+    border: 2px solid #4DB857;
+    border-radius: 4px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.432);
+}
+
+/*** Tablette ****/
+
+@media(min-width:600px) {
+    .imgCarte {
+        position: absolute;
+        float: left;
+    }
+}
+
+@media(min-width:600px) {
+    .ChoixReponses label span {
+        display: block;
+        justify-content: left;
+        position: absolute;
+        border: solid 2px black;
+        border-radius: 20px;
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+}
+
+@media(min-width:600px) {
+    .imgQ {
+        position: relative;
+        display: right;
+        justify-content: right;
+
+    }
+}
+
+@media(min-width:600px) {
+    h3 {
+        position: relative;
+        padding: 2% 4px 2%;
+        width: 400px;
+        height: 60px;
+    }
+}
+
+
+
+
+/***** Écran large de table *****/
+
+@media(min-width:800px) {}
+
+/******** Accueil *******/
+.logo {
+    width: 40%;
+    margin-left: 2%;
+}
+
+.texteAccueil {
+    text-align: center;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    border-radius: 30px;
+    padding: 5%;
+}
+
+.BoutonJeu {
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    border-radius: 20px;
+    padding: 2%;
+}
