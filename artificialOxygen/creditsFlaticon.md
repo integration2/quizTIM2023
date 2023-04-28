@@ -1,0 +1,1 @@
+https://www.flaticon.com/fr/icones-gratuites/du-sang"
