@@ -72,6 +72,7 @@ h3 {
 .bouton_départ {
     grid-area: depart;
     margin: 20px;
+    border: none;
 }
 
 
@@ -231,13 +232,22 @@ input[type=radio]:checked ~ .checkmark, input[type=radio]:checked ~ .check{
     border-radius: 5%;
 }
 
+.disable {
+    background: linear-gradient(135deg, rgb(58, 147, 118), rgb(0, 0, 0));
+    in
+}
 .mauvaise_reponse {
     background: linear-gradient(135deg, red, rgb(41, 0, 0));
 }
+input[type=radio]:checked ~ .checkmark.mauvaise_reponse, input[type=radio]:checked ~ .check.mauvaise_reponse {
+    background: linear-gradient(135deg, red, rgb(41, 0, 0));
+} 
+
 .bonne_reponse {
-    background-color: linear-gradient(135deg, rgb(0, 185, 46), rgb(0, 41, 8));;
+    background: linear-gradient(135deg, rgb(0, 255, 64), rgb(0, 111, 22));
 }
 
 .cache {
     display: none;
 }
+

@@ -16,7 +16,7 @@ const objJSON = {
         "Q2": "En effet, la majorité (même s’il existe des solutions et des exception) des peintures dites « acryliques » ne collera pas aux surfaces autre que le bois. Pour pouvoir travailler sur des matériaux comme le plastique, il est possible d’appliquer une couche de primer d’apprêt avant de le peinturer.",
         "Q3": "Cet outil porte plusieurs noms. Le seul nom qui ne s’applique pas est le paint-gun, qui désigne les armes à feu qui tire des minutions de peinture."
     },
-    "bonnesReponses": [
+    bonnesReponses: [
         "Q1B",
         "Q2A",
         "Q3D"
@@ -78,11 +78,17 @@ const quiz = {
         //this.refSubmitButton.classList.add("cache")
     },
     afficherQuestion: function (numeroQuestion) {
-        console.log(this.intNoQuestion);
+        console.log(quiz.refArrQuestions);
         //Disparait la question précédente
         //this.refArrQuestions[numeroQuestion-1].classList.add('cache')
         //Apparait la question
-        this.refArrQuestions[numeroQuestion].classList.remove('cache');
+        for (let index = 0; index < quiz.refArrQuestions.length; index++) {
+            quiz.refArrQuestions[index].classList.add("cache");
+            console.log("question numéro "+ index + " caché")
+            
+        }
+        console.log(numeroQuestion)
+        this.refArrQuestions[quiz.intNoQuestion].classList.remove('cache');
 
         // Créer un paragraphe
         const refBoutonReponse = document.createElement('p');
@@ -100,25 +106,74 @@ const quiz = {
         this.afficherQuestion(0); 
     },
     validerReponse: function () {
+        console.log("on valide")
         console.log(quiz.intNoQuestion);
-        
-        const refReponse = document.querySelector('input[name=Q'+(quiz.intNoQuestion+1)+']:checked');
-        const refBlocReponse = document.querySelector('input[type=radio]:checked ~ .etiquette');
-        const refCubeReponse = document.querySelector('input[type=radio]:checked ~ .checkmark');
-        console.log(refReponse)
-        console.log(refBlocReponse)
-        let strReponse = refReponse.id
-        
+        console.log(objJSON.bonnesReponses[quiz.intNoQuestion]);
 
+        //Liste réponse 
+        const refListeR = document.querySelector(".choix_Q"+(quiz.intNoQuestion+1));
+        const arrR = refListeR.querySelectorAll("label")
+
+        console.log(arrR)
+
+        //Bonne réponse;
+        const refBonneReponse = document.querySelector('label[for='+objJSON.bonnesReponses[quiz.intNoQuestion]+']')
+        const refBlocBR = refBonneReponse.parentNode;
+        const refCheckBR = refBlocBR.querySelector(".checkmark")
+        const refEtiquetteBR = refBlocBR.querySelector(".etiquette")
+        console.log(refBonneReponse)
+        
+        //Réponse émise;
+        const refReponse = document.querySelector('input[name=Q'+(quiz.intNoQuestion+1)+']:checked');
+        const refBlocR = refReponse.parentNode;
+        const refCheckR = refBlocR.querySelector(".checkmark")
+        const refEtiquetteR = refBlocR.querySelector(".etiquette")
+        console.log(refReponse)
+        let strReponse = refReponse.id
+        console.log(strReponse)
+
+        //Disable les input;
+        for (let index = 0; index < arrR.length; index++) {
+            const refLabel = arrR[index];
+            const refInput = refLabel.querySelector("input")
+            const refCheck = refLabel.querySelector(".checkmark");
+            const refEtiquette = refLabel.querySelector(".etiquette")
+            refCheck.classList.add("disable")
+            refInput.disabled = true
+            refEtiquette.classList.add("disable")
+        }
+        refListeR.parentNode.querySelector(".ctnBouton__bouton").disabled = true;
+        
+        //Comparer si bonne réponse ou non
         if (strReponse == objJSON.bonnesReponses[quiz.intNoQuestion]){
             document.getElementById("retroaction_reponse").innerText=objJSON.retroactions.positive;
+            quiz.intNbBonnesReponses++
+            
             
         } else {
-            refBlocReponse.classList.add("mauvaise_reponse") 
-            refCubeReponse.classList.add("mauvaise_reponse")
+            refCheckR.classList.add("mauvaise_reponse") ;
+            refEtiquetteR.classList.add("mauvaise_reponse")
+            
             
         }
+        console.log( quiz.intNbBonnesReponses + "sur 3")
+        refEtiquetteBR.classList.add("bonne_reponse")
+        refCheckBR.classList.add("bonne_reponse")
         document.getElementById("retroaction_explication").innerText=objJSON.explications.Q1;
+
+        quiz.pourContinuer(quiz.intNoQuestion);
+    },
+    pourContinuer: function(numeroQuestion) {
+        console.log("on continue")
+
+        const refBoutonContinuer = document.createElement('p');
+        refBoutonContinuer.classList.add('boutonReponse');
+        // Y ajouter le bouton de validation de la question 
+        refBoutonContinuer.innerHTML = '<button type="button" class="Pour_continuer">Continuer à la prochaine question</button>';
+        this.refArrQuestions[numeroQuestion].appendChild(refBoutonContinuer);
+        // Ajouter un écouteur d'événement au bouton
+        quiz.intNoQuestion++
+        refBoutonContinuer.querySelector('.Pour_continuer').addEventListener('click', quiz.afficherQuestion.bind(this.intNoQuestion));
     },
     afficherResultats: function () { }
 }
