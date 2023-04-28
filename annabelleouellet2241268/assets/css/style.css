@@ -1,0 +1,169 @@
+@charset "UTF-8";
+/**
+ * @author: Prénoms Noms OU githubUSERNAME
+ */
+
+/* IMPORTER D'ABORD LES POLICES DE CARACTÈRES */
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+/* IMPORTER LES FICHIERS CSS */
+@import url(normalize.css);
+@import url(utilitaires.css);
+@import url(base.css);
+@import url(typo.css);
+
+/* AJOUTER UNE TABLE DES MATIÈRES POUR POUVOIR NAVIGUER LA CSS*/
+/* ENTÊTE */
+.logo {
+    width: 45%;
+    margin: auto;
+    display: block;
+    }
+    .signature{
+        padding: 15px;
+        background-image: linear-gradient(#393268, #67468D);
+        margin-bottom: 6em;
+    }
+    .slogan {
+        font-family: 'Mochiy Pop One', sans-serif;
+        font-size: 3.6rem;
+        color: white;
+        text-align: center;
+        margin-bottom: 0;
+    }
+    
+    /* FORMULAIRE */
+    .formulaire {
+         background-image: linear-gradient(#ffffff, #9271F4);
+          
+    }
+   
+    @media screen and (min-width: 600px) {
+         
+            .question h2{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-family: 'Mochiy Pop One', sans-serif;
+            }
+            
+        }
+      
+      
+    .section_question{
+        padding: 10px;
+        text-align: center;
+    }
+    .texte_question{
+        font-family: 'Mochiy Pop One', sans-serif;
+        text-align: center;
+        font-size: 2rem;
+       
+    }
+   
+    legend{
+        font-family: 'Mochiy Pop One', sans-serif;
+        text-align: center;
+        position: relative;
+        top: -3em;
+       
+        
+    }
+    ul{
+        list-style: none;
+        padding-left: 0;
+        
+    }
+    .question {
+        /* Grille 12 colonnes en arrière-plan - Mettre en commentaires après usage */
+        max-width: 1034px;
+        margin: 60px auto;
+        /* background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="url(%23susy-svg-gradient)" width="100%" %3E%3Cdefs%3E%3ClinearGradient spreadMethod="pad" id="susy-svg-gradient" x1="0%" y1="0%" x2="100%" y2="0%"%3E%3Cstop offset="0%" style="stop-color:rgba(0, 0, 255, 0.2);" /%3E%3Cstop offset="100%" style="stop-color:rgba(0, 0, 255, 0.1);" /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x="0" width="6.7796610169%" height="100%"/%3E%3Crect x="8.4745762712%" width="6.7796610169%" height="100%"/%3E%3Crect x="16.9491525424%" width="6.7796610169%" height="100%"/%3E%3Crect x="25.4237288136%" width="6.7796610169%" height="100%"/%3E%3Crect x="33.8983050847%" width="6.7796610169%" height="100%"/%3E%3Crect x="42.3728813559%" width="6.7796610169%" height="100%"/%3E%3Crect x="50.8474576271%" width="6.7796610169%" height="100%"/%3E%3Crect x="59.3220338983%" width="6.7796610169%" height="100%"/%3E%3Crect x="67.7966101695%" width="6.7796610169%" height="100%"/%3E%3Crect x="76.2711864407%" width="6.7796610169%" height="100%"/%3E%3Crect x="84.7457627119%" width="6.7796610169%" height="100%"/%3E%3Crect x="93.2203389831%" width="6.7796610169%" height="100%"/%3E%3C/svg%3E') no-repeat scroll; */
+        background-color: #D4C6FF;
+        box-shadow: -10px 4px 23px #67468D;
+        border: none;
+        
+       
+    }
+    
+    .question__image{
+        border-radius: 35px;
+        max-width: 291px;
+        max-height: 610px;
+
+    }
+   
+    .question__image3{
+        border-radius: 35px;
+        max-width: 410px;
+        max-height: 610px;
+    }
+   [type="radio"]:hover + label .choix__span{
+    background-color: #314CAD;
+    transition: ease-in-out 0.2s;
+   }
+   [type="radio"]:checked + label .choix__span{
+    background-color: #ffa7f5;
+    color: #000000;
+    transition: ease-in-out 0.2s;
+   }
+   .intro{
+    background-image: linear-gradient(#ffffff, #B584D2);
+    padding:15px
+   }
+
+
+    .choix__image{
+        max-width: 320px;
+        max-height: 320px;
+        border-radius: 20px;
+    }
+    .choix__span{
+        display: block;
+        background-color: #7031AD;
+        border-radius: 6px;
+        color:#ffffff;
+    }
+ 
+    .span {
+        background-color: #c6b4ff;
+        border-radius: 35px;
+        padding: 17px;
+        font-size: 3rem;
+        display: block;
+
+    }
+    @media screen and (min-width:600px){
+        .span{
+            width: 44%; 
+        }
+    }
+    .choix{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .choix li{
+        margin: 0.5em;
+        
+    }
+    @media screen and (min-width:600px) {
+        .choix li{
+        width: 40%;    
+        }
+    }
+    .js .cache{
+        display: none;
+    }
+
+    /* FOOTER */
+    .footer{
+        background-color: #67468D;
+        padding: 20px;
+    }
+    .texte_footer{
+        font-family: 'Mochiy Pop One', sans-serif;
+        text-align: center;
+        font-size: 0.9em;
+        color:#ffffff;  
+    }
