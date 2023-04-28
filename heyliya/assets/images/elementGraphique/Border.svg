@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 209 209">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        stroke: #fff;
+      }
+    </style>
+  </defs>
+  <g id="BackgroundBouton">
+    <g id="BorderTest">
+      <path id="HideCorner" class="cls-2" d="m182.5,1.5c0,6.9,13.15,2.8,17.68,7.32,4.52,4.52-2.25,17.68,7.32,17.68V1.5h-25Z"/>
+      <path id="HideCorner-2" data-name="HideCorner" class="cls-2" d="m1.5,26.5c6.9,0,2.8-13.15,7.32-17.68,4.52-4.52,17.68,2.25,17.68-7.32H1.5v25Z"/>
+      <path id="HideCorner-3" data-name="HideCorner" class="cls-2" d="m26.5,207.5c0-6.9-13.15-2.8-17.68-7.32-4.52-4.52,2.25-17.68-7.32-17.68v25s25,0,25,0Z"/>
+      <path id="HideCorner-4" data-name="HideCorner" class="cls-2" d="m207.5,182.5c-6.9,0-2.8,13.15-7.32,17.68-4.52,4.52-17.68-2.25-17.68,7.32h25s0-25,0-25Z"/>
+      <path id="Border" class="cls-1" d="m1.5,26.5v156c9.57,0,2.8,13.15,7.32,17.68,4.52,4.52,17.68.42,17.68,7.32h156c0-9.57,13.15-2.8,17.68-7.32s.42-17.68,7.32-17.68V26.5c-9.57,0-2.8-13.15-7.32-17.68-4.52-4.52-17.68-.42-17.68-7.32H26.5c0,9.57-13.15,2.8-17.68,7.32-4.52,4.52-.42,17.68-7.32,17.68Z"/>
+    </g>
+  </g>
+</svg>
