@@ -1,0 +1,232 @@
+@charset "UTF-8";
+/**
+ * @author: Axel Roberge
+ */
+
+/* IMPORTER D'ABORD LES POLICES DE CARACTÈRES */
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@500&family=Inter:wght@200;300&display=swap');
+/* IMPORTER LES FICHIERS CSS */
+@import url(normalize.css);
+@import url(utilitaires.css);
+@import url(base.css);
+@import url(typo.css);
+
+/* AJOUTER UNE TABLE DES MATIÈRES POUR POUVOIR NAVIGUER LA CSS*/
+
+/* HEADER */
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+/* INTRODUCTION */
+.introduction {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 80px 20px 40px 20px;
+    border: solid 10px #FFEDE5;
+    border-radius: 15px;
+    background-color: white;
+    padding: 50px;
+    box-shadow: 5px 5px 5px 5px #888888;
+    font-size: 24px;
+}
+
+@media(min-width: 601px) {
+    .introduction {
+        font-size: 32px;
+        margin: 100px 200px 100px 200px;
+    }
+}
+
+
+
+/* QUESTIONNAIRE */
+
+fieldset {
+    border: none;
+}
+
+.quiz--titre {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    justify-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.question__h2 {
+    text-align: left;
+    color: black;
+    padding: 3px;
+    background-color:#FFEDE5;
+}
+
+.quiz {
+    display: flex;
+    list-style: none;
+    text-align: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px;
+}
+
+@media(min-width: 601px) {
+    .quiz {
+        text-align: center;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-around;
+    }
+
+    .quiz li {
+        width: 24%;
+        margin: 0 10px 30px 10px;
+    }
+}
+
+.container {
+    border: solid 10px #FFEDE5;
+    border-radius: 15px;
+    background-color: white;
+    padding: 20px;
+    margin: 80px 20px 80px 20px;
+    box-shadow: 5px 5px 5px 5px #888888;
+}
+
+@media(min-width: 601px) {
+    .container {
+        font-size: 24px;
+        margin: 100px 100px 100px 100px;
+
+    }
+}
+
+.choixQuestion {
+    font-size: 20px;
+    background-color: #F5D8C2;
+    border-radius: 40px;
+    border: none;
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: block;
+}
+
+/* IMAGES */
+.quiz--imgAccueil {
+    width: 90%;
+    border: solid 5px #f1dbd1;
+}
+
+@media(min-width: 601px) {
+    .quiz--imgAccueil {
+        width: 70%;
+    }
+}
+
+.quiz--imgPersonnage {
+    width: 30%;
+}
+
+@media(min-width: 601px) {
+    .quiz--imgPersonnage {
+        width: 20%;
+    }
+}
+
+.quiz--imgQuiz {
+    margin-top: 40px;
+    border: solid 5px #f1dbd1;
+}
+
+@media(min-width: 601px) {
+    .quiz--imgQuiz {
+        margin: 10px auto;
+    }
+}
+
+/* BUTTON */
+.btnInitiale {
+    margin: 0 10 10 20;
+    background-color: #F1BEA8;
+    border-radius: 10px;
+    border: none;
+    color: black;
+    border: none;
+    padding: 15px 32px;
+    cursor: pointer;
+    box-shadow: 4px 3px 3px grey;
+    transition: box-shadow 0.3s linear,
+        background-color 0.2s ease-in 0.5s, ;
+}
+
+.btnInitiale:hover{ 
+    color:white;
+    background-color:#E39CA4; 
+    box-shadow:none;
+    position:relative;
+    left:4px;
+    top:3px;
+  }
+input:focus+label span {
+    color: white;
+    background-color: #DCB0B5;
+    transition: background-color 0.2s ease-in 0.2s,
+        color 0.1s ease-out 1s;
+
+}
+
+span:hover {
+    background-color: #F1BEA8;
+    animation-duration: 0.6s;
+    animation-name: swing;
+}
+
+@keyframes swing {
+    20% {
+        transform: rotate3d(0, 0, 1, 7deg);
+    }
+
+    40% {
+        transform: rotate3d(0, 0, 1, -7deg);
+    }
+
+    60% {
+        transform: rotate3d(0, 0, 1, 5deg);
+    }
+
+    80% {
+        transform: rotate3d(0, 0, 1, -5deg);
+    }
+
+    to {
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+}
+
+
+/* FOOTER */
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+/* JAVASCRIPT */
+
+.js .cache {
+    display: none;
+}
