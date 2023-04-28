@@ -1,0 +1,296 @@
+@charset "UTF-8";
+/**
+ * @author: Philippe Gourdeau <github.com/Z0ul0u25>
+ */
+
+/* IMPORTER LES FICHIERS CSS */
+@import url(typo.css);
+@import url(normalize.css);
+@import url(utilitaires.css);
+@import url(base.css);
+@import url(grille.css);
+
+/* TODO AJOUTER UNE TABLE DES MATIÈRES POUR POUVOIR NAVIGUER LA CSS*/
+
+body {
+    background-color: var(--couleur-fond);
+    /* Permet le footer dans le bas de la page si le contenu est trop court */
+    display         : flex;
+    min-height      : 100vh;
+    flex-direction  : column;
+    justify-content : flex-start;
+}
+
+
+main {
+    margin: 0 10px;
+}
+
+@media (min-width: 600px) {
+    main {
+        margin: 0 20px;
+    }
+}
+
+@media (min-width: 1020px) {
+    main {
+        margin   : 0 auto;
+        max-width: 1000px;
+    }
+}
+
+
+h1,
+h2,
+h3,
+h4,
+p {
+    color: var(--couleur-texte-clair);
+}
+
+#titre {
+    margin: 20px 0;
+}
+
+#titre>* {
+    text-align : center;
+    margin     : 0;
+    line-height: normal;
+}
+
+#principal{
+    margin-bottom: 100px;
+    justify-items: center;
+}
+
+#principal img {
+    grid-row: 1;
+    grid-column: 1/3;
+}
+
+#principal p {
+    grid-row: 2;
+    grid-column: 1/3;
+}
+
+@media (min-width: 600px){
+
+    #principal img {
+        grid-column: 1/5;
+        grid-row: 1;
+    }
+
+    #principal p {
+        grid-column: 5/13;
+        grid-row: 1;
+    }
+}
+
+
+@media (max-width:599px){
+    #principal {
+        text-align: center;
+    }
+}
+
+footer {
+    position        : relative;
+    background-color: var(--couleur-fond-clair);
+    /* Permet le footer dans le bas de la page si le contenu est trop court */
+    margin-top      : auto;
+}
+
+footer p {
+    max-width : 1000px;
+    margin    : auto;
+    text-align: center;
+}
+
+
+/** FORM **/
+
+form{
+    margin-bottom: 85px;
+}
+
+legend{
+    max-width: 100vb;
+    text-align: center;
+}
+
+input[type="radio"]+label{
+    max-width: 320px;
+}
+
+fieldset{
+    border: none;
+}
+
+fieldset label:nth-of-type(2n+1){
+    /* border: 5px solid lightgreen; */
+    grid-column: 1;
+}
+
+fieldset label:nth-of-type(2n){
+    /* border: 5px solid red; */
+    grid-column: 2;
+}
+
+@media (min-width: 600px){
+
+    fieldset label:nth-of-type(2n+1){
+        /* border: 5px solid lightgreen; */
+        grid-column: 2/6;
+    }
+
+    fieldset label:nth-of-type(2n){
+        /* border: 5px solid red; */
+        grid-column: 8/12;
+    }
+}
+
+[type=radio]:checked+label {
+    border: 2px solid #068221;
+}
+
+button{
+    background-color: var(--couleur-principale);
+    border: 0;
+    height: var(--btn-hauteur);
+    /* font-size: 1.6rem; */
+}
+
+
+button.confirmer, button.suivant{
+    grid-column: 2;
+    grid-row: 3;
+    border-radius: 0 calc(var(--btn-hauteur)/2) calc(var(--btn-hauteur)/2) 0;
+    width: 100%;
+}
+
+@media (min-width: 600px){
+    button.confirmer, button.suivant{
+        grid-column: 8/12;
+    }
+}
+
+button:hover{
+    border-radius: calc(var(--btn-hauteur)/2);
+}
+
+button:focus{
+    border: 5px solid #5E9ED6
+}
+
+button:active{
+    background-color: var(--couleur-principale-claire);
+}
+
+button:disabled{
+    background-color: #818181;
+    color:#000;
+}
+
+.margin-bottom{
+    margin-bottom: 100px;
+}
+
+.suivi-question{
+    font-size: 7rem;
+    margin: 0;
+    grid-row: -2;
+    grid-column: 1/3;
+}
+
+legend{
+    text-align: right;
+}
+
+.reponse{
+    grid-column: 1/3;
+}
+
+fieldset div:first-of-type{
+    text-align: center;
+    grid-column: 1/3;
+}
+
+fieldset div:first-of-type img{
+    width: 160px;
+    margin: 0 auto;
+    grid-row: 1;
+    grid-column: 1/3;
+}
+
+fieldset h2{
+    grid-row: 2;
+    grid-column: 1/3;
+}
+
+fieldset label{
+    text-align: center;
+}
+
+fieldset label img{
+    display: block;
+}
+
+fieldset label span{
+    background-color: var(--couleur-principale);
+    color: #000;
+    max-height: 65px;
+    margin:0;
+    display: inline-block;
+    width: 100%;
+}
+
+fieldset label img+span {
+    float: none;
+}
+
+@media (min-width: 500px){
+
+    fieldset div:first-of-type img{
+        width: auto;
+        grid-column: 1;
+    }
+    fieldset h2{
+        grid-row: 1;
+        grid-column: 2;
+    }
+}
+
+@media (min-width: 600px){
+    .reponse{
+        grid-column: 1/13;
+    }
+
+    .suivi-question{
+        grid-row: 1;
+        grid-column: 5/13;
+    }
+
+    fieldset div:first-of-type{
+        grid-column: 1/13;
+    }
+
+    fieldset div:first-of-type img{
+        grid-column: 1/5;
+        grid-row:1/3;
+    }
+
+    fieldset h2{
+        align-self: center;
+        text-align: center;
+        grid-column: 5/13;
+        grid-row:2;
+    }
+}
+
+.cacher{
+    display: none;
+}
+
+.gris{
+    background-color: #818181;
+}
