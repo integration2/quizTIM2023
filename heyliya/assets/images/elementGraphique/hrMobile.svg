@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330.11 9.5">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 1.5px;
+      }
+    </style>
+  </defs>
+  <g id="HorizontalLine">
+    <g id="hrMobile">
+      <path class="cls-1" d="m330,7.48s-18.4,2.86-25.17,0c-35.8-15.14-56.19,0-65.28,0-45.59,0-103.39,0-148.98,0-9.09,0-29.48-15.14-65.28,0C18.52,10.34.12,7.48.12,7.48"/>
+      <path class="cls-1" d="m330,2.02s-18.4-2.86-25.17,0c-35.8,15.14-56.19,0-65.28,0-45.59,0-103.39,0-148.98,0-9.09,0-29.48,15.14-65.28,0C18.52-.84.12,2.02.12,2.02"/>
+    </g>
+  </g>
+</svg>

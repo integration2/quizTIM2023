@@ -1,0 +1,467 @@
+@charset "UTF-8";
+/**
+ * @author: Léa Marois
+ */
+
+/* IMPORTER D'ABORD LES POLICES DE CARACTÈRES */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+/* IMPORTER LES FICHIERS CSS */
+@import url(normalize.css);
+@import url(utilitaires.css);
+@import url(grille.css);
+@import url(typo.css);
+@import url(base.css);
+
+
+/* AJOUTER UNE TABLE DES MATIÈRES POUR POUVOIR NAVIGUER LA CSS*/
+/* 
+General
+    hr
+Header
+Intro
+Form
+    Fieldset
+        General
+        Question
+        Reponse
+    Bouton
+Retroaction
+Cacher
+*/
+
+
+/** General **/
+
+/* hr */
+
+hr {
+    height: 10px;
+    border: 0;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.hrBase {
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 330.11 9.5'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: none%3B stroke: %23000%3B stroke-miterlimit: 10%3B stroke-width: 1.5px%3B %7D %3C/style%3E%3C/defs%3E%3Cg id='HorizontalLine'%3E%3Cg id='hrMobile'%3E%3Cpath class='cls-1' d='m330 7.48s-18.4 2.86-25.17 0c-35.8-15.14-56.19 0-65.28 0-45.59 0-103.39 0-148.98 0-9.09 0-29.48-15.14-65.28 0C18.52 10.34.12 7.48.12 7.48'/%3E%3Cpath class='cls-1' d='m330 2.02s-18.4-2.86-25.17 0c-35.8 15.14-56.19 0-65.28 0-45.59 0-103.39 0-148.98 0-9.09 0-29.48 15.14-65.28 0C18.52-.84.12 2.02.12 2.02'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.hrBonneResponse {
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 330.11 9.5'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: none%3B stroke: %23298000%3B stroke-miterlimit: 10%3B stroke-width: 1.5px%3B %7D %3C/style%3E%3C/defs%3E%3Cg id='HorizontalLine'%3E%3Cg id='hrMobile'%3E%3Cpath class='cls-1' d='m330 7.48s-18.4 2.86-25.17 0c-35.8-15.14-56.19 0-65.28 0-45.59 0-103.39 0-148.98 0-9.09 0-29.48-15.14-65.28 0C18.52 10.34.12 7.48.12 7.48'/%3E%3Cpath class='cls-1' d='m330 2.02s-18.4-2.86-25.17 0c-35.8 15.14-56.19 0-65.28 0-45.59 0-103.39 0-148.98 0-9.09 0-29.48 15.14-65.28 0C18.52-.84.12 2.02.12 2.02'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.hrMauvaiseResponse {
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 330.11 9.5'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: none%3B stroke: %23B10000%3B stroke-miterlimit: 10%3B stroke-width: 1.5px%3B %7D %3C/style%3E%3C/defs%3E%3Cg id='HorizontalLine'%3E%3Cg id='hrMobile'%3E%3Cpath class='cls-1' d='m330 7.48s-18.4 2.86-25.17 0c-35.8-15.14-56.19 0-65.28 0-45.59 0-103.39 0-148.98 0-9.09 0-29.48-15.14-65.28 0C18.52 10.34.12 7.48.12 7.48'/%3E%3Cpath class='cls-1' d='m330 2.02s-18.4-2.86-25.17 0c-35.8 15.14-56.19 0-65.28 0-45.59 0-103.39 0-148.98 0-9.09 0-29.48 15.14-65.28 0C18.52-.84.12 2.02.12 2.02'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+@media (min-width: 600px) {
+    .hrBase {
+        background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 660 9.5'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: none%3B stroke: %23000%3B stroke-miterlimit: 10%3B stroke-width: 1.5px%3B %7D %3C/style%3E%3C/defs%3E%3Cg id='HorizontalLine'%3E%3Cg id='hrTablette'%3E%3Cpath class='cls-1' d='m659.88 7.48s-18.4 2.86-25.17 0c-35.8-15.14-56.19 0-65.28 0-45.59 0-433.27 0-478.87 0-9.09 0-29.48-15.14-65.28 0C18.52 10.34.12 7.48.12 7.48'/%3E%3Cpath class='cls-1' d='m659.88 2.02s-18.4-2.86-25.17 0c-35.8 15.14-56.19 0-65.28 0-45.59 0-433.27 0-478.87 0-9.09 0-29.48 15.14-65.28 0C18.52-.84.12 2.02.12 2.02'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hrBonneResponse {
+        background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 660 9.5'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: none%3B stroke: %23298000%3B stroke-miterlimit: 10%3B stroke-width: 1.5px%3B %7D %3C/style%3E%3C/defs%3E%3Cg id='HorizontalLine'%3E%3Cg id='hrTablette'%3E%3Cpath class='cls-1' d='m659.88 7.48s-18.4 2.86-25.17 0c-35.8-15.14-56.19 0-65.28 0-45.59 0-433.27 0-478.87 0-9.09 0-29.48-15.14-65.28 0C18.52 10.34.12 7.48.12 7.48'/%3E%3Cpath class='cls-1' d='m659.88 2.02s-18.4-2.86-25.17 0c-35.8 15.14-56.19 0-65.28 0-45.59 0-433.27 0-478.87 0-9.09 0-29.48 15.14-65.28 0C18.52-.84.12 2.02.12 2.02'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hrMauvaiseReponse {
+        background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 660 9.5'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: none%3B stroke: %23B10000%3B stroke-miterlimit: 10%3B stroke-width: 1.5px%3B %7D %3C/style%3E%3C/defs%3E%3Cg id='HorizontalLine'%3E%3Cg id='hrTablette'%3E%3Cpath class='cls-1' d='m659.88 7.48s-18.4 2.86-25.17 0c-35.8-15.14-56.19 0-65.28 0-45.59 0-433.27 0-478.87 0-9.09 0-29.48-15.14-65.28 0C18.52 10.34.12 7.48.12 7.48'/%3E%3Cpath class='cls-1' d='m659.88 2.02s-18.4-2.86-25.17 0c-35.8 15.14-56.19 0-65.28 0-45.59 0-433.27 0-478.87 0-9.09 0-29.48 15.14-65.28 0C18.52-.84.12 2.02.12 2.02'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+}
+@media (min-width: 800px) {
+    .hrBase {
+        background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 870.23 9.5'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: none%3B stroke: %23000%3B stroke-miterlimit: 10%3B stroke-width: 1.5px%3B %7D %3C/style%3E%3C/defs%3E%3Cg id='HorizontalLine'%3E%3Cg id='hrTable'%3E%3Cpath class='cls-1' d='m870.12 7.48s-18.4 2.86-25.17 0c-35.8-15.14-56.19 0-65.28 0-45.59 0-643.51 0-689.1 0-9.09 0-29.48-15.14-65.28 0C18.52 10.34.12 7.48.12 7.48'/%3E%3Cpath class='cls-1' d='m870.12 2.02s-18.4-2.86-25.17 0c-35.8 15.14-56.19 0-65.28 0-45.59 0-643.51 0-689.1 0-9.09 0-29.48 15.14-65.28 0C18.52-.84.12 2.02.12 2.02'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hrBonneResponse {
+        background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 870.23 9.5'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: none%3B stroke: %23298000%3B stroke-miterlimit: 10%3B stroke-width: 1.5px%3B %7D %3C/style%3E%3C/defs%3E%3Cg id='HorizontalLine'%3E%3Cg id='hrTable'%3E%3Cpath class='cls-1' d='m870.12 7.48s-18.4 2.86-25.17 0c-35.8-15.14-56.19 0-65.28 0-45.59 0-643.51 0-689.1 0-9.09 0-29.48-15.14-65.28 0C18.52 10.34.12 7.48.12 7.48'/%3E%3Cpath class='cls-1' d='m870.12 2.02s-18.4-2.86-25.17 0c-35.8 15.14-56.19 0-65.28 0-45.59 0-643.51 0-689.1 0-9.09 0-29.48 15.14-65.28 0C18.52-.84.12 2.02.12 2.02'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hrMauvaiseResponse {
+        background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 870.23 9.5'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: none%3B stroke: %23B10000%3B stroke-miterlimit: 10%3B stroke-width: 1.5px%3B %7D %3C/style%3E%3C/defs%3E%3Cg id='HorizontalLine'%3E%3Cg id='hrTable'%3E%3Cpath class='cls-1' d='m870.12 7.48s-18.4 2.86-25.17 0c-35.8-15.14-56.19 0-65.28 0-45.59 0-643.51 0-689.1 0-9.09 0-29.48-15.14-65.28 0C18.52 10.34.12 7.48.12 7.48'/%3E%3Cpath class='cls-1' d='m870.12 2.02s-18.4-2.86-25.17 0c-35.8 15.14-56.19 0-65.28 0-45.59 0-643.51 0-689.1 0-9.09 0-29.48 15.14-65.28 0C18.52-.84.12 2.02.12 2.02'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+}
+
+
+/* Body */
+
+/* body {
+    min-height: 100vh;
+}
+
+.content {
+ padding-bottom: 150px;
+}
+@media (min-width: 600px) {
+    .content {
+        padding-bottom: 100px;
+    }
+} */
+
+
+
+/* Header */
+
+.header {
+    height: 120px;
+    margin: 1rem 1rem;
+}
+.ctnTitre {
+    display: none;
+}
+.logoDND {
+    display: block;
+    max-height: 100%;
+    margin: 0 auto;
+}
+@media (min-width: 600px) {
+    .header {
+        height: 150px;
+        display: flex;
+        flex-direction: row;
+    }
+    .ctnTitre {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 75%;
+        margin: 0 auto;
+        background-image: url(../images/elementGraphique/BackgroundTitre.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size:contain;
+    }
+    .titre {
+        display: block;
+        margin: 0;
+        margin-left: 7%;
+    }
+    .sous-titre {
+        display: block;
+        margin: 0;
+        margin-right: 10%;
+        align-self: flex-end;
+    }
+    .logoDND {
+        width:  25%;
+        margin: auto 1rem;
+    }
+}
+@media (min-width: 800px) {
+    .header {
+        height: 240px;
+    }
+}
+
+.sous-titre {
+    display: block;
+}
+
+
+
+/* Intro */
+
+#intro {
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+
+/** Fieldset **/
+
+/* General */
+
+fieldset {
+    border: none;
+}
+
+li {
+    list-style: none;
+}
+
+/* Question */
+
+.question {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    column-gap: 1rem;
+    text-align: left;
+    margin: auto 0;
+}
+@media (min-width: 600px) {
+    .question {
+        grid-template-columns: 1fr 7fr;
+    }
+}
+@media (min-width: 800px) {
+    .question {
+        grid-template-columns: 2fr 10fr;
+    }
+}
+
+.progression {
+    margin: auto;
+}
+
+
+/* Reponse */
+
+.choixReponses {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+    align-items: center;
+}
+@media (min-width: 600px) {
+    .choixReponses {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+}
+@media (min-width: 800px) {
+    .choixReponses {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        width: 90%;
+        
+    }
+
+}
+
+
+/* Bouton Radio */
+
+.borderBackground {
+    width: 90%;
+    aspect-ratio: 1/1;
+    padding: 7%;
+    display: flex;
+    margin: 0 auto;
+
+	background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 209 209'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23f2f4ff%3B stroke: %23000%3B stroke-miterlimit: 10%3B stroke-width: 3px%3B %7D %3C/style%3E%3C/defs%3E%3Cg id='Border2'%3E%3Cpath id='border2' class='cls-1' d='m1.5 26.5v156c9.57 0 2.8 13.15 7.32 17.68 4.52 4.52 17.68.42 17.68 7.32h156c0-9.57 13.15-2.8 17.68-7.32 4.52-4.52.42-17.68 7.32-17.68V26.5c-9.57 0-2.8-13.15-7.32-17.68-4.52-4.52-17.68-.42-17.68-7.32H26.5c0 9.57-13.15 2.8-17.68 7.32-4.52 4.52-.42 17.68-7.32 17.68Z'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    filter: drop-shadow(0px 4px 4px rgb(0 0 0 / 0.5));
+
+}
+[type=radio]:hover+label .borderBackground {
+    cursor: pointer;
+}
+[type=radio]:hover+label .borderBackground,
+[type=radio]:focus+label .borderBackground {
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 213 213'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23f2f4ff%3B stroke: %23000%3B stroke-miterlimit: 10%3B stroke-width: 7px%3B %7D %3C/style%3E%3C/defs%3E%3Cg id='BackgroundBouton'%3E%3Cpath id='BackgroundBoutonHover' class='cls-1' d='m3.5 28.5v156c9.57 0 2.8 13.15 7.32 17.68s17.68.42 17.68 7.32h156c0-9.57 13.15-2.8 17.68-7.32 4.52-4.52.42-17.68 7.32-17.68V28.5c-9.57 0-2.8-13.15-7.32-17.68-4.52-4.52-17.68-.42-17.68-7.32H28.5c0 9.57-13.15 2.8-17.68 7.32-4.52 4.52-.42 17.68-7.32 17.68Z'/%3E%3C/g%3E%3C/svg%3E");
+
+    filter: drop-shadow(8px 12px 4px rgb(0 0 0 / 0.5));
+    transform: translateX(-6px) translateY(-6px);
+
+    transition: transform 0.3s ease-in-out,
+    background-image 0.3s ease-in-out,
+    filter 0.3s ease-in-out;
+
+}
+
+[type=radio]:checked+label .borderBackground {
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 214 214'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23f2f4ff%3B stroke: %23000%3B stroke-    qamiterlimit: 10%3B stroke-width: 8px%3B %7D %3C/style%3E%3C/defs%3E%3Cg id='BackgroundBouton'%3E%3Cpath id='BackgroundBoutonEnfonce' class='cls-1' d='m4 29v156c9.57 0 2.8 13.15 7.32 17.68 4.52 4.52 17.68.42 17.68 7.32h156c0-9.57 13.15-2.8 17.68-7.32 4.52-4.52.42-17.68 7.32-17.68V29c-9.57 0-2.8-13.15-7.32-17.68s-17.68-.42-17.68-7.32H29c0 9.57-13.15 2.8-17.68 7.32-4.52 4.52-.42 17.68-7.32 17.68Z'/%3E%3C/g%3E%3C/svg%3E");
+    filter: drop-shadow(0px 2px 4px rgb(0 0 0 / 0.5));
+    transform: translateX(0px) translateY(3px);
+
+    transition: transform 0.3s ease-in-out,
+                background-image 0.3s ease-in-out,
+                filter 0.3s ease-in-out;
+}
+
+.borderBackground img {
+height: 100%;
+margin: 0 auto;
+}
+
+.caption {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+
+/* Footer */
+
+.footer {
+    width: 100%;
+    background-color: var(--couleur-bandeau-superieur);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.footer p {
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+}
+@media (min-width: 600px) {
+    .footer p {
+        width: 50%;
+    }
+}
+
+.footerLien:link,
+.footerLien:visited,
+.footerLien:active {
+    color: var(--couleur-svg-bandeau-superieur);
+}
+.footerLien:hover {
+    color: var(--couleur-svg-bandeau-superieur-hover);
+}
+
+
+/* Bouton */
+.sectionBouton {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.textBouton {
+    display: inline-block;
+}
+ .boutonPetit {
+    display: block;
+    border: none;
+    background: rgba(255, 255, 255, 0);
+
+    height: 85px;
+    background-position: center;
+    text-align: center;
+    width: 50%;
+    aspect-ratio: 2.835/1;
+    margin: 1rem;
+}
+
+@media (min-width: 600px) {
+    .boutonPetit {
+        width: 33%;
+    }
+}
+@media (min-width: 800px) {
+    .boutonPetit {
+        width: 25%;
+    }
+}
+
+
+/* état / Background */
+.boutonPetit {
+    background-repeat: no-repeat;
+
+	background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 244.41 88'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23f2f4ff%3B stroke: %23000%3B stroke-miterlimit: 10%3B stroke-width: 3px%3B %7D %3C/style%3E%3C/defs%3E%3Cg id='BackgroundBouton'%3E%3Cpath id='BoutonInitial' class='cls-1' d='m1.5 26.92v34.15c9.57 0 2.8 13.38 7.32 17.98 4.52 4.6 17.68.43 17.68 7.45h191.41c0-9.73 13.15-2.85 17.68-7.45 4.52-4.6.42-17.98 7.32-17.98V26.92c-9.57 0-2.8-13.38-7.32-17.98-4.52-4.6-17.68-.43-17.68-7.45H26.5c0 9.73-13.15 2.85-17.68 7.45-4.52 4.6-.42 17.98-7.32 17.98Z'/%3E%3C/g%3E%3C/svg%3E");
+    filter: drop-shadow(0px 4px 4px rgb(0 0 0 / 0.5));
+    
+}
+.boutonPetit:hover {
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 248.41 92'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23f2f4ff%3B stroke: %23000%3B stroke-miterlimit: 10%3B stroke-width: 7px%3B %7D %3C/style%3E%3C/defs%3E%3Cg id='BackgroundBouton'%3E%3Cpath id='BoutonHover' class='cls-1' d='m3.5 28.92v34.15c9.57 0 2.8 13.38 7.32 17.98 4.52 4.6 17.68.43 17.68 7.45h191.41c0-9.73 13.15-2.85 17.68-7.45 4.52-4.6.42-17.98 7.32-17.98V28.92c-9.57 0-2.8-13.38-7.32-17.98-4.52-4.6-17.68-.43-17.68-7.45H28.5c0 9.73-13.15 2.85-17.68 7.45-4.52 4.6-.42 17.98-7.32 17.98Z'/%3E%3C/g%3E%3C/svg%3E");
+    filter: drop-shadow(8px 12px 4px rgb(0 0 0 / 0.5));
+    transform: translateX(-6px) translateY(-6px);
+
+    transition: transform 0.3s ease-in-out,
+                background-image 0.3s ease-in-out,
+                filter 0.3s ease-in-out;
+
+}
+.boutonPetit:active {
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 249.41 93'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23f2f4ff%3B stroke: %23000%3B stroke-miterlimit: 10%3B stroke-width: 8px%3B %7D %3C/style%3E%3C/defs%3E%3Cg id='BackgroundBouton'%3E%3Cpath id='BoutonEnfonce' class='cls-1' d='m4 29.42v34.15c9.57 0 2.8 13.38 7.32 17.98 4.52 4.6 17.68.43 17.68 7.45h191.41c0-9.73 13.15-2.85 17.68-7.45 4.52-4.6.42-17.98 7.32-17.98V29.42c-9.57 0-2.8-13.38-7.32-17.98-4.52-4.6-17.68-.43-17.68-7.45H29c0 9.73-13.15 2.85-17.68 7.45-4.52 4.6-.42 17.98-7.32 17.98Z'/%3E%3C/g%3E%3C/svg%3E");
+    filter: drop-shadow(0px 2px 4px rgb(0 0 0 / 0.5));
+    transform: translateX(0px) translateY(3px);
+    transition: transform 0.3s ease-in-out,
+                background-image 0.3s ease-in-out,
+                filter 0.3s ease-in-out;
+}
+.boutonPetit:disabled {
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 244.41 88'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23f2f4ff%3B stroke: %23b3b3b3%3B stroke-miterlimit: 10%3B stroke-width: 3px%3B %7D %3C/style%3E%3C/defs%3E%3Cg id='BackgroundBouton'%3E%3Cpath id='BoutonDisabled' class='cls-1' d='m1.5 26.92v34.15c9.57 0 2.8 13.38 7.32 17.98 4.52 4.6 17.68.43 17.68 7.45h191.41c0-9.73 13.15-2.85 17.68-7.45 4.52-4.6.42-17.98 7.32-17.98V26.92c-9.57 0-2.8-13.38-7.32-17.98-4.52-4.6-17.68-.43-17.68-7.45H26.5c0 9.73-13.15 2.85-17.68 7.45-4.52 4.6-.42 17.98-7.32 17.98Z'/%3E%3C/g%3E%3C/svg%3E");
+    filter: drop-shadow(0px 4px 4px rgb(0 0 0 / 0.5));
+    transform: translate(0px);
+}
+
+/* Retroaction */
+
+.ctnRetro {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-gap: 1rem;
+
+    border-image-slice: 15%;
+    border-image-width: 40px;
+    border-image-outset: 0px 0px 0px 0px;
+    border-image-repeat: stretch stretch;
+    border-image-source: url(../images/elementGraphique/Border.svg);
+    border-style: solid;
+    padding: 2rem;
+    background-color: var(--couleur-background-imput);
+}
+@media (min-width: 800px) {
+    .ctnRetro {
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 2fr;
+        grid-gap: 2rem;
+    }
+}
+
+.retroImg {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-gap: 1rem;
+    justify-content: center;
+}
+@media (min-width: 800px) {
+    .retroImg {
+        grid-template-columns: 1fr 2fr;
+        justify-content: center;
+    }
+}
+.retroImg--mauvaiseResponse {
+    margin: auto;
+}
+.retroImg--bonneResponse {
+    margin: auto 0;
+}
+.retroImg--mauvaiseResponse .borderBackground {
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 209 209'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23f2f4ff%3B stroke: %23b10000%3B stroke-miterlimit: 10%3B stroke-width: 3px%3B %7D %3C/style%3E%3C/defs%3E%3Cg id='BackgroundBouton'%3E%3Cpath id='BackgroundMauvaiseResponse' class='cls-1' d='m1.5 26.5v156c9.57 0 2.8 13.15 7.32 17.68 4.52 4.52 17.68.42 17.68 7.32h156c0-9.57 13.15-2.8 17.68-7.32s.42-17.68 7.32-17.68V26.5c-9.57 0-2.8-13.15-7.32-17.68-4.52-4.52-17.68-.42-17.68-7.32H26.5c0 9.57-13.15 2.8-17.68 7.32-4.52 4.52-.42 17.68-7.32 17.68Z'/%3E%3C/g%3E%3C/svg%3E");
+}
+.retroImg--bonneResponse .borderBackground{
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 209 209'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23f2f4ff%3B stroke: %23298000%3B stroke-miterlimit: 10%3B stroke-width: 3px%3B %7D %3C/style%3E%3C/defs%3E%3Cg id='BackgroundBouton'%3E%3Cpath id='BackgroundBonneReponse' class='cls-1' d='m1.5 26.5v156c9.57 0 2.8 13.15 7.32 17.68 4.52 4.52 17.68.42 17.68 7.32h156c0-9.57 13.15-2.8 17.68-7.32s.42-17.68 7.32-17.68V26.5c-9.57 0-2.8-13.15-7.32-17.68-4.52-4.52-17.68-.42-17.68-7.32H26.5c0 9.57-13.15 2.8-17.68 7.32-4.52 4.52-.42 17.68-7.32 17.68Z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.retroTitre {
+    margin: 0;
+}
+
+
+/* Resultat */
+.ctnResultat {
+    border-image-slice: 15%;
+    border-image-width: 40px;
+    border-image-outset: 0px 0px 0px 0px;
+    border-image-repeat: stretch stretch;
+    border-image-source: url(../images/elementGraphique/Border.svg);
+    border-style: solid;
+    padding: 2rem;
+    background-color: var(--couleur-background-imput);
+}
+
+.resultat {
+
+}
+
+.textResultat {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Caché */
+
+.cache {
+    display: none;
+   }
