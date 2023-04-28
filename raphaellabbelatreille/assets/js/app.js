@@ -78,7 +78,9 @@ const quiz = {
         //this.refSubmitButton.classList.add("cache")
     },
     afficherQuestion: function (numeroQuestion) {
+        console.log("On affiche")
         console.log(quiz.refArrQuestions);
+        
         //Disparait la question précédente
         //this.refArrQuestions[numeroQuestion-1].classList.add('cache')
         //Apparait la question
@@ -88,16 +90,24 @@ const quiz = {
             
         }
         console.log(numeroQuestion)
-        this.refArrQuestions[quiz.intNoQuestion].classList.remove('cache');
+        quiz.refArrQuestions[quiz.intNoQuestion].classList.remove('cache');
+
+
 
         // Créer un paragraphe
         const refBoutonReponse = document.createElement('p');
         refBoutonReponse.classList.add('boutonReponse');
         // Y ajouter le bouton de validation de la question 
         refBoutonReponse.innerHTML = '<button type="button" disabled class="ctnBouton__bouton">Valider ma réponse</button>';
-        this.refArrQuestions[numeroQuestion].appendChild(refBoutonReponse);
+        quiz.refArrQuestions[quiz.intNoQuestion].appendChild(refBoutonReponse);
         // Ajouter un écouteur d'événement au bouton
-        refBoutonReponse.querySelector('.ctnBouton__bouton').addEventListener('click', this.validerReponse.bind());
+        
+            refBoutonReponse.querySelector('.ctnBouton__bouton').addEventListener('click', quiz.validerReponse.bind());
+        
+        
+        
+        
+        
     },
     demarrerQuiz: function () {
         // Cacher l'intro       
@@ -125,10 +135,16 @@ const quiz = {
         
         //Réponse émise;
         const refReponse = document.querySelector('input[name=Q'+(quiz.intNoQuestion+1)+']:checked');
-        const refBlocR = refReponse.parentNode;
-        const refCheckR = refBlocR.querySelector(".checkmark")
-        const refEtiquetteR = refBlocR.querySelector(".etiquette")
         console.log(refReponse)
+        const refBlocR = refReponse.parentNode;
+        let refCheckR = refBlocR.querySelector(".checkmark")
+        let refEtiquetteR = refBlocR.querySelector(".etiquette")
+        
+        if (quiz.intNoQuestion == 2) {
+            refCheckR = refReponse.querySelector(".check");
+            refEtiquetteR = refReponse.querySelector(".check");
+        }
+        
         let strReponse = refReponse.id
         console.log(strReponse)
 
@@ -136,11 +152,17 @@ const quiz = {
         for (let index = 0; index < arrR.length; index++) {
             const refLabel = arrR[index];
             const refInput = refLabel.querySelector("input")
-            const refCheck = refLabel.querySelector(".checkmark");
-            const refEtiquette = refLabel.querySelector(".etiquette")
-            refCheck.classList.add("disable")
             refInput.disabled = true
-            refEtiquette.classList.add("disable")
+            if (quiz.intNoQuestion == 0 || quiz.intNoQuestion == 1) {
+                const refCheck = refLabel.querySelector(".checkmark");
+                const refEtiquette = refLabel.querySelector(".etiquette")
+                refCheck.classList.add("disable")
+                refEtiquette.classList.add("disable")
+            } else if (quiz.intNoQuestion == 2) {
+                const refCheck = refLabel.querySelector(".check");
+                refCheck.classList.add("disable")
+            }
+            
         }
         refListeR.parentNode.querySelector(".ctnBouton__bouton").disabled = true;
         
@@ -161,7 +183,15 @@ const quiz = {
         refCheckBR.classList.add("bonne_reponse")
         document.getElementById("retroaction_explication").innerText=objJSON.explications.Q1;
 
-        quiz.pourContinuer(quiz.intNoQuestion);
+        if (quiz.intNoQuestion == 0 || quiz.intNoQuestion == 1) {
+            quiz.pourContinuer(quiz.intNoQuestion);
+        } else {
+            if (quiz.intNoQuestion == 2) {
+                quiz.pourFinir(quiz.intNoQuestion);
+            }
+        }
+        
+        
     },
     pourContinuer: function(numeroQuestion) {
         console.log("on continue")
@@ -172,8 +202,23 @@ const quiz = {
         refBoutonContinuer.innerHTML = '<button type="button" class="Pour_continuer">Continuer à la prochaine question</button>';
         this.refArrQuestions[numeroQuestion].appendChild(refBoutonContinuer);
         // Ajouter un écouteur d'événement au bouton
-        quiz.intNoQuestion++
+        quiz.intNoQuestion = quiz.intNoQuestion+1
         refBoutonContinuer.querySelector('.Pour_continuer').addEventListener('click', quiz.afficherQuestion.bind(this.intNoQuestion));
     },
-    afficherResultats: function () { }
+    pourFinir: function(numeroQuestion) {
+        console.log("on Finit")
+
+        const refBoutonFinit = document.createElement('p');
+        refBoutonFinit.classList.add('boutonReponse');
+        // Y ajouter le bouton de validation de la question 
+        refBoutonFinit.innerHTML = '<button type="button" class="Pour_continuer">Continuer à la prochaine question</button>';
+        this.refArrQuestions[numeroQuestion].appendChild(refBoutonFinit);
+        // Ajouter un écouteur d'événement au bouton
+        quiz.intNoQuestion = quiz.intNoQuestion+1
+        refBoutonFinit.querySelector('.Pour_continuer').addEventListener('click', quiz.afficherResultats);
+    },
+
+    afficherResultats: function () {
+        console.log("OOn résulte")
+     }
 }
