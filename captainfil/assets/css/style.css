@@ -1,0 +1,214 @@
+@charset "UTF-8";
+/**
+ * @author: Prénoms Noms OU githubUSERNAME
+ */
+
+/* IMPORTER D'ABORD LES POLICES DE CARACTÈRES */
+
+/* IMPORTER LES FICHIERS CSS */
+@import url(normalize.css);
+@import url(utilitaires.css);
+@import url(base.css);
+@import url(typo.css);
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+/* AJOUTER UNE TABLE DES MATIÈRES POUR POUVOIR NAVIGUER LA CSS*/
+/*total*/
+/*intro*/
+/*question*/
+
+
+/*total*/
+.box__area{
+    margin: 15px;
+    padding: 1px;
+    background: linear-gradient(#C2DEE5, #C2DEE5);
+    background-size: calc(100% - 30px) auto;
+    background-repeat: no-repeat;
+    background-position:  -10px 25px;
+}
+
+.wrong{
+    margin: 15px;
+    padding: 1px;
+    background: linear-gradient(#FF9991, #FF9991); 
+    background-size: calc(100% - 30px) auto;
+    background-repeat: no-repeat;
+    background-position:  -10px 25px; 
+}
+
+.right{
+    margin: 15px;
+    padding: 1px;
+    background: linear-gradient(#9ED2C0, #9ED2C0); 
+    background-size: calc(100% - 30px) auto;
+    background-repeat: no-repeat;
+    background-position:  -10px 25px; 
+}
+
+.js .hidden{
+    display: none;
+}
+
+html{
+    background-color: #F2F9AD;
+}
+
+main{
+    background-color: white;
+    width: 90vw;
+    margin:  auto;
+    padding: 20px 0;
+    min-height: 100vh;
+}
+
+.arrow{
+    width: 30px;
+    display: inline-block;
+    margin:  auto;
+}
+
+.bouton{
+    display: block;
+    text-align: center;
+    padding: 10px;
+    font-family: 'Permanent Marker' , Thin;
+    background-color: transparent;
+    border: 1px solid black;
+    margin: 10px auto;
+}
+
+.bouton:hover{
+    cursor: pointer;
+    background-color: #C2DEE5;
+}
+
+.disabled,
+.disabled:hover{
+    border: none;
+    background-color: lightgrey;
+    color: white;
+}
+
+/*intro*/
+
+.logo{
+    width: 300px;
+    display: block;
+    margin: auto;
+}
+
+.text__intro{
+    text-align: center;
+    margin: 15px;
+    border: solid black 1px;
+    padding: 20px;
+}
+
+
+/*question*/
+fieldset{
+    border: none;
+}
+
+
+.question{
+    text-align: center;
+    margin: 15px;
+    border: solid black 1px;
+    padding: 25px;
+    font-family: 'Avenir Book';
+    font-size: 16px;
+}
+
+.img__question, .img__question-img{
+    display: block;
+    margin: 20px auto;
+    width: 320px;
+}
+
+@media (min-width: 1000px){
+    .img__question{
+        float: left;
+        padding: 33px 0;
+        margin-right: 12px;
+    }
+
+    .img__question-img{
+        float: left;
+        padding: 146px 0;
+    }
+}
+
+.list__choix, .list__choix-img{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 600px){
+    .list__choix-img{
+        margin: auto;
+        max-width: 800px;
+        display: flex;
+        justify-content:space-around;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }    
+}
+
+.radio{
+    display: none;
+}
+
+
+.label__img{
+    border:  dashed black 2px;
+    border-radius: 5px;
+    display: block;
+    margin: 10px auto;
+    width: 320px;
+    padding: 20px;
+}
+
+.label__img:hover {
+    background-color: #e4f4f7;
+}
+
+.label_text {
+    display: block ;
+    text-align: center;
+    border: solid black 1px;
+    margin: 10px auto;
+    width: 80%;
+    padding: 20px;
+}
+
+
+.radio:checked+label {
+  background-color: #C2DEE5;
+}
+
+.question__box:hover {
+    padding: 1px;
+    background: linear-gradient(#C2DEE5, #C2DEE5);
+    background-size: calc(92% - 50px) auto;
+    background-repeat: no-repeat;
+    background-position:  -5px 25px;
+}
+
+.ctnBouton .bouton {
+    width: 1000px;
+}
+
+/* resultat */
+
+.reload{
+    width: 15px;
+    margin: 2px 2px 0px 2px;
+    
+}
