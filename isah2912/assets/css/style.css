@@ -1,0 +1,250 @@
+@charset "UTF-8";
+/**
+ * @author: Isabel Hurtado
+ */
+
+/* IMPORTER D'ABORD LES POLICES DE CARACTÈRES */
+@import url('https://fonts.googleapis.com/css2?family=Abyssinica+SIL&family=Bad+Script&family=Comfortaa:wght@300;400;500;600;700&family=Lato:ital,wght@1,300&family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abyssinica+SIL&family=Bad+Script&family=Comfortaa:wght@300;400;500;600;700&family=Lato:ital,wght@1,300&family=Playfair+Display&display=swap');
+/* IMPORTER LES FICHIERS CSS */
+@import url(normalize.css);
+@import url(utilitaires.css);
+@import url(base.css);
+@import url(typo.css);
+
+/* AJOUTER UNE TABLE DES MATIÈRES POUR POUVOIR NAVIGUER LA CSS*/
+
+header{
+    border-bottom: 20px solid white;
+}
+.body {
+    background-color: #E8DDD2;
+}
+
+
+.dande{
+    background-color: #ffffff;
+}
+
+main,
+fieldset{
+    border: none;
+}
+
+
+/*ACCUEIL*/
+
+.logo{
+    width: 600px;
+    height: 200px;
+    padding-top: 2em;
+}
+
+@media(min-width:600px){
+    .logo{
+        padding-left: 15em;
+    }
+}
+
+.img_accueil{
+    width: 100%;
+    padding-top: 2em;
+    padding-bottom: 1em;
+}
+
+@media(min-width:600px){
+.img_accueil{
+width:90%;
+padding-left: 5em;
+padding-bottom: 1em;
+}
+}
+
+
+
+.p_acceuil{
+    background-color: rgba(237, 123, 59, 0.6);
+    box-shadow: 30px -20px rgba(251, 184, 147, 0.53);
+    font-size: 20px;
+    font-family: 'Comfortaa';
+    text-align: center;
+}
+
+@media(min-width:600px){
+    .p_acceuil{
+    font-size:22px;
+    }
+}
+
+
+.bouton-commencer{
+    height: 40px;
+    width: 200px; 
+    background: rgba(249, 133, 68, 0.58);
+    background-image: url("../images_/pointe_btn.svg"),
+    url("../images_/flechebtn.svg") ;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+
+}
+
+
+
+/* QUESTIONS */
+
+@media(min-width:800px){
+main{
+    display: block;
+    justify-content: center;
+}
+
+}
+.phrase-question{
+    text-align: center;
+   
+}
+
+@media (min-width:600px){
+    .phrase-question{
+padding-left: 3.5em;
+     
+    }
+}
+
+
+@media (min-width:800px){
+    .phrase-question{
+padding-left: 13em;
+     
+    }
+}
+
+
+
+@media (min-width:600px){
+    .image-question{
+      text-align: center;
+     
+    }
+}
+
+@media (min-width:800px){
+    .image-question{
+      padding-left: 20em;
+     
+    }
+}
+
+
+
+li{
+    padding-top: 2em;
+    list-style: none;
+}
+
+@media (min-width:600px){
+    li{
+    width: 80%;    
+    padding-left: 10em; 
+    padding-top: 4em;
+    }
+}
+
+
+@media (min-width:800px){
+    li{
+    width: 50%;  
+    padding-top: 4em;    
+    }
+}
+
+.image-reponse{
+width: 45%;
+box-shadow: -40px -30px #D18961 ;
+}
+
+
+.cercle {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background: #ED7B3B;
+    text-align: center;
+    size: 2em;
+    flex-shrink: 1;
+    padding-top: 0.2em;
+    font-size: 1.5em;
+}
+
+@media(min-width:600px){
+    .cercle{
+    width: 55px;
+    height: 55px;
+    border-radius: 60px;
+    text-align: center;
+    font-size: 2em;
+    }
+}
+
+
+
+.reponse{
+    font-size: 1.5em;
+}
+
+@media(min-width:600px){
+    .reponse{
+    font-size: 2em;
+   text-align: center;
+    }
+}
+
+
+.question{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 5em;
+}
+
+@media (min-width:600px){
+    .question{
+        display: flex;
+        justify-content: space-between;
+    align-items: center;
+    }
+}
+
+.p_footer{
+    text-align: center;
+}
+
+.footer{
+ background-color: #ED7B3B;
+ border-top: 25px solid rgb(255, 255, 255);
+ border-bottom: 20px solid #ED7B3B;
+}
+
+@media(min-width:600px){
+    .footer{
+        text-align: center;
+        background-color: aqua;
+    }
+}
+
+@media(min-width:800px){
+    .footer{
+        text-align: center;
+        background-color: rgb(4, 0, 255);
+    }
+}
+
+
+
+div {
+    background-color: #D18961;
+    width: 140px;
+    height: 100px;
+display: flex;
+}
