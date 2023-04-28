@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 50">
+  <style>
+    .st2{fill:#1f1f1f}
+  </style>
+  <path fill="#fff" d="M0 13h4v34H0z"/>
+  <path fill="#0058a1" d="M0 0h4v10H0z"/>
+  <path class="st2" d="M0 10h4v3H0zM0 47h4v3H0z"/>
+</svg>

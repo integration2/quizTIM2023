@@ -1,0 +1,170 @@
+@charset "UTF-8";
+
+/**
+ * @author Eve Février pour @TIMCSF
+ * Conception du Quiz : Martin Teasdale-Blais, finissant printemps 2019
+ * https://www.linkedin.com/in/mteasdaleb/
+ *
+ * TABLE DES MATIERES
+ * Normalize
+ * Utilitaires
+ * Base
+ * Charte typographique
+ * Menu
+ * Grille
+ * Animations
+ * Questionnaire 
+ *** Interactivité
+ *** Bandeau d'entête
+ *** Introduction
+ *** Questions
+ *** Pied de page
+ */
+
+/* Normalize
+   ========================================================================== */
+@import url(normalize.css);
+
+/* Utilitaires
+   ========================================================================== */
+@import url(utilitaires.css);
+
+/* Base
+   ========================================================================== */
+@import url(base.css);
+
+/* Charte typographique
+   ========================================================================== */
+@import url(typo.css);
+
+/* Grille
+   ========================================================================== */
+@import url(grille.css);
+
+/* Animations */
+@import url(animations.css);
+
+/* Questionnaire
+   ========================================================================== */
+
+/* interactivité */
+[type="radio"]+label {
+   display: inline-block;
+}
+
+[type="radio"]:checked+label {
+   background-color: rgba(0, 81, 255, 0.5);
+   color: #fff;
+}
+
+[type="radio"]:checked+label.bonneReponse,
+[type="radio"]+label.bonneReponse {
+   background-color: rgb(17, 129, 3);
+}
+
+[type="radio"]:checked+label.mauvaiseReponse {
+   background-color: rgb(169, 12, 3);
+}
+
+.js .cache {
+   display: none;
+}
+
+.js .ctnBoutonSubmit {
+   display: none;
+}
+
+/* Bandeau d'entête */
+header.title {
+   display: flex;
+   align-items: flex-end;
+   background-image: url(../images/svg/banner-left.svg), url(../images/svg/banner-tile.svg);
+   background-position: left top, left top;
+   background-repeat: no-repeat, repeat;
+   box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.32);
+}
+
+.title__h1 {
+   height: 46px;
+   padding-left: 25px;
+   padding-bottom: 0.2rem;
+}
+
+.virgule,
+.sousTitre {
+   font-size: small;
+}
+
+.main {
+   display: grid;
+   grid-template-rows: 100px 1fr 50px;
+   min-height: calc(100vh - 50px);
+}
+
+/* Introduction */
+
+.introduction {
+   position: relative;
+}
+
+@media(min-width: 800px) {
+   .introduction {
+      display: grid;
+      grid-gap: 2em;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+   }
+}
+
+.introduction__accroche {
+   position: absolute;
+   top: 25%;
+   background-color: #fff;
+   padding: 0.5em 1em;
+}
+
+@media(min-width: 800px) {
+   .introduction__accroche {
+      position: static;
+      background-color: transparent;
+      padding: 0;
+   }
+}
+
+/* Questions */
+@media (min-width: 800px) {
+   .question {
+      display: grid;
+      grid-gap: 1em;
+      grid-template-areas:
+         "h2 h2"
+         "image question"
+         "image bouton";
+      ;
+      padding: 1em;
+      background-color: #fff;
+      box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.32);
+   }
+}
+
+.question__h2 {
+   grid-area: h2;
+}
+
+.question__question {
+   grid-area: question;
+}
+
+.ctnBouton {
+   text-align: right;
+   grid-area: bouton;
+   margin-right: 2em;
+}
+
+/* Pied de page */
+
+footer {
+   background-color: var(--couleur-bandeau-superieur);
+   color: #fff;
+   padding: 1em;
+}

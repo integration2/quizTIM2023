@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 50">
+  <style>
+    .st1{fill:#fff}
+  </style>
+  <path fill="#eedb57" d="M0 31h9v17H0z"/>
+  <path class="st1" d="M10 13h54v35H10zM0 13h9v16H0z"/>
+  <path fill="#de210c" d="M0 0h8.5v10H0z"/>
+  <path class="st1" d="M41 0h20v10H41z"/>
+  <path class="st1" d="M11 0h31v10H11z"/>
+  <path fill="#0058a1" d="M62 0h2v10h-2z"/>
+  <path d="M8.5 0h3v48h-3zM40 0h3.5v13H40zM59 0h3.5v13H59z"/>
+  <path d="M0 28h9v3H0zM0 10h64v3H0zM0 47h64v3H0z"/>
+</svg>
