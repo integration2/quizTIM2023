@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/**
+ * @author: Sarah DUfour OU Sikrieria
+    Version 1.01
+ */
+
+/* IMPORTER D'ABORD LES POLICES DE CARACTÈRES */
+
+/* IMPORTER LES FICHIERS CSS */
+@import url(normalize.css);
+@import url(utilitaires.css);
+@import url(base.css);
+
+/* AJOUTER UNE TABLE DES MATIÈRES POUR POUVOIR NAVIGUER LA CSS*/
+
+/* LOGO */
+
+/* MAIN */
+
+body {
+    background-image: url("/github_Sikrieria/assets/images/papyrus.webp");
+    background-repeat: repeat;
+}
+
+/* INTRODUCTION */
+.introduction {
+text-align: center;
+}
+/* SECTION QUESTION */
+.question {
+    text-align: center;
+}
+.question__li {
+    list-style: none;
+}
+.question_li img {
+    max-width: 50%;
+}
+
+/* SECTION RETRO-ACTION */
+
+/* FOOTER */
+
+/* VARIA */
