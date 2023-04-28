@@ -140,10 +140,11 @@ const quiz = {
         let refCheckR = refBlocR.querySelector(".checkmark")
         let refEtiquetteR = refBlocR.querySelector(".etiquette")
         
-        if (quiz.intNoQuestion == 2) {
+        /*if (quiz.intNoQuestion == 2) {
+            console.log("on passe a Check")
             refCheckR = refReponse.querySelector(".check");
             refEtiquetteR = refReponse.querySelector(".check");
-        }
+        }*/
         
         let strReponse = refReponse.id
         console.log(strReponse)
