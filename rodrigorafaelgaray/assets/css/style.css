@@ -1,0 +1,398 @@
+@charset "UTF-8";
+/**
+ * @author: Rodrigo Garay (rodrigorafaelgaray)
+ */
+
+/* IMPORTER D'ABORD LES POLICES DE CARACTÈRES */
+
+/* IMPORTER LES FICHIERS CSS */
+@import url(normalize.css);
+@import url(utilitaires.css);
+@import url(base.css);
+@import url(typo.css);
+@import url(grille.css);
+
+/* AJOUTER UNE TABLE DES MATIÈRES POUR POUVOIR NAVIGUER LA CSS*/
+
+/*
+    - STYLE GÉNÉNÉRALE
+    - HEADER
+    - SECTION ACCEUIL
+        - Acceuil générale
+        - Logo
+    - SECTION QUESTION
+        - Barre de progression
+        - Fieldset générale
+        - Questions entête
+        - Choix de réponses
+        - Paragraphes d'erreurs
+    - SECTION RESULTAT
+    - BOUTONS
+    - FOOTER
+    - INTERACTIVITÉ
+*/
+
+
+/* STYLE GÉNÉRALE */
+
+main{
+    padding: 1%;
+    background-color: var(--couleur-dominante-clair);
+}
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+    border: solid 3px var(--couleur-dominante-principal);
+    border-radius: 25px;
+}
+
+
+#page{
+    background-color: var(--couleur-dominante-clair);
+}
+
+/* HEADER */
+
+
+/* SECTION ACCEUIL */
+
+    /* Acceuil générale */
+    #accueil{
+    }
+
+    /* Logo */
+    .logo_pingouin{
+        width: 30%;
+        height: auto;
+        padding: 2rem;
+        float: left;
+        border: none;
+    }
+
+    /* Text */
+    .text__acceuil{
+        width: auto;
+    }
+
+    /* Bouton Acceuil */
+
+
+/* SECTION QUESTION */
+
+    /* barre de progression */
+
+    .section__barre-de-progression {
+        max-width: 235px;
+        width: 100%;
+    }
+
+    .progressbar-wrapper {
+        background-color: #D6ECFC;
+        border: 3px solid #5DA29D;
+        border-radius: 40px;
+        width: 100%;
+    }
+
+    .progressbar {
+        background-color: #1F487A;
+        color: white;
+        padding: 1rem;
+        font-size: 20px;
+        border-radius: 15px;
+    }
+
+    .progres__1{
+        width: 33%;
+    }
+
+    .progres__2 {
+        width: 66%;
+    }
+
+    .progres__3 {
+        width: 100%;
+    }
+
+    .progres__completee{
+        background-color: #F6CC75;
+        border-color: #1F487A;
+        width: 100%;
+    }
+
+    /* Fieldset générale */
+
+    fieldset{
+        border: none;
+    }
+
+    /* Questions entête */
+    .questions__entete__sous-titre{
+        color: var(--couleur-dominante-principal);
+    }
+
+    @media only screen and (min-width: 600px){
+        .questions__entete{
+            display: grid;
+            grid-gap: 0;
+            grid-template-areas:
+                "h1 barre-de-progression"
+                "sous-titre sous-titre"
+        }
+        
+        .questions__entete__titre{
+            grid-area: h1;
+        }
+
+        .questions__entete__sous-titre{
+            grid-area: sous-titre;
+        }
+
+        .section__barre-de-progression{
+            grid-area: barre-de-progression;
+        }
+    }
+
+    /* Choix de réponses */
+
+    .choixReponses{
+        justify-content: center;
+    }
+
+    @media only screen and (min-width: 1024px){
+        .enonoce-question{
+            display: flex;
+        }
+
+        .question__texte{
+            order: 1;
+            margin-left: 20px;
+            width: 50%;
+        }
+    }
+
+    .choixReponses{
+        display: grid;
+        grid-gap: 0;
+        grid-template-areas:
+            "choixA"
+            "choixB"
+            "choixC"
+            "choixD";
+        
+    }
+
+    @media only screen and (min-width: 600px) {
+        .choixReponses {
+            grid-template-areas:
+                "choixA   choixB"
+                "choixC   choixD";
+        }
+    }
+
+    @media only screen and (min-width: 1024px) {
+        .choixReponses {
+            grid-gap: 20px;
+            grid-template-areas:
+                "choixA  choixB  choixC  choixD";
+
+            /* CENTRAGE */
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0;
+        }
+    }
+
+    /* aires occupées par les éléments d'interface */
+    .choixA {
+        grid-area: choixA;
+    }
+
+    .choixB {
+        grid-area: choixB;
+    }
+
+    .choixC {
+        grid-area: choixC;
+    }
+
+    .choixD {
+        grid-area: choixD;
+    }
+
+    .choix{
+        padding: 1em;
+        list-style: none;
+    }
+
+    .choix label img{
+        height: 20rem;
+    }
+
+    .choix__label_bouton{
+        background-image: url(../images/boutons/bouton_initial.svg);
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 235px;
+        max-height: 65px;
+    }
+
+    .choix__label_bouton_texte{
+        width: 100%;
+        text-align: center;
+        padding-right: 20px;
+        padding-left: 20px;
+        padding-top: 17px;
+        padding-bottom: 20px;
+        font-weight: 600;
+        font-family: 'Inter', serif;
+        color: var(--couleur-dominante-principal);
+    }
+
+    .choix__label_bouton:hover{
+        background-image: url(../images/boutons/boutonChoixReponse_survol.svg);
+        cursor: pointer;
+    }
+
+    .choix__label_bouton_texte:hover{
+        cursor: pointer;
+        color: white;
+    }
+
+    .questions__imagePrincipale{
+        height: 40rem;
+    }
+
+    /* Paragraphes d'erreurs */
+
+    .erreur{
+        border-top: .3em solid rgb(255, 0, 0);
+        border-radius: 1em;
+    }
+
+/* SECTION RESULTAT */
+.resultat__entete{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media only screen and (min-width: 600px) {
+    .resultat__entete{
+        flex-direction: row;
+    };
+    .progressbar-wrapper {
+        align-self: flex-end;
+    }
+}
+
+.resultat__reponse{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.resultat__reponse__element{
+    text-align: center;
+}
+
+.resultat__reponse p {
+    font-family: 'Inter', serif;
+    font-weight: 600;
+    color: var(--couleur-dominante-principal);
+}
+
+
+/* BOUTONS */
+
+.bouton__acceuil:hover {
+    cursor: pointer;
+} 
+
+.bouton__acceuil:hover rect, .bouton__acceuil:hover path {
+    fill: var(--couleur-accent_2_clair);
+    transition: fill 0.3s ease-in-out;
+}
+
+.boutonValiderReponseConteneur, .boutonQuestionSuivanteConteneur, .boutonVoirLesResultatsConteneur{
+    display: flex;
+    justify-content: center;
+}
+
+.boutonValiderReponse, .boutonQuestionSuivante, .boutonVoirLesResultats, .bouton__acceuil{
+    position: relative;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+}
+
+.boutonValiderReponse span, .boutonQuestionSuivante span, .boutonVoirLesResultatsConteneur span, .bouton__acceuil span{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--couleur-dominante-principal);
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif
+}
+
+.boutonValiderReponse:hover, .boutonQuestionSuivante:hover, .boutonVoirLesResultatsConteneur:hover, .bouton__acceuil:hover{
+    cursor: pointer;
+}
+
+.boutonValiderReponse:hover path, .boutonQuestionSuivante:hover path, .boutonVoirLesResultatsConteneur:hover path, .bouton__acceuil:hover path{
+    fill: var(--couleur-accent_2_clair);
+    transition: fill 0.3s ease-in-out;
+}
+
+
+.boutonValiderReponse:disabled{
+    opacity: 50%;
+}
+
+.boutonValiderReponse:disabled path{
+    fill: grey;
+    transition: fill 0.3s ease-in-out;
+}
+
+/* FOOTER */
+footer{
+    background-color: #1F487A;
+    color: #F6CC75;
+    text-align: center;
+    padding: 2em;
+    margin-top: 20rem;
+}
+
+footer p{
+    font-weight: bold;
+}
+
+/* INTERACTIVITÉ */
+input[type="radio"]:checked + label p {
+    background-image: url("../images/boutons/boutonChoixReponse_selectionne.svg");
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ .js .cache {
+    display: none;
+ }
+ 
+ .js .ctnBoutonSubmit {
+    display: none;
+ }
