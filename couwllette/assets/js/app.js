@@ -59,6 +59,10 @@ document.querySelectorAll('[type=radio]').forEach(function (btnRadio) {
 
 
 function initialisation() {
+
+   
+
+
     document.querySelector('body').classList.add('js');
 
     //afficher Intro
@@ -83,11 +87,14 @@ function initialisation() {
 }
 
 function demarrerQuiz() {
+    
+     intNoQuestion = 0;
     //cacher introduction
     refIntro.classList.add('cache');
     
     //afficher questions
     afficherQuestion(intNoQuestion);
+
 }
 
 function afficherQuestion(numeroQuestion) {
