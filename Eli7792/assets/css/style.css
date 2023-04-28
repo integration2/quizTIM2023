@@ -1,0 +1,261 @@
+@charset "UTF-8";
+/**
+ * @author: Élisabeth Bilodeau
+ */
+
+/* IMPORTER D'ABORD LES POLICES DE CARACTÈRES */
+
+/* IMPORTER LES FICHIERS CSS */
+@import url(normalize.css);
+@import url(utilitaires.css);
+@import url(base.css);
+
+/* AJOUTER UNE TABLE DES MATIÈRES POUR POUVOIR NAVIGUER LA CSS*/
+/**
+* Body
+* Accueil
+* Images
+* Boutons
+* Questions
+* Footer
+*/
+
+/*BODY*/
+
+body {
+    background-color: #EEDACE;
+}
+main {
+    margin:10px;
+}
+
+
+/*ACCUEIL*/
+
+h1 {
+    margin-top:0;
+    padding-top:20px;
+    font-size: 1.8rem;
+    margin-left: 10px;
+}
+@media(min-width:600px) {
+    h1  {
+        font-size: 2rem;
+       
+    }
+}
+@media(min-width:1024px) {
+    h1 {
+        font-size:2.5rem;
+    }
+}
+h2 {
+    font-size: 1.3rem;
+    margin-left:10px;
+}
+@media(min-width:600px) {
+    h2 {
+        font-size: 1.5rem;
+       
+    }
+}
+@media(min-width:1024px) {
+    h2 {
+        font-size:1.7rem;
+    }
+}
+p {
+    font-size: 1rem;
+    margin-left: 10px;
+    
+}
+@media(min-width:600px) {
+    p {
+        font-size: 1.2rem;
+    }
+}
+@media(min-width:800px) {
+    p {
+        font-size:1.2rem;
+        margin-right:3px;
+    }
+}
+@media(min-width:1024px) {
+    p {
+        font-size:1.4rem;
+    }
+}
+.accueil {
+    padding-bottom: 70px;
+    padding-top: 50px;
+}
+@media(min-width:600px) {
+    .accueil {
+        background-size: 600px 100%;
+      
+    }
+}
+@media(min-width:800px) {
+    .accueil {
+        padding-bottom: 50px;
+        display: grid;
+        grid-template-columns: 5fr 7fr ;    
+    } 
+}
+.accueil__texte {
+    background-image: url(/Eli7792/images/fond-papier\ copie.png);
+    background-size: 500px 100%;
+    background-repeat: no-repeat;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+@media(min-width:600px) {
+    .accueil__texte {
+        background-size: 600px 100%;
+        min-height:400px;
+    }
+}
+@media(min-width:800px) {
+    .accueil__texte {
+       background-size: 620px 100%;
+       min-height: 450px;
+    }
+}
+@media(min-width:700px) {
+    .accueil__texte {
+        background-size:800px 100%;
+    }
+}
+.accueil img {
+    display:none;
+}
+@media(min-width:800px) {
+    .accueil img {
+        display:block;
+        width: 100%;
+        margin-right: 0;
+        
+    }
+}
+/*IMAGES*/
+@media(min-width:600px) {
+    .imageAuteur {
+        width: 350px;
+        margin-left:18%;
+    }
+}
+@media(min-width:800px) {
+    .imageAuteur {
+        width:340px;
+    }
+}
+
+/*BOUTONS*/
+
+button {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: 40px;
+  background-color: #050851;
+  color: white;
+  border:none;
+  border-radius: 5px;
+}
+@media(min-width:600px) {
+    button {
+        font-size: 1.3rem;
+    }
+}
+button:hover {
+    border:3px solid white;
+}
+.bouton {
+    padding-bottom: 20px;
+}
+.boutonsRadio {
+    display: flex;
+    flex-direction: column;
+}
+@media(min-width:600px) {
+    .boutonsRadio {
+        padding:0;
+    }
+}
+
+.boutonsRadio__btn {
+    background-color: #050851;
+    color:white;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    list-style: none;  
+}
+.boutonsRadio__btn:hover {
+    border: 3px solid white;
+}
+.boutonsRadio__btn label {
+    display:flex;
+    width:100%;
+    justify-content: space-between;
+   
+}
+@media(min-width:600px) {
+    .boutonsRadio__btn label {
+        font-size: 1.3rem;
+    }
+}
+.boutonsRadio__nm {
+    font-weight: bold;
+    font-size: 1.5em;
+    display:flex;
+}
+input {
+    display:none;
+}
+.boutonsRadio__btn img {
+    width: 80px;
+    height: 60px;
+    margin-right:10px;
+   
+}
+
+/*QUESTIONS*/
+fieldset {
+    border:none;
+    margin-left:30px; 
+  }
+@media(min-width:800px) {
+    .questions {
+        display:grid;
+        grid-template-columns: 50% 50%;
+        grid-template-areas: "img p";
+    }
+    .imageAuteur {
+        grid-area: img;
+    }
+    .questions h2 {
+        grid-area: p;
+    }
+    .questions p {
+        grid-area: p;
+    }
+    .boutonsRadio {
+        grid-area: p;
+    }
+}
+
+/*FOOTER*/
+
+footer {
+    background-color: #8A0F0F;
+    color: white;
+    text-align: center;
+    font-size: em;
+    padding: 50px;
+}
+
+
+
