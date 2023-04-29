@@ -122,29 +122,32 @@ const quiz = {
 
         //Liste réponse 
         const refListeR = document.querySelector(".choix_Q"+(quiz.intNoQuestion+1));
-        const arrR = refListeR.querySelectorAll("label")
+        const arrR = refListeR.querySelectorAll("label");
+        const refSection = refListeR.parentNode;
+        const refExplication = refSection.querySelector(".retroaction_explication");
+        console.log(refExplication)
+        const refRetro = refSection.querySelector(".retroaction_reponse");
 
         console.log(arrR)
 
         //Bonne réponse;
         const refBonneReponse = document.querySelector('label[for='+objJSON.bonnesReponses[quiz.intNoQuestion]+']')
         const refBlocBR = refBonneReponse.parentNode;
-        const refCheckBR = refBlocBR.querySelector(".checkmark")
+        let refCheckBR = refBlocBR.querySelector(".checkmark")
         const refEtiquetteBR = refBlocBR.querySelector(".etiquette")
         console.log(refBonneReponse)
         
         //Réponse émise;
         const refReponse = document.querySelector('input[name=Q'+(quiz.intNoQuestion+1)+']:checked');
-        console.log(refReponse)
         const refBlocR = refReponse.parentNode;
         let refCheckR = refBlocR.querySelector(".checkmark")
-        let refEtiquetteR = refBlocR.querySelector(".etiquette")
+        const refEtiquetteR = refBlocR.querySelector(".etiquette")
         
-        /*if (quiz.intNoQuestion == 2) {
+        if (quiz.intNoQuestion == 2) {
             console.log("on passe a Check")
-            refCheckR = refReponse.querySelector(".check");
-            refEtiquetteR = refReponse.querySelector(".check");
-        }*/
+            refCheckR = refBlocR.querySelector(".check");
+            refCheckBR = refBlocBR.querySelector(".check")
+        }
         
         let strReponse = refReponse.id
         console.log(strReponse)
@@ -168,8 +171,9 @@ const quiz = {
         refListeR.parentNode.querySelector(".ctnBouton__bouton").disabled = true;
         
         //Comparer si bonne réponse ou non
+
         if (strReponse == objJSON.bonnesReponses[quiz.intNoQuestion]){
-            document.getElementById("retroaction_reponse").innerText=objJSON.retroactions.positive;
+            refRetro.innerHTML=objJSON.retroactions.positive;
             quiz.intNbBonnesReponses++
             
             
@@ -182,7 +186,7 @@ const quiz = {
         console.log( quiz.intNbBonnesReponses + "sur 3")
         refEtiquetteBR.classList.add("bonne_reponse")
         refCheckBR.classList.add("bonne_reponse")
-        document.getElementById("retroaction_explication").innerText=objJSON.explications.Q1;
+        refExplication.innerHTML= objJSON.explications["Q"+(quiz.intNoQuestion+1)];
 
         if (quiz.intNoQuestion == 0 || quiz.intNoQuestion == 1) {
             quiz.pourContinuer(quiz.intNoQuestion);
