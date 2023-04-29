@@ -24,9 +24,9 @@ const objJSON = {
     "messages": {
         "resultatsDebut": "Vous avez obtenu un résultat de",
         "note0": "Vous auriez pu faire mieux. Je vous suggère ..",
-        "note33": "Vous auriez pu faire mieux. Je vous suggère ..",
-        "note66": "Bravo, vous avez une bonne connaissance générale de ...",
-        "note100": "Félicitations, vous êtes un fin connaisseur !"
+        "note1": "Vous auriez pu faire mieux. Je vous suggère ..",
+        "note2": "Bravo, vous avez une bonne connaissance générale de ...",
+        "note3": "Félicitations, vous êtes un fin connaisseur !"
     }
 };
 document.querySelectorAll('[type=radio]').forEach(function (btnRadio) {
@@ -216,7 +216,7 @@ const quiz = {
         const refBoutonFinit = document.createElement('p');
         refBoutonFinit.classList.add('boutonReponse');
         // Y ajouter le bouton de validation de la question 
-        refBoutonFinit.innerHTML = '<button type="button" class="Pour_continuer">Continuer à la prochaine question</button>';
+        refBoutonFinit.innerHTML = '<button type="button" class="Pour_continuer">Voir les résultat</button>';
         this.refArrQuestions[numeroQuestion].appendChild(refBoutonFinit);
         // Ajouter un écouteur d'événement au bouton
         quiz.intNoQuestion = quiz.intNoQuestion+1
@@ -224,6 +224,17 @@ const quiz = {
     },
 
     afficherResultats: function () {
-        console.log("OOn résulte")
+        console.log("On résulte")
+        const refSectionOutro = document.querySelector(".outro")
+        const refRetroactionOutro = refSectionOutro.querySelector(".outro_retroaction")
+        const refScoreOutro = refSectionOutro.querySelector(".outro_score")
+
+        //Afficher la bonne section
+        document.querySelector("form").classList.add("cache")
+        refSectionOutro.classList.remove("cache");
+        
+        refScoreOutro.innerHTML = "Résultat : "+quiz.intNbBonnesReponses+"/3"
+        refRetroactionOutro.innerHTML = objJSON.messages["note"+quiz.intNbBonnesReponses]
+
      }
 }
