@@ -227,13 +227,13 @@ const quiz = {
         console.log("On résulte")
         const refSectionOutro = document.querySelector(".outro")
         const refRetroactionOutro = refSectionOutro.querySelector(".outro_retroaction")
-        const refScoreOutro = refSectionOutro.querySelector(".outro_score")
+        const refScoreOutro = document.getElementById("score")
 
         //Afficher la bonne section
         document.querySelector("form").classList.add("cache")
         refSectionOutro.classList.remove("cache");
         
-        refScoreOutro.innerHTML = "Résultat : "+quiz.intNbBonnesReponses+"/3"
+        refScoreOutro.innerHTML = quiz.intNbBonnesReponses
         refRetroactionOutro.innerHTML = objJSON.messages["note"+quiz.intNbBonnesReponses]
 
      }
