@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 213 213">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f2f4ff;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 7px;
+      }
+    </style>
+  </defs>
+  <g id="BackgroundBouton">
+    <path id="BackgroundBoutonHover" class="cls-1" d="m3.5,28.5v156c9.57,0,2.8,13.15,7.32,17.68s17.68.42,17.68,7.32h156c0-9.57,13.15-2.8,17.68-7.32,4.52-4.52.42-17.68,7.32-17.68V28.5c-9.57,0-2.8-13.15-7.32-17.68-4.52-4.52-17.68-.42-17.68-7.32H28.5c0,9.57-13.15,2.8-17.68,7.32-4.52,4.52-.42,17.68-7.32,17.68Z"/>
+  </g>
+</svg>

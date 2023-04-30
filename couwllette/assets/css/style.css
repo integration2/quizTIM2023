@@ -521,6 +521,6 @@ footer {
     }
 }
 
-.afficherResultat{
-    min-width: 100vh;
-}
+/* .afficherResultat{
+    min-height: 100vh;
+} */
