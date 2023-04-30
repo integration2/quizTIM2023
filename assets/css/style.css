@@ -1,0 +1,223 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,800;1,400&family=Roboto+Slab:wght@100;300;400&display=swap');
+
+/*************************
+    * table des matières 
+    * 1. Titre du site
+    * 2. Base
+    * 3. Quiz
+*************************/
+
+@import url(normalize.css);
+@import url(utils.css);
+@import url(typo.css);
+@import url(animations.css);
+
+/* Titre du site */
+.titre-site {
+    background-image: url("../images/deco/146479.svg");
+    /* background-color: var(--color-primary); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    padding: 2em;
+    margin: 0;
+}
+
+@media (min-width: 600px) {
+    .titre-site {
+        background-size: 65%;
+        ;
+    }
+}
+
+.mot {
+    display: inline-block;
+    /* margin: 0.05em; */
+    padding: 0.25em;
+    text-shadow: var(--ombre-texte);
+}
+
+.mot--1 {
+    color: black;
+    position: relative;
+    left: 20px;
+    bottom: 10px;
+    /* padding: 0 0.25em; */
+    font-size: larger;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+}
+
+.mot--2 {
+    color: var(--color-tertiary);
+    transform: skewY(10deg);
+    position: relative;
+    bottom: 10px;
+    font-size: larger;
+}
+
+.mot--3 {
+    color: var(--color-quaternary);
+    background-color: var(--color-primary);
+    transform: skewY(8deg) scaleX(1.8) scaleY(1.5);
+    position: relative;
+    left: 1.5em;
+    bottom: 10px;
+    padding: 0;
+    line-height: 1;
+    border-radius: 50%;
+}
+
+.mot--4 {
+    color: var(--color-quinary);
+    transform: skewY(3deg);
+    position: relative;
+    bottom: -0.75em;
+    left: -10px;
+
+}
+
+/* Base */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("../images/deco/33305.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.conteneur {
+    padding: 2em;
+}
+
+@media screen and (min-width: 600px) {
+    .conteneur {
+        padding: 4em;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+}
+
+/* Quiz */
+ol {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+@media (min-width: 600px) {
+    ol {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 800px) {
+    ol {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.quiz__item-de-liste {
+    background-color: var(--color-quinary);
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+    margin: 0.5em;
+    padding: 0 1em;
+}
+
+@media (min-width: 600px) {
+    .quiz__item-de-liste {
+        background-image: url("../images/deco/1618916-ff5722.svg");
+        background-size: cover;
+        justify-content: center;
+        align-items: center;
+        min-width: 13em;
+        min-height: 13em;
+        min-width: 45%;
+        border-radius: 50%;
+        text-align: center;
+    }
+}
+
+.quiz__item-de-liste:hover .quiz__auteur {
+    /* visibility: visible; */
+}
+
+.quiz__auteur img {
+    width: 2em;
+    height: 2em;
+}
+
+.quiz__lien a {
+    display: block;
+    text-decoration: none;
+    font-weight: 800;
+    color: var(--color-primary);
+}
+
+@media (min-width: 600px) {
+    .quiz__lien a {
+        padding-top: 1.5em;
+    }
+}
+
+.quiz__auteur p {
+    margin: 0;
+}
+
+.quiz__auteur {
+    width: max-content;
+    color: white;
+    order: 1;
+}
+
+@media (min-width: 600px) {
+    .quiz__auteur {
+        position: absolute;
+        bottom: 0;
+        left: 1.25em;
+
+    }
+}
+
+
+.quiz__auteur::after {
+    content: attr(data-prenom);
+    color: var(--color-tertiary);
+    display: inline-block;
+    position: absolute;
+    bottom: 1.25em;
+    left: 3.5em;
+    width: 100%;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+@media (min-width: 600px) {
+    .quiz__auteur::after {
+        bottom: 0.5em;
+        left: 2.5em;
+    }
+}
+
+.quiz__auteur a {
+    color: white;
+    display: block;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.quiz__auteur:hover::after {
+    color: var(--color-quaternaryv);
+}
+
+.quiz__auteur a:hover {
+    color: var(--color-quaternary);
+}

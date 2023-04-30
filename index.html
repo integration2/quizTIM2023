@@ -6,241 +6,170 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz TIM - Portail</title>
-    <style>
-        /*************************
-         * table des matières 
-            * 1. Titre du site
-            * 2. Base
-            * 3. Quiz
-         *************************/
-
-        /* Titre du site */
-        .titre-site {
-            font-size: 2em;
-            text-align: center;
-            padding: 2em;
-            background-color: #000000;
-            margin-top: 0;
-        }
-
-        .mot {
-            border-radius: 20%;
-            display: inline-block;
-            margin: 0.05em;
-            padding: 0.25em;
-        }
-
-        .mot--1 {
-            background-color: #ff0000;
-            color: #ffffff;
-        }
-
-        .mot--2 {
-            background-color: #ff8000;
-            color: #ffffff;
-        }
-
-        .mot--3 {
-            background-color: #ffff00;
-            color: #000000;
-        }
-
-        .mot--4 {
-            background-color: #00ff00;
-            color: #000000;
-        }
-
-        /* Base */
-        body {
-            font-family: sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .conteneur {
-            padding: 2em;
-            background-color: aquamarine;
-        }
-
-        @media screen and (min-width: 600px) {
-            .conteneur {
-                padding: 4em;
-                max-width: 800px;
-                margin: 0 auto;
-            }
-        }
-
-        /* Quiz */
-        .quiz__item-de-liste {
-            background-color: wheat;
-        }
-
-        @media (min-width: 600px) {
-            .quiz__item-de-liste {
-                margin: 0.5em;
-                min-width: 45%;
-            }
-        }
-
-        ol {
-            padding: 0;
-            margin: 0;
-            list-style-type: none;
-        }
-
-        @media (min-width: 600px) {
-            ol {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
-            }
-        }
-
-        @media (min-width: 800px) {
-            ol {
-                display: grid;
-                grid-template-columns: repeat(5, 1fr);
-                grid-gap: 1em;
-            }
-        }
-
-        .quiz__auteur {}
-
-        .quiz__lien {}
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
     <header>
         <h1 class="titre-site">
-            <span class="mot mot--1"> TIM </span>
-            <span class="mot mot--2"> Quiz </span>
-            <span class="mot mot--3"> Portfolio </span>
-            <span class="mot mot--4"> 2023 </span>
+            <span class="mot mot--1">TIM</span>
+            <span class="mot mot--2 pulse">Quiz</span>
+            <span class="mot mot--3">Portfolio</span>
+            <span class="mot mot--4">2023</span>
         </h1>
     </header>
     <main class="conteneur">
         <ol class="quiz">
-            <li class="quiz__item-de-liste"">
-                <p class=" quiz__auteur"><a href="https://github.com/evefevrier">Ève (evefevrier)</a></p>
-                <p class="quiz__lien"><a href="prototype/index.html">Prototype</a></p>
+            <li class="quiz__item-de-liste">
+                <p class=" quiz__lien"><a href="prototype/index.html">Prototype</a></p>
+                <p class="quiz__auteur" data-prenom="Ève"><a href="https://github.com/evefevrier">
+                        <img src="assets/images/github-mark/github-mark.svg" alt="Github Ève Février"></a></p>
             </li>
-            <li class="quiz__item-de-liste"">
-                <p class=" quiz__auteur"><a href="https://github.com/zOulOu25">Philippe (ZOulOu25)</a></p>
-                <p class="quiz__lien"><a href="zOulOu25/index.html">Titre du quiz</a></p>
+            <li class="quiz__item-de-liste">
+                <p class=" quiz__lien"><a href="Z0ul0u25/index.html">Le Quiz Linus Tech Tips</a></p>
+                <p class="quiz__auteur" data-prenom="Philippe"><a href="https://github.com/Z0ul0u25"><img
+                            src="assets/images/github-mark/github-mark.svg" alt="Github Z0ul0u25"></a></p>
             </li>
-            <li class="quiz__item-de-liste"">
-                <p class=" quiz__auteur"><a href="https://github.com/sikrieria">Sarah D. (Sikrieria)</a></p>
-                <p class="quiz__lien"><a href="sikrieria/index.html">Titre du quiz</a></p>
+            <li class="quiz__item-de-liste">
+                <p class=" quiz__lien"><a href="sikrieria/index.html">Titre du quiz</a></p>
+                <p class="quiz__auteur" data-prenom="Sarah"><a href="https://github.com/sikrieria"><img
+                            src="assets/images/github-mark/github-mark.svg" alt="Github Z0ul0u25"></a></p>
             </li>
-            <li class="quiz__item-de-liste"">
-                <p class=" quiz__auteur"><a href="https://github.com/alexandradias">Ardenxela (alexandradias)</a></p>
-                <p class="quiz__lien"><a href="alexandradias/index.html">Titre du quiz</a></p>
+            <li class="quiz__item-de-liste">
+                <p class=" quiz__lien"><a href="alexandradias/index.html">Les énigmes</a></p>
+                <p class="quiz__auteur" data-prenom="Alexandra"><a href="https://github.com/alexandradias"><img
+                            src="assets/images/github-mark/github-mark.svg" alt="Github Z0ul0u25"></a></p>
             </li>
-            <li class="quiz__item-de-liste"">
-                <p class=" quiz__auteur"><a href="https://github.com/maxamax2">Maxime (Maxamax2)</a></p>
-                <p class="quiz__lien"><a href="maxamax2/index.html">Titre du quiz</a></p>
+            <li class="quiz__item-de-liste">
+                <p class=" quiz__lien"><a href="maxamax2/index.html">Le système solaire</a></p>
+                <p class="quiz__auteur" data-prenom="Maxime"><a href="https://github.com/maxamax2"><img
+                            src="assets/images/github-mark/github-mark.svg" alt="Github Z0ul0u25"></a></p>
             </li>
-            <li class="quiz__item-de-liste"">
-                <p class=" quiz__auteur"><a href="https://github.com/jpcote14">Jean-Philippe (jpcote14)</a></p>
-                <p class="quiz__lien"><a href="jpcote14/index.html">Titre du quiz</a></p>
+            <li class="quiz__item-de-liste">
+                <p class=" quiz__lien"><a href="jpcote14/index.html">Henri pis sa gang</a></p>
+                <p class="quiz__auteur" data-prenom="Jean-Philippe"><a href="https://github.com/jpcote14"><img
+                            src="assets/images/github-mark/github-mark.svg" alt="Github Z0ul0u25"></a></p>
             </li>
-            <li class="quiz__item-de-liste"">
-                <p class=" quiz__auteur"><a href="https://github.com/skye506">Kim (skye506)</a></p>
-                <p class="quiz__lien"><a href="skye506/index.html">Titre du quiz</a></p>
+            <li class="quiz__item-de-liste">
+                <p class=" quiz__lien"><a href="skye506/index.html">Les dinosaures</a></p>
+                <p class="quiz__auteur" data-prenom="Kim"><a href="https://github.com/skye506"><img
+                            src="assets/images/github-mark/github-mark.svg" alt="Github Skye506"></a></p>
             </li>
-            <li class="quiz__item-de-liste"">
-                <p class=" quiz__auteur"><a href="https://github.com/artificialOxygen">Lorie-Anne
-                    (ArtificialOxygen)</a>
+            <li class="quiz__item-de-liste">
+                <p class=" quiz__lien"><a href="artificialOxygen/index.html">L'or rouge</a></p>
+                <p class="quiz__auteur" data-prenom="Lorie-Anne"><a href="https://github.com/artificialOxygen"><img
+                            src="assets/images/github-mark/github-mark.svg" alt="Github ArtificialOxygen"></a>
                 </p>
-                <p class="quiz__lien"><a href="artificialOxygen/index.html">Titre du quiz</a></p>
             </li>
-            <li class="quiz__item-de-liste"">
-                <p class=" quiz__auteur"><a href="https://github.com/gugmaton">Ugo (Gugmaton)</a></p>
-                <p class="quiz__lien"><a href="gugmaton/index.html">Titre du quiz</a></p>
+            <li class="quiz__item-de-liste">
+                <p class=" quiz__lien"><a href="gugmaton/index.html">Windows</a></p>
+                <p class="quiz__auteur" data-prenom="Ugo"><a href="https://github.com/gugmaton"><img
+                            src="assets/images/github-mark/github-mark.svg" alt="Github Gugmaton"></a></p>
             </li>
-            <li class="quiz__item-de-liste"">
-                <p class=" quiz__auteur"><a href="https://github.com/dog03">Mathieu B. (Dog03)</a></p>
-                <p class="quiz__lien"><a href="dog03/index.html">Titre du quiz</a></p>
+            <li class="quiz__item-de-liste">
+                <p class=" quiz__lien"><a href="dog03/index.html">Titre du quiz</a></p>
+                <p class="quiz__auteur" data-prenom="Mathieu"><a href="https://github.com/dog03"><img
+                            src="assets/images/github-mark/github-mark.svg" alt="Github Dog03"></a></p>
             </li>
-            <li class="quiz__item-de-liste"">
-                <p class=" quiz__auteur"><a href="https://github.com/phoenix-four">François (phoenix-four)</a></p>
-                <p class="quiz__lien"><a href="phoenix-four/index.html">Titre du quiz</a></p>
+            <li class="quiz__item-de-liste">
+                <p class=" quiz__lien"><a href="phoenix-four/index.html">Les monarques</a></p>
+                <p class="quiz__auteur" data-prenom="François"><a href="https://github.com/phoenix-four"><img
+                            src="assets/images/github-mark/github-mark.svg" alt="Github Phoenix-four"></a></p>
             </li>
-            <li class="quiz__item-de-liste"">
-                <p class=" quiz__auteur"><a href="https://github.com/captainfil">Félix (captainfil)</a></p>
-                <p class="quiz__lien"><a href="captainfil/index.html">Titre du quiz</a></p>
+            <li class="quiz__item-de-liste">
+                <p class=" quiz__lien"><a href="captainfil/index.html">Le lapin domestique</a></p>
+                <p class="quiz__auteur" data-prenom="Félix"><a href="https://github.com/captainfil"><img
+                            src="assets/images/github-mark/github-mark.svg" alt="Github Captainfil"></a></p>
             </li>
-            <li class="quiz__item-de-liste"">
-                <p class=" quiz__auteur"><a href="https://github.com/couwllette">Cloé (couwllette)</a></p>
-                <p class="quiz__lien"><a href="couwllette/index.html">Portugal</a></p>
+            <li class="quiz__item-de-liste">
+                <p class=" quiz__lien"><a href="couwllette/index.html">Portugal</a></p>
+                <p class="quiz__auteur" data-prenom="Cloé"><a href="https://github.com/couwllette"><img
+                            src="assets/images/github-mark/github-mark.svg" alt="Github Couwllette"></a></p>
             </li>
-            <li class="quiz__item-de-liste"">
-                <p class=" quiz__auteur"><a href="https://github.com/annabelleouellet2241268">Annabelle</a></p>
-                <p class="quiz__lien"><a href="annabelleouellet2241268/index.html">Titre du quiz</a></p>
-            </li>
-            <li class="quiz__item-de-liste"">
-                <p class=" quiz__auteur"><a href="https://github.com/sharpchel94">Olivier (Sharpchel94)</a></p>
-                <p class="quiz__lien"><a href="sharpchel94/index.html">Titre du quiz</a></p>
-            </li>
-            <li class="quiz__item-de-liste"">
-                <p class=" quiz__auteur"><a href="https://github.com/tpred">Mathieu T. (TPRed)</a></p>
-                <p class="quiz__lien"><a href="tpred/index.html">Titre du quiz</a></p>
-            </li>
-            <li class="quiz__item-de-liste"">
-                <p class=" quiz__auteur"><a href="https://github.com/jeremyFraise">Jérémy (JeremyFraise)</a></p>
-                <p class="quiz__lien"><a href="jeremyFraise/index.html">Titre du quiz</a></p>
-            </li>
-            <li class="quiz__item-de-liste"">
-                <p class=" quiz__auteur"><a href="https://github.com/pcosp">Perle (pcosp)</a></p>
-                <p class="quiz__lien"><a href="pcosp/index.html">Titre du quiz</a></p>
-            </li>
-            <li class="quiz__item-de-liste"">
-                <p class=" quiz__auteur"><a href="https://github.com/axelRoberge">Axel (AxelRoberge)</a></p>
-                <p class="quiz__lien"><a href="axelRoberge/index.html">Titre du quiz</a></p>
-            </li>
-            <li class="quiz__item-de-liste"">
-                <p class=" quiz__auteur"><a href="https://github.com/sarahal02">Sarah (sarahal02)</a></p>
-                <p class="quiz__lien"><a href="sarahal02/index.html">Titre du quiz</a></p>
-            </li>
-            <li class="quiz__item-de-liste"">
-                <p class=" quiz__auteur"><a href="https://github.com/raphaellabelatreille">Raphaël LL
-                    (raphaellabelatreille)</a></p>
-                <p class="quiz__lien"><a href="raphaellabelatreille/index.html">Titre du quiz</a></p>
-            </li>
-            <li class="quiz__item-de-liste"">
-                <p class=" quiz__auteur"><a href="https://github.com/samuelcamara36">Samuel (samuelcamara36)</a></p>
-                <p class="quiz__lien"><a href="samuelcamara36/index.html">Titre du quiz</a></p>
-            </li>
-            <li class="quiz__item-de-liste"">
-                <p class=" quiz__auteur"><a href="https://github.com/heyliya">Léa (Heyliya)</a></p>
-                <p class="quiz__lien"><a href="heyliya/index.html">Titre du quiz</a></p>
-            </li>
-            <li class="quiz__item-de-liste"">
-                <p class=" quiz__auteur"><a href="https://github.com/rodrigorafaelgaray">Rodrigo
-                    (rodrigorafaelgaray)</a>
+            <li class="quiz__item-de-liste">
+                <p class=" quiz__lien"><a href="annabelleouellet2241268/index.html">Pop et K-Pop</a></p>
+                <p class="quiz__auteur" data-prenom="Annabelle"><a
+                        href="https://github.com/annabelleouellet2241268"><img
+                            src="assets/images/github-mark/github-mark.svg" alt="Github annabelleouellet2241268"></a>
                 </p>
-                <p class="quiz__lien"><a href="rodrigorafaelgaray/index.html">Titre du quiz</a></p>
             </li>
-            <li class="quiz__item-de-liste"">
-                <p class=" quiz__auteur"><a href="https://github.com/isah2912">Isabel (isah2912)</a></p>
-                <p class="quiz__lien"><a href="isah2912/index.html">Titre du quiz</a></p>
+            <li class="quiz__item-de-liste">
+                <p class=" quiz__lien"><a href="sharpchel94/index.html">Titre du quiz</a></p>
+                <p class="quiz__auteur" data-prenom="Olivier"><a href="https://github.com/sharpchel94"><img
+                            src="assets/images/github-mark/github-mark.svg" alt="Github Sharpchel94"></a></p>
             </li>
-            <li class="quiz__item-de-liste"">
-                <p class=" quiz__auteur"><a href="https://github.com/eli7792">Élisabeth (Eli7792)</a></p>
-                <p class="quiz__lien"><a href="eli7792/index.html">Titre du quiz</a></p>
+            <li class="quiz__item-de-liste">
+                <p class=" quiz__lien"><a href="tpred/index.html" lang="en">Assassin's Creed</a></p>
+                <p class="quiz__auteur" data-prenom="Mathieu"><a href="https://github.com/tpred"><img
+                            src="assets/images/github-mark/github-mark.svg" alt="Github TPRed"></a></p>
             </li>
-            <li class="quiz__item-de-liste"">
-                <p class=" quiz__auteur"><a href="https://github.com/lauriem1">Laurie (lauriem1)</a></p>
-                <p class="quiz__lien"><a href="lauriem1/index.html">Titre du quiz</a></p>
+            <li class="quiz__item-de-liste">
+                <p class=" quiz__lien"><a href="jeremyFraise/index.html">L'Animation, un art du mouvement</a></p>
+                <p class="quiz__auteur" data-prenom="Jérémy"><a href="https://github.com/jeremyFraise"><img
+                            src="assets/images/github-mark/github-mark.svg" alt="Github JeremyFraise"></a></p>
             </li>
-            <li class="quiz__item-de-liste"">
-                <p class=" quiz__auteur"><a href="https://github.com/kateundercoffler">Kate (kateundercoffler)</a></p>
-                <p class="quiz__lien"><a href="kateundercoffler/index.html">Titre du quiz</a></p>
+            <li class="quiz__item-de-liste">
+                <p class=" quiz__lien"><a href="pcosp/index.html">Titre du quiz</a></p>
+                <p class="quiz__auteur" data-prenom="Perle"><a href="https://github.com/pcosp"><img
+                            src="assets/images/github-mark/github-mark.svg" alt="Github pcosp"></a></p>
             </li>
-            <li class="quiz__item-de-liste"">
-                <p class=" quiz__auteur"><a href="https://github.com/raphaelmercier">Raphaël M.</a></p>
-                <p class="quiz__lien"><a href="raphaelmercier/index.html">Titre du quiz</a></p>
+            <li class="quiz__item-de-liste">
+                <p class=" quiz__lien"><a href="axelRoberge/index.html">Titre du quiz</a></p>
+                <p class="quiz__auteur" data-prenom="Axel"><a href="https://github.com/axelRoberge"><img
+                            src="assets/images/github-mark/github-mark.svg" alt="Github AxelRoberge"></a></p>
+            </li>
+            <li class="quiz__item-de-liste">
+                <p class=" quiz__lien"><a href="sarahal02/index.html">Grèce antique</a></p>
+                <p class="quiz__auteur" data-prenom="Sarah"><a href="https://github.com/sarahal02"><img
+                            src="assets/images/github-mark/github-mark.svg" alt="Github sarahal02"></a></p>
+            </li>
+            <li class="quiz__item-de-liste">
+                <p class=" quiz__lien"><a href="raphaellabbelatreille/index.html">Peinture - Hobby - Miniatures</a></p>
+                <p class="quiz__auteur" data-prenom="Raphaël"><a href="https://github.com/raphaellabbelatreille"><img
+                            src="assets/images/github-mark/github-mark.svg" alt="Github raphaellabbelatreille"></a></p>
+            </li>
+            <li class="quiz__item-de-liste">
+                <p class=" quiz__lien"><a href="samuelcamara36/index.html">Titre du quiz</a></p>
+                <p class="quiz__auteur" data-prenom="Samuel"><a href="https://github.com/samuelcamara36"><img
+                            src="assets/images/github-mark/github-mark.svg" alt="Github samuelcamara36"></a></p>
+            </li>
+            <li class="quiz__item-de-liste">
+                <p class=" quiz__lien"><a href="heyliya/index.html">Donjons et dragons</a></p>
+                <p class="quiz__auteur" data-prenom="Léa"><a href="https://github.com/heyliya"><img
+                            src="assets/images/github-mark/github-mark.svg" alt="Github Heyliya"></a></p>
+            </li>
+            <li class="quiz__item-de-liste">
+                <p class=" quiz__lien"><a href="rodrigorafaelgaray/index.html">Les pingouins</a></p>
+                <p class="quiz__auteur" data-prenom="Rodrigo"><a href="https://github.com/rodrigorafaelgaray"><img
+                            src="assets/images/github-mark/github-mark.svg" alt="Github rodrigorafaelgaray"></a>
+                </p>
+            </li>
+            <li class="quiz__item-de-liste">
+                <p class=" quiz__lien"><a href="isah2912/index.html">Titre du quiz</a></p>
+                <p class="quiz__auteur" data-prenom="Isabel"><a href="https://github.com/isah2912"><img
+                            src="assets/images/github-mark/github-mark.svg" alt="Github isah2912"></a></p>
+            </li>
+            <li class="quiz__item-de-liste">
+                <p class=" quiz__lien"><a href="eli7792/index.html">Titre du quiz</a></p>
+                <p class="quiz__auteur" data-prenom="Élisabeth"><a href="https://github.com/eli7792"><img
+                            src="assets/images/github-mark/github-mark.svg" alt="Github Eli7792"></a></p>
+            </li>
+            <li class="quiz__item-de-liste">
+                <p class=" quiz__lien"><a href="lauriem1/index.html">Les pays</a></p>
+                <p class="quiz__auteur" data-prenom="Laurie"><a href="https://github.com/lauriem1"><img
+                            src="assets/images/github-mark/github-mark.svg" alt="Github lauriem1"></a></p>
+            </li>
+            <li class="quiz__item-de-liste">
+                <p class=" quiz__lien"><a href="kateundercoffler/index.html">Capturer, stériliser et relâcher des chats
+                        errants.</a></p>
+                <p class="quiz__auteur" data-prenom="Kate"><a href="https://github.com/kateundercoffler"><img
+                            src="assets/images/github-mark/github-mark.svg" alt="Github kateundercoffler"></a>
+                </p>
+            </li>
+            <li class="quiz__item-de-liste">
+                <p class=" quiz__lien"><a href="raphaelmercier/index.html">Football Européen</a></p>
+                <p class="quiz__auteur" data-prenom="Raphaël"><a href="https://github.com/raphaelmercier"><img
+                            src="assets/images/github-mark/github-mark.svg" alt="Github raphaelmercier"></a></p>
             </li>
         </ol>
     </main>
