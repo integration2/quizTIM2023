@@ -1,10 +1,7 @@
 # Titre du Quiz-TIM
 
 ## Chose à checker
-- On peux-tu mettre un sorte de aria-label sur l'element de progression?
 - faire les messages pour le resultat
-- Ajuster le margin peut-etre bottom/top pour la derniere question
-- Lors de la rétroaction la reponse mauvaise qui est choisi dépase de la boîte (Druide par exemple)
 
 
 ## Accomplissement
