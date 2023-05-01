@@ -38,7 +38,7 @@ img {
 /*** Styles de base ***/
 abbr[title] {
     text-decoration: none;
-    cursor: help;
+    /* cursor: help; */
 }
 
 abbr[title]:hover {

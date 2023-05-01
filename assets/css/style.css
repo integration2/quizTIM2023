@@ -16,8 +16,7 @@
 
 /* Titre du site */
 .titre-site {
-    background-image: url("../images/deco/146479.svg");
-    /* background-color: var(--color-primary); */
+    background-image: linear-gradient(to top left, rgba(255, 255, 255, 0), rgba(148, 111, 90, 1) 50%, rgba(148, 111, 90, 1) 90%);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -26,8 +25,9 @@
     margin: 0;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 800px) {
     .titre-site {
+        background-image: url("../images/deco/146479.svg");
         background-size: 65%;
         ;
     }
@@ -43,24 +43,25 @@
 .mot--1 {
     color: black;
     position: relative;
-    left: 20px;
+    left: 15px;
     bottom: 10px;
     /* padding: 0 0.25em; */
     font-size: larger;
     font-family: 'Roboto Slab', serif;
-    font-weight: bold;
+    font-weight: bolder;
+    transform: skewY(-10deg);
 }
 
 .mot--2 {
     color: var(--color-tertiary);
-    transform: skewY(10deg);
     position: relative;
     bottom: 10px;
-    font-size: larger;
+    font-size: 4rem;
+    text-shadow: 2px 2px 2px black;
 }
 
 .mot--3 {
-    color: var(--color-quaternary);
+    color: var(--color-quinary);
     background-color: var(--color-primary);
     transform: skewY(8deg) scaleX(1.8) scaleY(1.5);
     position: relative;
@@ -69,24 +70,59 @@
     padding: 0;
     line-height: 1;
     border-radius: 50%;
+    text-shadow: 2px 2px 2px black;
 }
 
 .mot--4 {
-    color: var(--color-quinary);
+    color: var(--color-secondary);
     transform: skewY(3deg);
     position: relative;
-    bottom: -0.75em;
-    left: -10px;
+    bottom: -1.25em;
+    left: 10px;
 
+}
+
+@media (min-width: 600px) {
+    .mot--4 {
+        bottom: -0.75em;
+    }
+}
+
+.mot a {
+    color: black;
+    text-decoration: none;
+}
+
+abbr:hover {
+    background-color: var(--color-primary);
+}
+
+abbr:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -1em;
+    left: calc(50% - 5em);
+    width: 10em;
+    font-size: medium;
+    color: white;
+    background-color: var(--color-primary);
+}
+
+@media (min-width:600px) {
+    abbr:hover::after {
+        bottom: 0;
+    }
 }
 
 /* Base */
 body {
     margin: 0;
     padding: 0;
-    background-image: url("../images/deco/33305.svg");
-    background-size: contain;
+    background-image: url(../images/deco/33305.svg), url(../images/deco/1564379.svg), linear-gradient(rgba(255, 255, 255, 0.5), var(--color-tertiary));
+    background-size: contain, 100%;
     background-repeat: no-repeat;
+    background-position: top left, bottom right;
+
 }
 
 .conteneur {
@@ -126,23 +162,33 @@ ol {
 .quiz__item-de-liste {
     background-color: var(--color-quinary);
     display: flex;
+    justify-content: space-between;
     flex-flow: column nowrap;
     position: relative;
     margin: 0.5em;
-    padding: 0 1em;
+    padding: 0 1.25em;
+    border-radius: 1em;
 }
 
 @media (min-width: 600px) {
     .quiz__item-de-liste {
-        background-image: url("../images/deco/1618916-ff5722.svg");
-        background-size: cover;
+        background-image: url("../images/deco/1618916-ff5722.svg"), url("../images/deco/371653.svg");
+        background-size: cover, 25%;
+        background-repeat: no-repeat;
+        background-position: center;
         justify-content: center;
         align-items: center;
-        min-width: 13em;
-        min-height: 13em;
-        min-width: 45%;
+        max-width: 13em;
+        max-height: 13em;
         border-radius: 50%;
         text-align: center;
+    }
+}
+
+@media (min-width: 800px) {
+    .quiz__item-de-liste {
+        min-width: 13em;
+        min-height: 13em;
     }
 }
 
@@ -151,20 +197,39 @@ ol {
 }
 
 .quiz__auteur img {
-    width: 2em;
-    height: 2em;
+    width: 3em;
+    height: 3em;
+    display: block;
 }
 
 .quiz__lien a {
-    display: block;
+    display: inline-block;
     text-decoration: none;
     font-weight: 800;
-    color: var(--color-primary);
+    color: black;
+    text-shadow: 3px 3px 3px white;
 }
 
 @media (min-width: 600px) {
     .quiz__lien a {
-        padding-top: 1.5em;
+        display: block;
+        padding-top: 2.5em;
+        transition: 0.3s ease-in-out;
+    }
+}
+
+.quiz__lien a:hover {
+    transform: scaleY(1.5);
+    /* position: relative;
+    left: 1em; */
+    /* color: var(--color-secondary); */
+}
+
+@media (min-width: 600px) {
+    .quiz__lien a:hover {
+
+        transform: scale(1.2);
+        /* position: static; */
     }
 }
 
@@ -173,32 +238,34 @@ ol {
 }
 
 .quiz__auteur {
+    display: flex;
+    align-items: center;
     width: max-content;
-    color: white;
+    color: black;
+    padding-bottom: 0.5em;
     order: 1;
+    margin: 0;
 }
 
 @media (min-width: 600px) {
     .quiz__auteur {
-        position: absolute;
+        /* position: absolute; */
         bottom: 0;
-        left: 1.25em;
+        display: block;
+        /* right: calc(100% - (max-content / 2)); */
 
+    }
+
+    .par {
+        display: block;
+        padding-bottom: 1.5em;
+        padding-right: 0.5em;
+        position: relative;
+        z-index: 1;
+        font-family: 'Open Sans', sans-serif;
     }
 }
 
-
-.quiz__auteur::after {
-    content: attr(data-prenom);
-    color: var(--color-tertiary);
-    display: inline-block;
-    position: absolute;
-    bottom: 1.25em;
-    left: 3.5em;
-    width: 100%;
-    cursor: pointer;
-    font-weight: 500;
-}
 
 @media (min-width: 600px) {
     .quiz__auteur::after {
@@ -209,15 +276,48 @@ ol {
 
 .quiz__auteur a {
     color: white;
-    display: block;
+    display: inline-block;
     border-radius: 50%;
     background-color: #fff;
+    position: absolute;
+    right: 0.5em;
+    bottom: 0.5em;
+}
+
+@media (min-width: 600px) {
+    .quiz__auteur a {
+        position: absolute;
+        bottom: calc(25% - 1.5em);
+        right: 0;
+    }
+}
+
 }
 
 .quiz__auteur:hover::after {
-    color: var(--color-quaternaryv);
+    color: var(--color-quaternary);
 }
 
 .quiz__auteur a:hover {
     color: var(--color-quaternary);
+}
+
+.quiz__auteur img {
+    border: 1px solid darkgrey;
+    border-radius: 50%;
+    filter: saturate(0);
+    transition: transform 1s ease-out, filter 1.5s ease-out;
+}
+
+.quiz__auteur a:hover img {
+    filter: saturate(1.25);
+    transform: rotate(360deg);
+}
+
+footer {
+    background-color: var(--color-secondary);
+    padding: 1em;
+    text-align: center;
+    color: white;
+    font-size: 0.8em;
 }
