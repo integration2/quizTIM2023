@@ -197,9 +197,17 @@ ol {
 }
 
 .quiz__auteur img {
-    width: 3em;
-    height: 3em;
+    width: 4em;
+    height: 4em;
     display: block;
+}
+
+
+@media (min-width: 800px) {
+    .quiz__auteur img {
+        width: 5.5em;
+        height: 5.5em;
+    }
 }
 
 .quiz__lien a {
@@ -207,7 +215,7 @@ ol {
     text-decoration: none;
     font-weight: 800;
     color: black;
-    text-shadow: 3px 3px 3px white;
+    text-shadow: 3px 3px 5px white;
 }
 
 @media (min-width: 600px) {
@@ -263,6 +271,7 @@ ol {
         position: relative;
         z-index: 1;
         font-family: 'Open Sans', sans-serif;
+        text-shadow: var(--ombre-texte);
     }
 }
 
@@ -282,13 +291,14 @@ ol {
     position: absolute;
     right: 0.5em;
     bottom: 0.5em;
+    filter: drop-shadow(0 0 1rem black);
 }
 
 @media (min-width: 600px) {
     .quiz__auteur a {
         position: absolute;
-        bottom: calc(25% - 1.5em);
-        right: 0;
+        bottom: -10%;
+        right: -1.5em;
     }
 }
 
