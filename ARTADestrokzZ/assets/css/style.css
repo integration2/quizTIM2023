@@ -103,14 +103,27 @@ legend{
     "Q3C  Q3D";
 }
 
-button{
+.bonneReponse{
+    border-color: #54FF6F;
+}
+
+.mauvaiseReponse{
+    border-color: #FF3131;
+}
+
+li{
     width: 100%;
-    padding: 2.5%;
+    padding: 3.5%;
     margin-left: 0%;
     border-radius: 20px;
     color: white;
     background-color: rgb(74, 74, 74);
     font-size: 80%;
+    list-style-type: none;
+}
+
+input:checked + label{
+    color: aquamarine;
 }
 
 .valide{

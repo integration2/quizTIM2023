@@ -41,7 +41,7 @@ document.querySelectorAll('[type=radio]').forEach(function (btnRadio) {
     // console.log(btnRadio);
     btnRadio.addEventListener('click', function (e) {
         // Activer le bouton de validation
-        e.target.closest('.question').querySelector('.ctnBouton__bouton').disabled = false;
+        e.target.closest('.question').querySelector('.valide').disabled = false;
         // quiz.setReponse(e.target.id);
     });
 });
@@ -53,7 +53,7 @@ const quiz = {
     refCtnBoutonSubmit: document.querySelectorAll(".ctnBoutonSubmit"),
     refResultat: document.querySelector(".resultat"), 
 
-    intNoQuestion: 1,
+    intNoQuestion: 0,
     intNbQuestions: 3,
     intNbBonnesReponses: 0,
     
@@ -82,34 +82,36 @@ const quiz = {
         // Cacher l'intro       
         this.refIntro.classList.add('cache');
         // Afficher la première question
-        this.afficherQuestion(quiz.intNoQuestion);
+        this.afficherQuestion();
     },
-    afficherQuestion: function (numeroQuestion) {
+    afficherQuestion: function () {
+        console.log(this.refArrQuestion[this.intNoQuestion]);
         // Mettre à jour le numéro de la question
-        this.intNoQuestion = numeroQuestion;
+        //this.intNoQuestion = numeroQuestion;
         // Afficher la question
-        document.getElementById("Q" + this.intNoQuestion).classList.remove('cache');
+        document.getElementById("Q" + (this.intNoQuestion + 1)).classList.remove('cache');
         //this.refArrQuestions[numeroQuestion]
         // Créer un paragraphe
-        const refCtnBouton = document.createElement('button');
-        refCtnBouton.classList.add("valide");
+        const refCtnBouton = document.createElement('p');
+        refCtnBouton.classList.add("ctnBouton");
         // Y ajouter le bouton de validation de la question 
-        refCtnBouton.innerHTML = 'Valider mon choix';
-        this.refArrQuestion[numeroQuestion].appendChild(refCtnBouton);
+        refCtnBouton.innerHTML = '<button type="button" class="valide">Valider mon choix</button>';
+        this.refArrQuestion[this.intNoQuestion].appendChild(refCtnBouton);
         // Ajouter un écouteur d'événement au bouton
-        refCtnBouton.querySelector('valide').addEventListener('click', this.validerReponse.bind(this));
+        refCtnBouton.querySelector('.valide').addEventListener('click', this.validerReponse.bind(this));
     },
     validerReponse: function () {
         console.log('validerReponse');
 
         // Aller chercher la réponse (checked) en construisant le sélecteur d'après le no de question 
         const refReponse = document.querySelector('input[name=Q' + (this.intNoQuestion + 1) + ']:checked');
-        const strReponse = refReponse.id;
+        const strReponse = refReponse;
+        const refRetroaction = document.getElementsByClassName(".question_retroaction");
 
         // Vérifier si la réponse est correcte 
         if (objJSON.bonnesReponses[this.intNoQuestion] === strReponse) {
             // Afficher la rétroaction positive
-            this.refArrQuestions[this.intNoQuestion].querySelector('.question__retroaction').innerHTML = objJSON.retroactions.positive;
+            refRetroaction.innerHTML = objJSON.retroactions.positive;
             // Changer l'apparence de la bonne réponse
             console.log(refReponse);
             refReponse.closest('li').querySelector('input+label').classList.add('bonneReponse');
@@ -117,12 +119,11 @@ const quiz = {
             this.intNbBonnesReponses++;
         } else {
             // Afficher la rétroaction négative
-            this.refArrQuestions[this.intNoQuestion]
-                .querySelector('.question__retroaction').innerHTML = objJSON.retroactions.negative;
+            refRetroaction.innerHTML = objJSON.retroactions.negative;
             // Changer l'apparence de la mauvaise réponse 
             refReponse.closest('li').querySelector('input+label').classList.add('mauvaiseReponse');
             // Changer l'apparence de la bonne réponse
-            const refQuestion = this.refArrQuestions[this.intNoQuestion];
+            const refQuestion = refRetroaction;
             refQuestion.querySelector('#' + objJSON.bonnesReponses[this.intNoQuestion] + '+label').classList.add('bonneReponse');
 
         }
@@ -137,8 +138,7 @@ const quiz = {
         // Ajouter animation au paragraphe de rétroaction
         this.refArrQuestions[this.intNoQuestion].querySelector('.question__retroaction').classList.add('slideUp');
         // Afficher l'explication
-        this.refArrQuestions[this.intNoQuestion]
-            .querySelector('.question__explication').innerHTML = objJSON.explications['Q' + (this.intNoQuestion + 1)];
+        this.refArrQuestions[this.intNoQuestion].querySelector('.question__explication').innerHTML = objJSON.explications['Q' + (this.intNoQuestion + 1)];
         this.refArrQuestions[this.intNoQuestion].querySelector('.question__explication').className = 'question__explication tada';
 
         // Afficher le bouton pour passer à la question suivante
@@ -147,19 +147,17 @@ const quiz = {
             .innerHTML += '<button type="button" class="ctnBouton__bouton">Passer à la question suivante</button>';
 
         // Ajouter une animation au bouton
-        this.refArrQuestions[this.intNoQuestion]
-            .querySelector('.ctnBouton__bouton:last-child').className = 'ctnBouton__bouton rubberBand';
+        this.refArrQuestions[this.intNoQuestion].querySelector('.ctnBouton__bouton:last-child').className = 'ctnBouton__bouton rubberBand';
 
         // Ajouter un écouteur d'événement au bouton
-        this.refArrQuestions[this.intNoQuestion]
-            .querySelector('.ctnBouton__bouton:last-child')
-            .addEventListener('click', this.questionSuivante.bind(this));
+        this.refArrQuestions[this.intNoQuestion].querySelector('.ctnBouton__bouton:last-child').addEventListener('click', this.questionSuivante.bind(this));
 
     },
     questionSuivante: function () {
         // Cacher la question
         this.refArrQuestions[this.intNoQuestion].classList.add('cache');
         // Afficher la question suivante
+        this.intNoQuestion = this.intNoQuestion + 1;
         this.afficherQuestion(this.intNoQuestion + 1);
     },
 
