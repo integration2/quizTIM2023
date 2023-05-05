@@ -7,31 +7,39 @@
 
 @font-face {
     font-family: Audiowide;
-    src: url(../polices/Audiowide-Regular.ttf);
+    src        : url(../polices/Audiowide-Regular.ttf);
 }
+
 @font-face {
     font-family: Teko;
-    src: url(../polices/Teko-Regular.ttf);
-    font-weight: 400; /* normal */
+    src        : url(../polices/Teko-Regular.ttf);
+    font-weight: 400;
+    /* normal */
 }
+
 @font-face {
     font-family: Teko;
-    src: url(../polices/Teko-Bold.ttf);
-    font-weight: 700; /* bold */
+    src        : url(../polices/Teko-Bold.ttf);
+    font-weight: 700;
+    /* bold */
 }
+
 @font-face {
     font-family: Teko;
-    src: url(../polices/Teko-Light.ttf);
-    font-weight: 300; /* lighter */
+    src        : url(../polices/Teko-Light.ttf);
+    font-weight: 300;
+    /* lighter */
 }
+
 @font-face {
     font-family: Teko;
-    src: url(../polices/Teko-Medium.ttf);
+    src        : url(../polices/Teko-Medium.ttf);
     font-weight: 500;
 }
+
 @font-face {
     font-family: Teko;
-    src: url(../polices/Teko-SemiBold.ttf);
+    src        : url(../polices/Teko-SemiBold.ttf);
     font-weight: 600;
 }
 
@@ -55,7 +63,7 @@ html {
 
 body {
     /* 16px pour toutes les largeurs d'écran */
-    font-size: 1.6rem;
+    font-size  : 1.6rem;
     /* facteur multiplicateur de la taille de la police 1.375x16 = 22 */
     line-height: 1.375;
 }
@@ -135,20 +143,21 @@ h3 {
     }
 }
 
-p {
+p, button {
     /* = 16px */
-    font-size: 1.6rem;
+    font-size     : 1.6rem;
+    letter-spacing: 0.04em;
 }
 
 @media (min-width: 600px) {
-    p {
+    p, button {
         /* = 18px */
         font-size: 1.8rem;
     }
 }
 
 @media (min-width: 800px) {
-    p {
+    p, button {
         /* = 20px */
         font-size: 2rem;
     }
