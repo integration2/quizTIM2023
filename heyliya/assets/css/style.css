@@ -412,7 +412,7 @@ margin: 0 auto;
     }
 }
 .retroImg--mauvaiseResponse {
-    margin: auto;
+    margin: auto 0;
 }
 .retroImg--bonneResponse {
     margin: auto 0;
