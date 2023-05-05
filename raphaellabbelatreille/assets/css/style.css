@@ -1,0 +1,307 @@
+@charset "UTF-8";
+/**
+ * @author: Raphaël Labbé-Latreille
+ */
+
+/* IMPORTER D'ABORD LES POLICES DE CARACTÈRES */
+
+/* IMPORTER LES FICHIERS CSS */
+@import url(normalize.css);
+@import url(utilitaires.css);
+@import url(base.css);
+
+/* AJOUTER UNE TABLE DES MATIÈRES POUR POUVOIR NAVIGUER LA CSS*/
+
+img {
+    max-width: 100%;
+}
+button {
+    background: linear-gradient(135deg, teal, rgb(122, 215, 215)); 
+}
+
+h2 {
+    font-size: 2rem;
+}
+h3 {
+    font-size: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+/*Introduction */
+.introduction {
+    padding-left: 6em;
+    padding-right: 6em;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto 50px 40px 150px;
+    grid-template-areas: 
+    "logo image"
+    "titre titre"
+    "sous-titre sous-titre"
+    "depart depart";
+}
+
+.img_logo {
+    grid-area: logo;
+    width: auto;
+    display: block;
+}
+
+.img_intro {
+    grid-area: image;
+    background-color: aqua;
+    display: block;
+}
+
+.titre_intro {
+    grid-area: titre;
+    text-align: center;
+    display: block;
+}
+
+.sous_intro {
+    grid-area: sous-titre;
+    text-align: center;
+    display: block;
+}
+
+.bouton_départ {
+    grid-area: depart;
+    margin: 20px;
+    border: none;
+}
+
+
+
+/*Questions */
+.question_1, .question_2, .question_3 {
+    text-align: center;
+    justify-content: center;
+}
+.case {
+    text-align: left;
+    margin-left: 10%;
+    width: fit-content;
+    background-color: aquamarine;
+    border-radius: 1em ;
+}
+p {
+    margin-left: 5%;
+    margin-right: 5%;
+    width:80%;
+    justify-content: center;
+}
+ul {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    justify-content: space-evenly;
+    padding-left: 0%;
+}
+li {
+    flex-direction: column;
+    display: flex;
+    width: 40%;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 1%;
+    background-color: rgb(164, 164, 164);
+    border-radius: 1em;   
+}
+.choix_Q3 li {
+    flex-direction: none;
+    display: block;
+    text-align: left;
+    flex-direction: row;
+    display: flex;
+    height:auto;
+    margin: 1em;
+}
+
+li label {
+    margin:auto;
+    position: relative;
+}
+
+.choix_Q3 label {
+    background-color: none;
+    text-align: center;
+    width: 100%;
+    font-size: larger;
+    
+}
+
+@media (width>600px) {
+    p {
+        margin-left: 30%;
+        margin-right: 30%;
+        width: auto;
+    }
+    ul {
+        flex-direction: row;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .choix_Q1 li, .choix_Q2 li {
+        max-width: 20%;
+    }
+}
+
+
+/* input */
+input[type=radio] {
+    opacity: 0;
+    margin-bottom:2rem;
+}
+.checkmark {
+    font-size: 2em;
+    position: absolute;
+    top: 83%;
+    left: 35%;
+    height: 45px;
+    width: 45px;
+    background: linear-gradient(135deg, teal, rgb(122, 215, 215));
+    border-radius: 5%;
+}
+/* Question 3 est plus bizare, dont la nécessité d'un check*/
+.check {
+    font-size: 2em;
+    position: absolute;
+    top: -100%;
+    left:0;
+    height: 45px;
+    width: 45px;
+    background: linear-gradient(135deg, teal, rgb(122, 215, 215));
+    border-radius: 5%;
+  }
+
+.etiquette {
+    font-size: 1em;
+    position: absolute;
+    top: -20px;
+    left: 10%;
+    height: auto;
+    width: 80%;
+    background-color: teal;
+    border-radius: 5%;
+}
+
+
+/* Pour le outro ou la page de résultat */
+.outro {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 2fr 1fr 2em;
+    grid-column-gap: 30px;
+    grid-row-gap: 4px;
+    margin-left: 10%;
+    margin-right: 10%;
+    }
+    
+.img_outro {
+    margin-left: 100px;
+    margin-right: 100px;
+    width: max-content;
+    grid-area: 1 / 1 / 2 / 3; }
+.outro_score { 
+    grid-area: 2 / 1 / 3 / 2; 
+    display:flex;
+    position: relative;
+}
+.rectangle {
+    position: absolute ;
+    width: 65%;
+    height: 100px;
+    border: 2px solid black;
+    border-radius: 5%;
+    background-color: teal;
+}
+.num1 {
+    left: 10%;
+    top:0%;
+}
+.num2 {
+    left: 20%;
+    top: 10%;
+}
+.num3 {
+    left: 30%;
+    top: 20%;
+}
+.score {
+    position: absolute;
+    left: 35%;
+    top: 50%;
+    font-size: 1.5em;
+}
+
+.outro_retroaction { 
+    grid-area: 2 / 2 / 3 / 3; 
+}
+.outro_lien { 
+    grid-area: 3 / 1 / 4 / 3; 
+}
+
+
+/* Pour les couleur */
+input[type=radio]:hover ~ .etiquette {
+    background-color: aquamarine;
+}
+input[type=radio]:hover ~ .checkmark, input[type=radio]:hover ~ .check{
+    background: linear-gradient(135deg, aquamarine, rgb(0, 132, 88));
+}
+
+input[type=radio]:checked ~ .etiquette {
+    background-color: aquamarine;
+}
+input[type=radio]:checked ~ .checkmark, input[type=radio]:checked ~ .check{
+    background: linear-gradient(135deg, aquamarine, rgb(0, 132, 88));
+}
+
+
+/*image*/
+.image_fond {
+    position: absolute;
+    z-index: -10;
+    background-image: url("../images/images_optimisees/400/pot_peinture.jpg");
+    left:5px;
+    width: 50%;
+    height: auto;
+    -webkit-mask-image: -webkit-gradient(linear, left top, right top, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+
+}
+@media (min-width:600px) {
+    .image_fond {
+        left:20%;
+        width:auto;
+    }
+    
+}
+
+.ctnBouton__bouton {
+    position:absolute;
+    right: 200px;
+    height: 3rem;
+    border-radius: 5%;
+}
+
+.disable {
+    background: linear-gradient(135deg, rgb(58, 147, 118), rgb(0, 0, 0));
+}
+.mauvaise_reponse {
+    background: linear-gradient(135deg, rgb(255, 0, 0) , rgb(41, 0, 0));
+}
+input[type=radio]:checked ~ .checkmark.mauvaise_reponse, input[type=radio]:checked ~ .check.mauvaise_reponse {
+    background: linear-gradient(135deg, rgb(255, 0, 0), rgb(41, 0, 0));
+} 
+
+.bonne_reponse {
+    background: linear-gradient(135deg, rgb(0, 255, 64), rgb(0, 111, 22));
+}
+
+.cache {
+    display: none;
+}
+
