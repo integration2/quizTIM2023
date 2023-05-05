@@ -278,7 +278,7 @@ const quiz = {
 
 
 
-quiz.refCtnBoutonSubmit.addEventListener('click', function(e){
+document.querySelector('form').addEventListener('submit', function(e){
     // Prevent Default du bouton submit
     e.preventDefault()
     // Afficher le resultat lors du clique du bouton submit

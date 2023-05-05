@@ -1,21 +1,13 @@
 # Titre du Quiz-TIM
 
-## Chose à checker
-- faire les messages pour le resultat
+## Ce qui est bien réussi et dont je suis fière
+- Je suis fière d'avoir recréer exactement se que j'avais créer en design
+- Je suis fière d'avoir trouver la solution à tout les problèmes que j'ai rencontré par moi même
 
+## Ce qui a causé le plus de difficultés
+- Le plus grand problème que j'ai eu dans le projet c'est les background images contre les border images pour les bouton. Je pensais faire mes boutons avec des border images, mais lorsque j'ajoutait une background color, il débordait de la border. Il existais une solution avec clip-path, mais je comprennais pas comment l'utiliser pour ma situation. Donc avec un background image carré qui est tout le temps carré il ne causais pas de problèmes. Et pour les boutons de prochaine question et de vérification, j'ai fait un background image personnalisé pour ce type de bouton
 
-## Accomplissement
-- Réussi à faire le HTML et le css
-- Réussi à faire le code
-- Réussi à faire le projet comment je l'avais imaginer
-
-## Chose à faire ou à améliorer
-- Regler le bug que dans la rétroaction négative, l'image sort du contenant
-- Faire les messages de résultat
-- Ajuster les margin de la dernière question pour qu'elle ne sois pas coller (Parce que elle n'a pas de caption)
-
-## Conclusion
-- Je suis très fière du travail que j'ai fait et j'ai vraiment aimée trouver des solutions aux problème que j'avais
-
-
-test
+## Ce qui pourrais être amélioré
+- J'aurais pus ajouter des transition/animation entre les différentes questions.
+- J'aurais pus ajouter le texte de progression du quiz en JavaScript
+- J'aurais ajouter un page de résultat plus intéressante
