@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Les dinosaures - Quiz TIM</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script defer src="assets/js/app.js"></script>
     <link rel="icon" type="image/x-icon" href="assets/images/diplodocus.png">
 </head>
 
@@ -34,8 +35,8 @@
     
 
 
-<div class="intro">
-
+<section class="intro cache" >
+<div class="introduction__accroche">
     <img class="logo" src="assets/images/logo.svg" alt="logo du site, les dinosaures">
 
         <img class="dinoIntro" src="assets/images/stegosaurus.png" alt="image d'un stegosaure">
@@ -47,19 +48,19 @@
         <p class="pIntro">Les premiers dinosaures sont apparus sur terre il y a environ 235 millions d’années et  sont disparus à environ 66 
         millions d’années.</p>
 
-        <button class="parti">C'est parti!</button>
-
 </div>
+</section>
 <br>
 <br>
 
     <!-- Première question portant l'identifiant Q1 -->
-    <form>
-    <img class="logo" src="assets/images/logo.svg" alt="logo du site, les dinosaures">
-    <div class="dinoQuestion">
-        <img class="dino" src="../skye506/assets/images/stegosaurus.png" alt="image d'un stegosaure">
-        <titre class="TQuestion">Question 1</titre>
-        </div>
+    <form action="index.html">
+     <div class="dinoQuestion">
+        <img class="logo" src="assets/images/logo.svg" alt="logo du site, les dinosaures">
+  
+        <img class="dino" src="assets/images/stegosaurus.png" alt="image d'un stegosaure">
+        <p class="TQuestion">Question 1</p>
+        
     <fieldset id="Q1">
         <legend>
             <h3 class="question"> A quelle période de l'ère Mésozoïque le tyrannosaures a-t-il vécu? </h3>
@@ -70,35 +71,35 @@
                 <input id="Q1A" type="radio" name="Q1" value="A" checked>
                 <label for="Q1A">La période Trias </label>
             </li>
-            <br>
+            
             <li>
                 <input id="Q1B" type="radio" name="Q1" value="B" checked>
                 <label for="Q1B">La préride Jurassique</label>
             </li>
-            <br>
+            
             <li>
                 <input id="Q1C" type="radio" name="Q1" value="C" checked>
                 <label for="Q1C">La période Crétacé</label>
             </li>
-            <br>
+            
             <li>
-                <input id="Q1C" type="radio" name="Q1" value="D" checked>
+                <input id="Q1D" type="radio" name="Q1" value="D" checked>
                 <label for="Q1D">La période Mésozoïque</label>
             </li>
             </ul>
-            <button class="valider">Valider</button>
-        </div>
-        <p class="choixReponses__p"><img class="imagesQ" src="../skye506/assets/images/patte_1.svg" alt="Patte de dinosaur avec des images de t-rex a l'interieur"></p>
+        <p class="choixReponses__p"><img class="imagesQ" src="assets/images/patte_1.svg" alt="Patte de dinosaur avec des images de t-rex a l'interieur"></p>
+        <p class="question__retroaction"> </p>
+        <p class="question__explication"> </p>
     </div>
-        <p class="erreur"> </p>
     </fieldset>
-
+</div>
     <!-- Première question portant l'identifiant Q2 -->
     <div class="dinoQuestion">
-        <img class="dino" src="../skye506/assets/images/stegosaurus.png" alt="image d'un stegosaure">
-        <titre class="TQuestion">Question 2</titre>
-        </div>
-    <fieldset id="Q2">
+        <img class="logo" src="assets/images/logo.svg" alt="logo du site, les dinosaures">
+        <img class="dino" src="assets/images/stegosaurus.png" alt="image d'un stegosaure">
+        <p class="TQuestion">Question 2</p>
+
+    <fieldset id="Q2" >
         <legend>
             <h3 class="question">Qu'est-ce qui a déclenché la disparition des dinosaures?</h3>
         </legend>
@@ -108,35 +109,34 @@
                 <input id="Q2A" type="radio" name="Q2" value="A" checked>
                     <label for="Q2A">Un incendie forestier majeur</label>
             </li>
-            <br>
+            
             <li>
                 <input id="Q2B" type="radio" name="Q2" value="B" checked>
                 <label for="Q2B">Plusieur volcans qui sont entrés en éruption au même moment </label>
             </li>
-            <br>
+            
             <li>
                 <input id="Q2C" type="radio" name="Q2" value="C" checked>
                 <label for="Q2C">Une météorite</label>
             </li>
-            <br>
+            
             <li>
                 <input id="Q2D" type="radio" name="Q2" value="D" checked>
                 <label for="Q2D">Un hiver planétaire</label>
             </li>
             </ul>
-            <button class="valider">valider</button>
-            </div>
-        <p class="choixReponses__p"> <img class="imagesQ" src="../skye506/assets/images/pattes_2.svg" alt="Patte de dinosaur avec des images de catastrophe naturelle l'interieur"></p>
-        </div>
-        <p class="erreur"> </p>
+        <p class="choixReponses__p"> <img class="imagesQ" src="assets/images/pattes_2.svg" alt="Patte de dinosaur avec des images de catastrophe naturelle l'interieur"></p>
+        <p class="question__retroaction"> </p>
+        <p class="question__explication"> </p>
+    </div>
     </fieldset>
-
+    </div>
 
     <!-- Première question portant l'identifiant Q3 -->
     <div class="dinoQuestion">
-        <img class="dino" src="../skye506/assets/images/stegosaurus.png" alt="image d'un stegosaure">
-        <titre class="TQuestion">Question 3</titre>
-        </div>
+        <img class="logo" src="assets/images/logo.svg" alt="logo du site, les dinosaures">
+        <img class="dino" src="assets/images/stegosaurus.png" alt="image d'un stegosaure">
+        <p class="TQuestion">Question 3</p>
         <fieldset id="Q3">
         <legend>
             <h3 class="question"> Quelle était la longueur du Vélociraptor? </h3>
@@ -147,29 +147,30 @@
                 <input id="Q3A" type="radio" name="Q3" value="A" checked>
                 <label for="Q3A">3 mètres</label>
             </li>
-            <br>
+
             <li>
                 <input id="Q3B" type="radio" name="Q3" value="B" checked>
                 <label for="Q3B">2 mètres</label>
             </li>
-            <br>
+
             <li>
                 <input id="Q3C" type="radio" name="Q3" value="C" checked>
                 <label for="Q3C">6 mètres</label>
             </li>
-            <br>
+
             <li>
                 <input id="Q3D" type="radio" name="Q3" value="D" checked>
                 <label for="Q3D">8 mètres</label>
             </li>
         </ul>
-        <button class="valider">valider</button>
-        </div>
-       <p class="choixReponses__p"> <img class="imagesQ" src="../skye506/assets/images/patte_3.svg" alt="Patte de dinosaur avec des images de raptor l'interieur"></p>
+       <p class="choixReponses__p"> <img class="imagesQ" src="assets/images/patte_3.svg" alt="Patte de dinosaur avec des images de raptor l'interieur"></p>
+        <p class="question__retroaction"> </p>
+        <p class="question__explication"> </p>
     </div>
-        <p class="erreur"> </p>
     </fieldset>
-    <br>
+    </div>
+
+    <div id="reponse"> </div>
 </form>
 
     <!-- Footer -->  
