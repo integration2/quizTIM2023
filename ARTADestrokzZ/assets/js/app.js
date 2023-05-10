@@ -17,16 +17,16 @@ const objJSON = {
         "Q3": "Le voyage dure trois saisons: l’automne, l’hiver et le printemps. Donc du mois de septembre 2033 au mois d’avril 2034."
     },
     "bonnesReponses": [
-        "Joël Miller",
-        "Image B",
-        "7 Mois"
+        "Q1C",
+        "Q2B",
+        "Q3A",
     ],
     "messages": {
-        "resultatsDebut": "Vous avez obtenu un résultat de",
-        "note0": "Vous auriez pu faire mieux. Je vous suggère ..",
-        "note33": "Vous auriez pu faire mieux. Je vous suggère ..",
-        "note66": "Bravo, vous avez une bonne connaissance générale de ...",
-        "note100": "Félicitations, vous êtes un fin connaisseur !"
+        "resultatsDebut": "Vous avez obtenu un résultat de: ",
+        "note0": " 0 sur 3. Tu es un amateur !",
+        "note33": "1 sur 3. Tu peux faire mieux.",
+        "note66": "2 sur 3. Bonne note.",
+        "note100": "3 sur 3. Félicitations, vous êtes un fin connaisseur !"
     }
 };
 
@@ -71,7 +71,7 @@ const quiz = {
         refBoutonStart.addEventListener('click', this.demarrerQuiz.bind(this));
 
         // // Cacher les questions
-        // this.refArrQuestions.forEach(function (refQuestion) {
+        // this.refArrQuestion.forEach(function (refQuestion) {
         //     // console.log(refQuestion.classList);
         //     refQuestion.classList.add('cache');
         // })
@@ -90,7 +90,7 @@ const quiz = {
         //this.intNoQuestion = numeroQuestion;
         // Afficher la question
         document.getElementById("Q" + (this.intNoQuestion + 1)).classList.remove('cache');
-        //this.refArrQuestions[numeroQuestion]
+        //this.refArrQuestion[numeroQuestion]
         // Créer un paragraphe
         const refCtnBouton = document.createElement('p');
         refCtnBouton.classList.add("ctnBouton");
@@ -105,8 +105,12 @@ const quiz = {
 
         // Aller chercher la réponse (checked) en construisant le sélecteur d'après le no de question 
         const refReponse = document.querySelector('input[name=Q' + (this.intNoQuestion + 1) + ']:checked');
-        const strReponse = refReponse;
-        const refRetroaction = document.getElementsByClassName(".question_retroaction");
+        const strReponse = refReponse.id;
+        // const refRetroaction = document.getElementsByClassName(".question__retroaction"); 
+        
+        console.log(this.refArrQuestion[this.intNoQuestion]);
+        const refRetroaction = this.refArrQuestion[this.intNoQuestion].querySelector('.question__retroaction');
+        console.log(refRetroaction);
 
         // Vérifier si la réponse est correcte 
         if (objJSON.bonnesReponses[this.intNoQuestion] === strReponse) {
@@ -114,52 +118,89 @@ const quiz = {
             refRetroaction.innerHTML = objJSON.retroactions.positive;
             // Changer l'apparence de la bonne réponse
             console.log(refReponse);
-            refReponse.closest('li').querySelector('input+label').classList.add('bonneReponse');
+            refReponse.closest('li').querySelector('input:checked+label').classList.add('bonnesReponses');
+
             // Incrémenter le nombre de bonnes réponses
             this.intNbBonnesReponses++;
         } else {
             // Afficher la rétroaction négative
             refRetroaction.innerHTML = objJSON.retroactions.negative;
             // Changer l'apparence de la mauvaise réponse 
-            refReponse.closest('li').querySelector('input+label').classList.add('mauvaiseReponse');
+            refReponse.closest('li').querySelector('input:checked+label').classList.add('mauvaisesReponses');
             // Changer l'apparence de la bonne réponse
-            const refQuestion = refRetroaction;
-            refQuestion.querySelector('#' + objJSON.bonnesReponses[this.intNoQuestion] + '+label').classList.add('bonneReponse');
+            console.log(objJSON.bonnesReponses[this.intNoQuestion]);
+            document.querySelector(`#${objJSON.bonnesReponses[this.intNoQuestion]}+label`).classList.add('bonnesReponses');
+            // const refQuestion = refRetroaction;
+            // refReponse.closest('li').querySelector('#' + objJSON.bonnesReponses[this.intNoQuestion] + '+label').classList.add('bonneReponse');
 
         }
 
         // Supprimer le bouton Valider la réponse
-        this.refArrQuestions[this.intNoQuestion].querySelector('.ctnBouton__bouton').remove();
+        this.refArrQuestion[this.intNoQuestion].querySelector('.valide').remove();
         // Désactiver les boutons radios de la question courante
-        this.refArrQuestions[this.intNoQuestion].querySelectorAll('input[type=radio]').forEach(function (refInput) {
+        this.refArrQuestion[this.intNoQuestion].querySelectorAll('input[type=radio]').forEach(function (refInput) {
             refInput.disabled = true;
         });
 
         // Ajouter animation au paragraphe de rétroaction
-        this.refArrQuestions[this.intNoQuestion].querySelector('.question__retroaction').classList.add('slideUp');
+        this.refArrQuestion[this.intNoQuestion].querySelector('.question__retroaction').classList.add('slideUp');
         // Afficher l'explication
-        this.refArrQuestions[this.intNoQuestion].querySelector('.question__explication').innerHTML = objJSON.explications['Q' + (this.intNoQuestion + 1)];
-        this.refArrQuestions[this.intNoQuestion].querySelector('.question__explication').className = 'question__explication tada';
+        this.refArrQuestion[this.intNoQuestion].querySelector('.question__explication').innerHTML = objJSON.explications['Q' + (this.intNoQuestion + 1)];
+        this.refArrQuestion[this.intNoQuestion].querySelector('.question__explication').className = 'question__explication tada';
 
         // Afficher le bouton pour passer à la question suivante
-        this.refArrQuestions[this.intNoQuestion]
+        this.refArrQuestion[this.intNoQuestion]
             .querySelector('.ctnBouton')
             .innerHTML += '<button type="button" class="ctnBouton__bouton">Passer à la question suivante</button>';
 
         // Ajouter une animation au bouton
-        this.refArrQuestions[this.intNoQuestion].querySelector('.ctnBouton__bouton:last-child').className = 'ctnBouton__bouton rubberBand';
+        this.refArrQuestion[this.intNoQuestion].querySelector('.ctnBouton__bouton:last-child').className = 'ctnBouton__bouton rubberBand';
 
         // Ajouter un écouteur d'événement au bouton
-        this.refArrQuestions[this.intNoQuestion].querySelector('.ctnBouton__bouton:last-child').addEventListener('click', this.questionSuivante.bind(this));
+        this.refArrQuestion[this.intNoQuestion].querySelector('.ctnBouton__bouton:last-child').addEventListener('click', this.questionSuivante.bind(this));
 
     },
     questionSuivante: function () {
+        
+        if(this.intNoQuestion == 2){
+            this.afficherResultats();
+        }
+
         // Cacher la question
-        this.refArrQuestions[this.intNoQuestion].classList.add('cache');
+        this.refArrQuestion[this.intNoQuestion].classList.add('cache');
         // Afficher la question suivante
         this.intNoQuestion = this.intNoQuestion + 1;
-        this.afficherQuestion(this.intNoQuestion + 1);
+        this.afficherQuestion();
+
+        
     },
 
-    afficherResultats: function () { }
+    afficherResultats: function () { 
+        // Afficher les résultats
+        this.refArrQuestion[this.intNoQuestion].classList.add('cache');
+        this.refResultat.classList.remove("cache");
+        
+        this.refResultat.querySelector('.resultat__debut').innerHTML = objJSON.messages.resultatsDebut;
+        this.refResultat.querySelector('.resultat__debut').className = 'resultat__debut';
+
+        if(this.intNbBonnesReponses == 0){
+            this.refResultat.querySelector('.note').innerHTML = objJSON.messages.note0;
+            this.refResultat.querySelector('.note').className = 'note';
+        }
+        
+        if(this.intNbBonnesReponses == 1){
+            this.refResultat.querySelector('.note').innerHTML = objJSON.messages.note33;
+            this.refResultat.querySelector('.note').className = 'note';
+        }
+
+        if(this.intNbBonnesReponses == 2){
+            this.refResultat.querySelector('.note').innerHTML = objJSON.messages.note66;
+            this.refResultat.querySelector('.note').className = 'note';
+        }
+
+        if(this.intNbBonnesReponses == 3){
+            this.refResultat.querySelector('.note').innerHTML = objJSON.messages.note100;
+            this.refResultat.querySelector('.note').className = 'note';
+        }
+    }
 }

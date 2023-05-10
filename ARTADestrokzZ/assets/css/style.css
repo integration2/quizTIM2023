@@ -103,27 +103,37 @@ legend{
     "Q3C  Q3D";
 }
 
-.bonneReponse{
+.bonnesReponses{
+    border-style: solid;
     border-color: #54FF6F;
+    border-width: 2px;
 }
 
-.mauvaiseReponse{
+.mauvaisesReponses{
+    border-style: solid;
     border-color: #FF3131;
+    border-width: 2px;
 }
 
 li{
-    width: 100%;
-    padding: 3.5%;
-    margin-left: 0%;
-    border-radius: 20px;
     color: white;
-    background-color: rgb(74, 74, 74);
     font-size: 80%;
     list-style-type: none;
 }
 
+label{
+    padding: 5px;
+    margin-left: 0%;
+    background-color: rgb(74, 74, 74);
+    border-radius: 20px;
+    width: 100%;
+    display: block;
+}
+
 input:checked + label{
-    color: aquamarine;
+    border-style: solid;
+    border-color: #5EBBFF;
+    border-width: 2px;
 }
 
 .valide{
@@ -141,6 +151,21 @@ input:checked + label{
   top:3px;
 }
 
+.ctnBouton__bouton{
+    width: 45%;
+    margin-right: 20%;
+    background-color: black;
+    transition: background-color 1s;
+}
+
+.ctnBouton__bouton:hover{
+  background-color:gray; 
+  box-shadow:none;
+  position:relative;
+  left:4px;
+  top:3px;
+}
+
 .resultat{
     font-size: 150%;
 }
@@ -149,8 +174,12 @@ input:checked + label{
     border-radius: 50%;
 }
 
-.texte_resultat{
-    font-size: 100%;
+.resultat_debut{
+    font-size: 50%;
+}
+
+.note{
+    font-size: 80%;
 }
 
 .retour{
