@@ -8,8 +8,8 @@
 des input[type=radio] */
 const objJSON = {
     "retroactions": {
-        "positive": "Bravo, c’est une bonne réponse !",
-        "negative": "Désolé, ce n’est pas la bonne réponse"
+        "positive": "Bravo!",
+        "negative": "Oups, ceci n’est pas la réponse attendu."
     },
     "explications": {
         "Q1": "Avant de passer d’une couleur à une autre, il faut enlever la peinture du pinceau. Pour cela, il est nécessaire de tremper celui-ci dans un verre d’eau. Sans cela, le pinceau va durcir et il sera plus dur de travailler avec.",
@@ -23,10 +23,10 @@ const objJSON = {
     ],
     "messages": {
         "resultatsDebut": "Vous avez obtenu un résultat de",
-        "note0": "Vous auriez pu faire mieux. Je vous suggère ..",
+        "note0": "Vous auriez pu faire mieux. Je vous suggère de faire un peu de recherche avant de vous tacher les doights!",
         "note1": "Vous auriez pu faire mieux. Je vous suggère ..",
-        "note2": "Bravo, vous avez une bonne connaissance générale de ...",
-        "note3": "Félicitations, vous êtes un fin connaisseur !"
+        "note2": "Bravo, avec un peu de pratique, vous pourriez maitrisé cette art.",
+        "note3": "Coup donc, qu'est-ce qui vous empêche de vous lancez la dedans? Vous êtes un fin connaisseur!"
     }
 };
 document.querySelectorAll('[type=radio]').forEach(function (btnRadio) {
@@ -186,6 +186,7 @@ const quiz = {
         console.log( quiz.intNbBonnesReponses + "sur 3")
         refEtiquetteBR.classList.add("bonne_reponse")
         refCheckBR.classList.add("bonne_reponse")
+        refBlocBR.classList.add("bon_bloc")
         refExplication.innerHTML= objJSON.explications["Q"+(quiz.intNoQuestion+1)];
 
         if (quiz.intNoQuestion == 0 || quiz.intNoQuestion == 1) {
@@ -204,7 +205,7 @@ const quiz = {
         const refBoutonContinuer = document.createElement('p');
         refBoutonContinuer.classList.add('boutonReponse');
         // Y ajouter le bouton de validation de la question 
-        refBoutonContinuer.innerHTML = '<button type="button" class="Pour_continuer">Continuer à la prochaine question</button>';
+        refBoutonContinuer.innerHTML = '<button type="button" class="Pour_continuer fading">Continuer à la prochaine question</button>';
         this.refArrQuestions[numeroQuestion].appendChild(refBoutonContinuer);
         // Ajouter un écouteur d'événement au bouton
         quiz.intNoQuestion = quiz.intNoQuestion+1
@@ -216,7 +217,7 @@ const quiz = {
         const refBoutonFinit = document.createElement('p');
         refBoutonFinit.classList.add('boutonReponse');
         // Y ajouter le bouton de validation de la question 
-        refBoutonFinit.innerHTML = '<button type="button" class="Pour_continuer">Voir les résultat</button>';
+        refBoutonFinit.innerHTML = '<button type="button" class="Pour_continuer fading">Voir les résultat</button>';
         this.refArrQuestions[numeroQuestion].appendChild(refBoutonFinit);
         // Ajouter un écouteur d'événement au bouton
         quiz.intNoQuestion = quiz.intNoQuestion+1
@@ -228,7 +229,11 @@ const quiz = {
         const refSectionOutro = document.querySelector(".outro")
         const refRetroactionOutro = refSectionOutro.querySelector(".outro_retroaction")
         const refScoreOutro = document.getElementById("score")
-
+        for (let index = 1; index <= quiz.intNbBonnesReponses; index++) {
+            document.querySelector(".num"+index).classList.add("bonne_reponse")
+            console.log(index)
+            
+        }
         //Afficher la bonne section
         document.querySelector("form").classList.add("cache")
         refSectionOutro.classList.remove("cache");
