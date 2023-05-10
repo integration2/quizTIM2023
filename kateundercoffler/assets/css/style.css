@@ -1,0 +1,541 @@
+@charset "UTF-8";
+/**
+ * @author: kateundercoffler
+ */
+
+/* POLICES DE CARACTÈRES */
+@import url("https://use.typekit.net/kcw4vzt.css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* IMPORTER LES FICHIERS CSS */
+@import url(normalize.css);
+@import url(utilitaires.css);
+@import url(base.css);
+
+/* AJOUTER UNE TABLE DES MATIÈRES POUR POUVOIR NAVIGUER LA CSS*/
+
+/* COULEURS_HEADERS_BODY */
+h2,
+h3 {
+    color: #323232;
+}
+
+@media (min-width: 768px) {
+    h3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 128px;
+    }
+}
+
+body {
+    background-color: #FCF1EC;
+}
+
+/* ENTÊTE  */
+.header-banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #F9B093;
+    font-family: 'Poppins';
+    font-size: 1rem;
+    max-width: 100%;
+    box-shadow: 0 8px 8px -4px #414440;
+    margin-bottom: 175px;
+}
+
+@media (min-width: 768px) {
+    .header-banner {
+        font-size: 1.5rem;
+        margin-bottom: 45px;
+        justify-content: left;
+        align-items: center;
+    }
+}
+
+
+.header-banner_logo {
+    max-width: 171px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+    .header-banner_logo {
+        max-width: 10rem;
+        margin-left: 106px;
+    }
+}
+
+@media (min-width: 768px) {
+    .header-banner_logo {
+        max-width: 23rem;
+        margin-left: 70px;
+    }
+}
+
+.header-span {
+    color: #323232;
+    top: 300px;
+    position: absolute;
+    font-weight: bold;
+    font-size: 1rem;
+    padding-left: 25px;
+    max-width: 80%;
+}
+
+@media (min-width: 768px) {
+    .header-span {
+        top: 109px;
+        font-size: 1.25rem;
+        padding-left: 242px;
+        max-width: 80%;
+        margin-left: 84px;
+    }
+}
+
+@media (min-width: 768px) {
+    .header-span {
+        position: static;
+        font-size: 1.5rem;
+        font-family: 'New Kansas';
+        max-width: 100%;
+        padding-left: 6px;
+    }
+}
+
+/* ÉLÉMENTS GRAPHIQUES */
+.main-section_graphique {
+    position: absolute;
+    size: 150px 150px;
+    width: 277px;
+    transform: rotate(85deg);
+    right: -136px;
+    top: 392px;
+}
+
+@media (min-width: 768px) {
+    .main-section_graphique {
+        right: -242px;
+        top: 336px;
+        width: 529px;
+    }
+}
+
+@media (min-width: 768px) {
+    .main-section_graphique {
+        right: -41px;
+        top: 558px;
+    }
+}
+
+.q-graphique {
+    size: 150px 150px;
+    position: absolute;
+    width: 277px;
+    transform: rotate(85deg);
+    z-index: -1;
+    left: -46px;
+}
+
+@media (min-width: 768px) {
+    .q-graphique {
+        left: -175px;
+        width: 641px;
+    }
+}
+
+/* BARRE DE PROGRÈS */
+.barre-progres_container {
+    border: solid #414440;
+    border-radius: 40px;
+    background-color: #f1f1f1;
+    width: 100%;
+    height: 2rem;
+    max-width: 400px;
+}
+
+@media (min-width: 768px) {
+    .barre-progres_container {
+        left: -175px;
+        width: 641px;
+    }
+}
+
+@media (min-width: 768px) {
+    .barre-progres_container {
+        margin-right: auto;
+    }
+}
+
+.barre-progres_barre {
+    background-color: #F6C67E;
+    border-radius: 40px;
+    width: 25%;
+    height: 100%;
+}
+
+.barre-progres_barre2 {
+    background-color: #F6C67E;
+    border-radius: 40px;
+    width: 50%;
+    height: 100%;
+}
+
+.barre-progres_barre3 {
+    background-color: #F6C67E;
+    border-radius: 40px;
+    width: 100%;
+    height: 100%;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+/* DECORATION ENTOURNANT LES IMAGES */
+
+.quiz-picture-boite {
+    /* À CHANGER TANTÔT!! */
+    border-right: 0.5rem solid #414440;
+    border-bottom: 0.5rem solid #414440;
+    border-radius: 33px;
+    /* box-shadow: 9px 6px 0px 0px #343434; */
+    background-color: #9AB486;
+    padding: 43px 0 42px 0;
+    display: block;
+    position: relative;
+
+}
+
+.quiz-picture-boite_symbols {
+    display: flex;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+}
+
+.quiz-picture-boite_symbol {
+    margin-right: 10px;
+}
+
+.quiz-picture-boite_bar {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    bottom: 5px;
+    justify-content: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.quiz-picture-boite_bar-start,
+.quiz-picture-boite_bar-line,
+.quiz-picture-boite_bar-end {
+    font-family: 'poppins';
+    color: #3E3E3E;
+    font-size: 1.5rem;
+    padding: 0 5px;
+}
+
+.quiz-picture-boite_bar-line {
+    position: relative;
+    bottom: 3px;
+    border: solid #414440;
+    border-radius: 40px;
+    background-color: #f9c9b6;
+    width: 100%;
+    height: 2rem;
+    max-width: 400px;
+}
+
+.quiz-picture-boite_img {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+/* MAIN */
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins';
+    font-size: 1rem;
+    color: #323232;
+    margin: 100px 10px 5px 10px;
+    width: 80%;
+    margin: auto;
+}
+
+
+
+.main-section {
+    overflow: hidden;
+}
+
+
+@media (min-width: 768px) {
+    .main-section-card {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.main-section_paragraphes {
+    padding: 15px;
+}
+
+
+.choixReponses {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+
+/* CHANGEMENTS DU FORMULAIRE */
+fieldset {
+    overflow: hidden;
+    padding-inline: 0;
+    padding-block: 0;
+    margin-inline: 0;
+    border: none;
+}
+
+legend {
+    width: 100%;
+}
+
+ul {
+    margin-inline: 0;
+    padding-inline: 0;
+    padding-block: 0;
+    padding: 0 30px;
+
+}
+
+.section-quiz_status {
+    display: block;
+}
+
+
+@media (min-width: 768px) {
+    .section-quiz_status {
+        font-size: 1.25rem;
+    }
+    .section-quiz,
+    .main-section-card {
+        display: flex;
+        justify-content: left;
+        flex-wrap: wrap;
+    }
+    .quiz-picture-boite,
+    .main-section_paragraphes, 
+    .quiz-picture-boite, 
+    .choixReponses{
+        width: 48%;
+    }
+}
+
+.section_messages p {
+    margin-block: 0;
+    margin: 15px 0;
+}
+.section_messages {
+   background: #fff;
+   padding: 10px;
+   border: #f19571 4px solid;
+   border-radius: 10px;
+   margin: 15px 0;
+}
+
+/* BORDER RÉPONSES */
+label {
+    display: flex;
+    flex-wrap: nowrap;
+    border: 1px solid #3E3E3E;
+    background-color: #FCF1EC;
+    box-shadow: 7px 8px 8px -8px #666666;
+    border-radius: 10px;
+    margin: 10px 0 10px 0;
+    width: 100%;
+    padding: 15px;
+    cursor: pointer;
+    -webkit-appearance: button;
+    /* WebKit */
+    -moz-appearance: button;
+    /* Mozilla */
+    -o-appearance: button;
+    /* Opera */
+    -ms-appearance: button;
+    /* Internet Explorer */
+    appearance: button;
+    /* CSS3 */
+}
+
+
+button {
+    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-right: 5px;
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: 2px 8px 8px -4px #414440;
+    float:right;
+    
+}
+
+button:hover:not([disabled]) {
+    background: #F9B093;
+    border: 1px solid #787878;
+    border-radius: 10px;
+    animation: pulse 1s;
+}
+
+/* FOOTER */
+.footer {
+    display: flex;
+    background-color: #F9B093;
+    font-family: 'Poppins';
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 19px;
+
+}
+
+/* SECTION PAGE RESULTATS */
+
+/* css et html pour le pie chart est de https://www.smashingmagazine.com/2015/07/designing-simple-pie-charts-with-css/ */
+
+.cacher {
+    display: none;
+}
+
+.pie-chart_svg {
+    width: 250px;
+    height: 250px;
+    background: transparent;
+    border-radius: 50%;
+}
+.pie-chart_texte {
+    display: block;
+    font-weight: bold;
+    font-size: 1.8rem;
+    position: absolute;
+    bottom: 44%;
+    left: 44%;
+}
+.pie-chart {
+    position: relative;
+    padding: 30px 0 30px 0;
+    display: flex;
+    justify-content: center;
+}
+
+circle {
+    fill: rgb(224, 224, 224);
+    stroke: #9AB486;
+    stroke-width: 32;
+}
+
+.pie-filled-1-of-3 {
+    stroke-dasharray: 33 100;
+}
+
+.pie-filled-2-of-3 {
+    stroke-dasharray: 66 100;
+}
+
+.pie-filled-0-of-3 {
+    stroke-dasharray: 0 100;
+}
+
+
+
+input[type="radio"]:checked+label {
+    background: #FAD8CB;
+    border: 1px solid #787878;
+    border-radius: 10px;
+}
+
+
+
+input[type="radio"]:not([disabled])+label:hover {
+    background: #F9B093;
+    border: 1px solid #787878;
+    border-radius: 10px;
+    animation: pulse 1s;
+}
+input[type="radio"]:focus:not([disabled])+label {
+    background: #F9B093;
+    border: 4px solid #7B322E;
+    border-radius: 10px;
+    
+}
+
+input[type="radio"]:disabled:not(:checked)+label {
+    opacity: .5;
+    cursor: default;
+}
+
+
+.bonneReponse input[type="radio"]:checked+label {
+    background: rgb(183, 234, 139);
+    cursor: default;
+}
+
+.mauvaiseReponse input[type="radio"]:checked+label {
+    background: rgb(252, 148, 148);
+    cursor: default;
+}
+
+.section-resultat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-resultat .quiz-picture-boite,
+.section-resultat .pie-chart{
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+@media (min-width: 768px) {
+    .section-resultat {
+        flex-direction: row;
+        flex-wrap: wrap;
+       
+    }
+    .section-resultat .quiz-picture-boite,
+    .section-resultat .pie-chart{
+        width: 48%;
+    }
+    .section-resultat .section-resultat_texte,
+    .section-resultat .section-resultat_message {
+        width: 100%;
+    }
+
+}
+.section-resultat_texte{
+    font-size: 1.4rem;
+}
+
+.section-resultat_texte,
+ .section-resultat_message {
+    font-weight: bold;
+    text-align: center;
+}

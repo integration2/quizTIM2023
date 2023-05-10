@@ -97,6 +97,7 @@ const quiz = {
         // Ajouter un écouteur d'événement au bouton
         refCtnBouton.querySelector('.ctnBouton__bouton').addEventListener('click', this.validerReponse.bind(this));
     },
+
     validerReponse: function () {
         console.log('validerReponse');
 
