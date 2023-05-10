@@ -1,0 +1,288 @@
+@charset "UTF-8";
+/**
+ * @author: Lorie-Anne Côté - ArtificialOxygen
+ */
+
+/* IMPORTER D'ABORD LES POLICES DE CARACTÈRES */
+
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap'); /*Note à moi-même: à supprimer*/
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff&display=swap');
+
+/* IMPORTER LES FICHIERS CSS */
+@import url(normalize.css);
+@import url(utilitaires.css);
+@import url(base.css);
+@import url(typo.css);
+@import url(grille.css);
+@import url(animations.css);
+
+
+/* AJOUTER UNE TABLE DES MATIÈRES POUR POUVOIR NAVIGUER LA CSS*/
+
+/**
+*Ajustement des marges de la page
+*Background de la page
+*Titre h1
+*Introduction
+*Blocs question  
+*Réponses (choix)
+*Bouton Valider
+*Footer - crédits 
+*/
+
+/*AJUSTEMENT DES MARGES DE LA PAGE*/
+
+main {
+
+    margin: 0;
+
+}
+
+@media only screen and (min-width: 500px) {
+    main {
+        margin: 0 5%;
+    }
+}
+
+
+@media only screen and (min-width: 800px) {
+    main {
+        margin: 0 20%;
+    }
+}
+
+/*BACKGROUND DE LA PAGE*/
+
+body {
+
+    background-image: url("../images/quizTimTexture.png");
+    background-repeat: repeat;
+
+}
+
+/*INTRODUCTION*/
+
+.ctnAccueil {
+
+    border-top: 20px solid var(--couleur-principale);
+    background-color: var(--couleur-neutre);
+    border-bottom: 20px solid var(--couleur-principale);
+    box-shadow: 7px 7px 3px rgb(103, 103, 103);
+    padding: 30px 50px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+
+}
+
+/* Classe pour bouton JS*/
+
+.btnAccueil {
+
+    border: 2px solid var(--couleur-secondaire);
+    background-color: var(--couleur-secondaire);
+    border-radius: 15px;
+    margin: 15px;
+    padding: 20px 40px;
+    font-weight: bold;
+    color: var(--couleur-neutre);
+
+
+}
+
+.btnAccueil:hover {
+
+    border: 2px solid #122C5F;
+    background-color: #122C5F;
+
+}
+
+/*css de l'image d'accueil dans bas.css*/
+
+/*TITRE H1*/
+
+/*css du logo dans base.css*/
+
+.titre-ptincipal, .ctnQuestion {
+
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+
+}
+
+/*BLOCS QUESTION*/
+
+fieldset {
+
+    margin: 70px 0;
+    padding: 0;
+    border: none;
+    background-color: var(--couleur-neutre);
+    border-bottom: 30px solid var(--couleur-principale);
+    box-shadow: 7px 7px 3px rgb(103, 103, 103);
+
+}
+
+.nombreQts {
+
+    background-color: var(--couleur-principale);
+    color: var(--couleur-neutre);
+    font-family: 'DynaPuff', sans serif;
+    font-size: 1.9rem;
+    padding: 10px;
+    margin-top: 0;
+
+}
+
+.ctnQuestion {
+
+    background: url("../svgTimQuiz/SVG/blocreponse2.svg") no-repeat center;
+    min-height: 400px;
+    margin: 0 2%;
+
+}
+
+@media only screen and (min-width: 500px) {
+    .ctnQuestion {
+        background: url("../svgTimQuiz/SVG/blocreponse1.svg") no-repeat center;
+        min-height: 380px;
+        margin: 0 2%;
+    }
+    
+}
+
+/*css des images de question dans base.css*/
+
+/*RÉPONSE (CHOIX)*/
+
+ul {
+
+    padding: 10px;
+    margin: 0 4%;
+    
+}
+
+li {
+
+    list-style: none;
+
+}
+
+/*à mettre sur les li lorsque désactivés*/
+
+/*:disabled {
+
+    background-color: #636363;
+    color: var(--couleur-neutre);
+    border: 2px solid #636363;
+    box-shadow: 7px 7px #373737;
+
+}*/
+
+label {
+
+    border: 2px solid var(--couleur-secondaire);
+    background-color: var(--couleur-secondaire);
+    border-radius: 15px;
+    box-shadow: 7px 7px  #122C5F;
+    padding: 10px;
+    margin: 20px 20px;
+    list-style: none;
+    color: var(--couleur-neutre);
+    display: flex;
+    align-items: center; /*base pour le vertica-align*/
+    
+}
+
+label:hover {
+
+    border: 2px solid #122C5F;
+    box-shadow: 3px 3px #122C5F;
+    position: relative;
+    top: 3px;
+    left: 3px;
+
+}
+
+input[type="radio"]:checked + label {
+
+    background-color: #C0D5FF;
+    color: black;
+    border: 2px solid #122C5F;
+    box-shadow: 3px 3px #122C5F;
+    position: relative;
+    top: 3px;
+    left: 3px;
+    transition: background-color .1s ;
+    
+}
+
+label > span {
+
+    vertical-align: baseline;
+    padding: 15px
+
+}
+
+/*BOUTON VALIDER*/
+
+.validerQuiz {
+
+    padding: 20px;
+    font-size: 1.2em;
+    border: 4px solid var(--couleur-principale);
+    background-color: var(--couleur-btnValid-principale);
+    border-radius: 15px 20px;
+    font-weight: bold;
+    z-index: 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+
+}
+
+.validerQuiz::before {
+
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 240px;
+    background-color: var(--couleur-principale);
+    width: 100%;
+    height: 100%;
+    background: var(--couleur-principale);
+    z-index: -1;
+    transition: all .5s;
+    color: var(--couleur-neutre);
+}
+
+.validerQuiz:hover::before {
+
+    right: 0px;
+    border-radius: 0;
+    
+}
+
+.validerQuiz:hover {
+
+    color: var(--couleur-neutre);
+
+}
+
+/* FOOTER - CRÉDITS*/
+
+footer {
+
+    background-color: var(--couleur-principale);
+    color: var(--couleur-neutre);
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 60px;
+
+}
+
