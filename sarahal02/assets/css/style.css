@@ -1,0 +1,258 @@
+@charset "UTF-8";
+/**
+ * @author: sarahal02
+ */
+
+/* IMPORTER D'ABORD LES POLICES DE CARACTÈRES */
+@import url('https://fonts.cdnfonts.com/css/impact');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
+
+/* IMPORTER LES FICHIERS CSS */
+@import url(normalize.css);
+@import url(utilitaires.css);
+@import url(base.css);
+
+/* AJOUTER UNE TABLE DES MATIÈRES POUR POUVOIR NAVIGUER LA CSS*/
+
+/**
+ * Règles générales
+ * Grilles
+ * Réactivité
+ *
+ * Input
+ */
+
+ /*Règles générales*/
+
+body{
+    background-color: beige;
+}
+
+main {
+    margin: 40px;
+}
+
+p{
+    font-family: "Source Sans 3";
+}
+
+fieldset{
+    border:0;
+}
+
+/**/
+
+.wrap{
+    display:block;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 600px;
+}
+
+@media (min-width: 600px) {
+    .wrap{
+        max-width: 90%;
+     }
+}
+@media (min-width: 800px) {
+    .wrap{
+        max-width: 50%;
+     }
+}
+
+.question_actuelle{
+    font-size:4em;
+    padding-left:0.4em;
+    padding-right: 0.2em;
+    font-weight: bold;
+    font-family: "Impact";
+}
+
+@media (min-width: 600px){
+    .question_actuelle{
+        padding-right: 0.3em;
+    }
+}
+
+.question_total{
+    font-size:40%;
+    float: right;
+ }
+
+ @media (min-width: 600px){
+    .wrap2{
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+ }
+
+.question_contenu{
+    background-color: white;
+    border-radius: 0px 0px 45px 45px;
+    margin-top: 0;
+    list-style: none;
+    font-family: "Heebo";
+    padding-left: 0;
+    padding-bottom: 3em;
+}
+
+li{
+    padding: 1.5em;
+    border-bottom: 2px solid #000;
+    margin-left: 4em;
+    margin-right: 4em;
+}
+
+.question_image{
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100%;
+    margin-left: 0
+}
+
+.logo{
+    margin-top: 0;
+    margin-bottom: 5em;
+}
+
+.quiz_accueil{
+    
+    text-align: center;
+    margin-bottom: 5em;
+}
+
+.container_boutton {
+    position: relative;
+    display: block;
+    left: 5px;
+    width: 200px;
+    margin-top: 30px;
+    padding: 30px;
+    border: 2px solid #7CB0D6;
+    background-color: #7CB0D6;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.25);
+    margin-left: 29%;
+    transition: transform .2s;
+  }
+
+  @media (min-width: 600px){
+    .container_boutton{
+        margin-left: 37%;
+    }
+ }
+
+ @media (min-width: 800px){
+    .container_boutton{
+        margin-left: 44%;
+    }
+ }
+  
+.question_boutton {
+    display: block;
+  height: 58px;
+  width: 200px;
+  border: solid #002561;
+  background-color: white;
+  border-width: 3px;
+  color: #002561;
+  font-size: 18px;
+  margin: -37px 0px -25px -37px;
+  padding: 15px;
+  padding-left: 10px;
+  }
+
+  .question_boutton:active{
+    transform: translateY(9px) translateX(9px);
+    transition: transform .1s;
+    
+  }
+
+ button:focus{
+    outline: none; 
+    color: white;
+    background-color: #002561;
+ }
+ 
+ .container_boutton:hover{
+    transform: scale(1.1);
+ }
+
+ button{
+    font-family:"Source Sans 3";
+    font-weight: bold;
+ }
+ /*Grilles*/
+
+.question_header{
+    margin-top: 1em;
+    justify-content: center;
+    background: #C5DEEF;
+    border-radius: 45px 45px 0px 0px;
+
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas: 
+    "question_actuelle wrap2";
+    color: #002561;
+}
+
+.wrap2{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "question_legende"
+    "question_explication";
+    grid-area: wrap2;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.question_legende {
+    margin-top: 3em;
+    grid-area: question_legende;
+    font-family: "Source Sans 3";
+    font-weight: bold;
+}
+
+.question_explication {
+    margin-bottom: 30px;
+    grid-area: question_explication;
+    font-family: "Source Sans 3"
+}
+
+.question_actuelle{
+    grid-area: question_actuelle;
+}
+
+/*Input*/
+
+input[type='radio'] {
+    box-sizing: border-box;
+    appearance: none;
+    background: #7CB0D6;
+    outline: 3px solid #002561;
+    border: 3px solid #7CB0D6;
+    width: 15px;
+    height: 15px;
+    transition: transform .2s;
+    margin-right: 2em;
+  }
+  
+  input[type='radio']:checked{
+    background: #002561;
+  }
+  
+  input[type='radio']:hover{
+    background: #004dc9;
+    transform: scale(1.2);
+  }
+
+  input:checked+span{
+    font-weight: bold;
+  }
+
+  input:hover+span{
+    font-weight: bold;
+  }
