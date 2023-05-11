@@ -30,20 +30,27 @@
     </header>
 
     <main>
+        <header>
+            <h1>Football Européen</h1>
+            <p id="description_titre">Quiz sur le soccer et les joueurs</p>
+        </header>
 
-        <h1>Football Européen</h1>
-        <p id="description_titre">Quiz sur le soccer et les joueurs</p>
+        <section class="introduction cache">
+            
 
-        <svg xmlns="/images/SVG/soccer.svg" class="logoQuizTIM" viewBox="0 0 174.55 28.58"
-                aria-labelledby="libelleQuizTIM">
-                <title id="libelleQuizTIM">retour au Portail Quiz TIM</title>
-        </svg>
+            <p class="introduction__image">
+                <img src="assets/images/SVG/soccer.svg" alt="oeuvre de Mondrian">
 
-        <h2>Tester vos connaissances et répondez à des questions sur le soccer et ses joueurs.</h2>
+            </p>
 
-        <div class="ctnBouton" id="startBtn">
-            <button class="bouton" type="submit" id='validerQuiz' name='validerQuiz' value="true">Commencer</button>
-        </div>
+            <div class="introduction__accroche">
+                <h2>Tester vos connaissances et répondez à des questions sur le soccer et ses joueurs.</h2>
+            </div>
+            
+
+            
+        </section>
+        
         
 
         <form action="script.php">
@@ -53,11 +60,16 @@
                     <source srcset="assets/images/1000/jack-hunter_1000.jpg">
                     <img src="assets/images/1000/jack-hunter_1000.jpg" alt="Mural d'un joueur de soccer">
                 </picture>
-                <figcaption>
+                <figcaption class="question__question">
                     <fieldset>
                         <legend>
                             <h3>En quelle année les premiers clubs indépendants ont été créés ? </h3>
                         </legend>
+
+                        <p class="question__retroaction"></p>
+                        <p class="question__explication"></p>
+                        
+                        
                         <ul class="choixReponses">
                             <li>
                                 <input id="Q1A" type="radio" name="Q1" value="A" required class="visuallyhidden">
@@ -78,9 +90,6 @@
                         </ul>
                         <p class="erreur"></p>
                     </fieldset>
-                    <div class="ctnBouton">
-                        <button class="bouton" type="submit" id='validerQuiz' name='validerQuiz' value="true">Valider mes choix</button>
-                    </div>
                 </figure>
 
 
@@ -93,10 +102,15 @@
                         <img src="assets/images/1000/cristiano_ronaldo_1000.jpg" alt="Peinture de Wassily Kandinsky">
                     </picture>
                     <figcaption>
-                        <fieldset>
+                        <fieldset class="question__question">
                             <legend>
                                 <h3>Qui est ce joueur ?</h3>
                             </legend>
+
+                            <p class="question__retroaction"></p>
+                            <p class="question__explication"></p>
+
+
                             <ul class="choixReponses">
                                 <li>
                                     <input id="Q2A" type="radio" name="Q2" value="A" required class="visuallyhidden">
@@ -119,9 +133,6 @@
                             </p>
                         </fieldset>
                     </figcaption>
-                    <div class="ctnBouton">
-                        <button class="bouton" type="submit" id='validerQuiz' name='validerQuiz' value="true">Valider mes choix</button>
-                    </div>
                 </figure>
     
 
@@ -134,11 +145,16 @@
                         <source srcset="assets/images/1000/coupe_1000.jpg">
                         <img src="assets/images/1000/coupe_1000.jpg" alt="Peinture Carré blanc sur fond blanc">
                     </picture>
-                    <figcaption>
+                    <figcaption class="question__question">
                         <fieldset>
                             <legend>
                                 <h3>Qui a gagné la coupe du monde 2022?</h3>
                             </legend>
+
+                            <p class="question__retroaction"></p>
+                            <p class="question__explication"></p>
+
+
                             <ul class="choixReponses">
                                 <li>
                                     <input id="Q3A" type="radio" name="Q3" value="A" required class="visuallyhidden">
@@ -166,16 +182,15 @@
                     <button class="bouton" type="submit" id='validerQuiz' name='validerQuiz' value="true">Valider mes choix</button>
                 </div>
             </figcaption>
-
-
-
         </form>
-        
-
-
     </main>
-    
+    <footer role="contentinfo">
+        <div class="conteneur">
+            <small>Tous droits réservés | TIMCSF &copy; 2023</small>
+        </div>
+    </footer>
 
+    <script src="assets/js/app.js"></script>
 </body>
 
 </html>

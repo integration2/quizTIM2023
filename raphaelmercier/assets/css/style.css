@@ -31,6 +31,10 @@ h1{
     background-color: #fff;
 }
 
+h2{
+    text-align: center;
+}
+
 h3{
     font-size: 1.5rem;
 }
@@ -49,6 +53,19 @@ fieldset {
     border: none;
 }
 
+.introduction__image{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.introduction__accroche{
+    text-align: center;
+}
+
+.conteneur{
+    display: flex;
+    justify-content: center;
+}
 .choixReponses {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -83,7 +100,7 @@ fieldset {
     transition: all 0.2s ease-in-out;
 }
 
-button[type="submit"] {
+button[type="button"] {
     background-color: #007FC7;
     font-size: 1.2rem;
     color: #fff;
@@ -97,13 +114,22 @@ button[type="submit"] {
     margin: 0 auto;
 }
 
-#startBtn{
-    
-}
+
 
 button[type="submit"]:hover {
     background-color: #005ea8;
 }
+
+[type="radio"]:checked+label.bonneReponse,
+[type="radio"]+label.bonneReponse {
+   background-color: rgb(48, 172, 32);
+}
+
+[type="radio"]:checked+label.mauvaiseReponse {
+   background-color: rgb(211, 38, 29);
+}
+
+
 
 .js .cache {
     display: none;

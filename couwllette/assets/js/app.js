@@ -208,5 +208,4 @@ function afficherResultat() {
 function cacherResultat() {
     document.querySelector('.afficherResultat').classList.add('cache');
     refBtnRedemarrer.classList.add('cache');
-    document.querySelector('.button-demarrer').classList.add('cache');
 }
