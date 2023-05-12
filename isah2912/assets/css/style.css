@@ -1,0 +1,448 @@
+@charset "UTF-8";
+/**
+ * @author: Isabel Hurtado
+ */
+
+/* IMPORTER D'ABORD LES POLICES DE CARACTÈRES */
+@import url('https://fonts.googleapis.com/css2?family=Abyssinica+SIL&family=Bad+Script&family=Comfortaa:wght@300;400;500;600;700&family=Lato:ital,wght@1,300&family=Playfair+Display&display=swap');
+@import url();
+/* IMPORTER LES FICHIERS CSS */
+@import url(normalize.css);
+@import url(utilitaires.css);
+@import url(typo.css);
+@import url(base.css);
+
+
+/* AJOUTER UNE TABLE DES MATIÈRES POUR POUVOIR NAVIGUER LA CSS*/
+
+header {
+    border-bottom: 20px solid rgb(255, 255, 255);
+    background-color: #ED7B3B;
+}
+
+.body {
+    background-color: #E8DDD2;
+}
+
+
+.dande {
+    background-color: #ffffff;
+}
+
+main,
+fieldset {
+    border: none;
+}
+
+/* intéractivité */
+.js .cache {
+    display: none;
+ }
+ 
+ .js .ctnBoutonSubmit {
+    display: none;
+ }
+
+ 
+ input[type="radio"]+label {
+    display: inline-block;
+ }
+
+ input[type="radio"]:checked + label .reponse {
+  color:black;
+  background-color:#AF6339;
+ }
+
+ input[type="radio"]:hover + label .reponse {
+    color:black;
+
+   }
+
+ .bonneReponse {
+    display: block;
+    margin: auto;
+    border: 4px solid green;
+    }
+
+    
+.mauvaiseReponse {
+       border: 4px solid red;
+    }
+
+/*ACCUEIL*/
+
+.logo {
+    width: 600px;
+    height: 200px;
+    padding-top: 2em;
+}
+
+h2 {
+    text-align: center;
+    
+}
+
+@media(min-width:600px) {
+    .logo {
+        display: flex;
+        margin: auto;
+    }
+}
+
+
+.img_accueil {
+    width: 100%;
+    padding-top: 2em;
+    padding-bottom: 1em;
+}
+
+@media(min-width:600px) {
+    .img_accueil {
+        width: 80%;
+        display: block;
+        margin:auto;
+        
+
+    }
+}
+
+@media(min-width:800px) {
+    .img_accueil {
+        width: 45%;
+        display:block;
+        float:left;  
+        margin:10px 10px;
+     
+   
+      
+    }
+}
+
+.p_acceuil {
+    background-color: rgba(237, 123, 59, 0.6);
+    box-shadow: 30px -20px rgba(251, 184, 147, 0.53);
+    font-size: 20px;
+    font-family: 'Comfortaa';
+    text-align: center;
+}
+
+@media(min-width:600px) {
+    .contenu {
+        padding-top: 2em;
+        display: flex;
+        margin: 30px 30px;
+    }
+}
+
+@media(min-width:800px) {
+    .contenu {
+        margin: 110px;
+    }
+
+}
+
+
+.contenu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+}
+@media(min-width:800px){
+.contenu{
+    flex-direction: column;
+    align-items: center;
+}
+}
+
+
+
+/* QUESTIONS */
+
+
+
+ @media(min-width:800px){
+ .question__retroaction,
+ .question__explication{
+    display: flex;
+    margin-top: auto; 
+    
+ }
+
+ }
+
+.choixDeReponses{
+    padding-top: 4em;
+}
+
+@media(min-width:800px){
+    .choixDeReponses{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        margin-top: 320px;
+        width: 100%;
+        text-align: center;
+      
+    }
+}
+
+.Q__legende {
+    width: 100%;
+}
+
+.Q {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media(min-width:800px) {
+    main {
+        display: block;
+        justify-content: center;
+    }
+}
+
+
+.phrase-question {
+    text-align: center;
+
+}
+
+
+
+@media (min-width:600px) {
+    .image-question {
+        text-align: center;
+
+    }
+}
+
+@media (min-width:800px) {
+    .image-question {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        margin-top: 2em;
+    }
+
+}
+
+li {
+   
+    list-style: none;
+    padding-top: 5em;
+}
+
+@media (min-width:600px) {
+    li {
+        width: 100%;
+
+    }
+}
+
+
+.image-reponse {
+    width: 45%;
+    box-shadow: -40px -30px #D18961;
+}
+
+@media(min-width:800px) {
+    .image-reponse {
+    box-shadow: none;
+    display: block;
+    margin: auto;
+    margin-bottom: 1em
+
+    }
+}
+
+.cercle_reponse {
+    display: block;
+    text-align: center;
+    margin: 1rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background: #ED7B3B;
+    size: 2em;
+    font-size: 1.5em;
+}
+
+
+@media(min-width:600px) {
+    .cercle_reponse {
+        width: 55px;
+        height: 55px;
+        border-radius: 60px;
+        text-align: center;
+        font-size: 2em;
+    }
+}
+
+@media(min-width:800px) {
+    .cercle_reponse {
+        margin: auto;
+        margin-bottom: 0.2em;
+    }
+}
+
+
+
+
+
+.reponse {
+    display: flex;
+    margin: auto;
+    text-align: center;
+    font-size: 1.5em;
+    background-color: #FBB893;
+    width: 5em;
+}
+
+@media(min-width:600px) {
+    .reponse {
+        display: flex;
+        margin: auto;
+        justify-content: center;
+        font-size: 2em;
+    }
+}
+
+@media(min-width:800px) {
+    .reponse {
+        font-size: 2em;
+        text-align: center;
+    }
+}
+
+
+.question {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    padding-bottom: 4em;
+}
+
+@media (min-width:600px) {
+    .question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+@media (min-width:800px) {
+    .question {
+        display: flex;
+        margin: auto;
+        flex-direction: column;
+        margin-top: 1em;
+    }
+}
+
+
+.p_footer {
+    text-align: center;
+}
+
+.footer {
+    background-color: #ED7B3B;
+    border-top: 25px solid rgb(255, 255, 255);
+    border-bottom: 20px solid #ED7B3B;
+}
+
+@media(min-width:600px) {
+    .footer {
+        text-align: center;
+        background-color: #ED7B3B;
+    }
+}
+
+@media(min-width:800px) {
+    .footer {
+        text-align: center;
+        background-color: #ED7B3B;
+    }
+}
+
+.ctnBoutonSubmit{
+   display: flex;
+   margin-bottom: 1em;
+   justify-content: center;
+}
+
+/* RESULTAT */
+
+.paragraphe,
+.p_resultat,
+.p_felicitation {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+@media(min-width:800px){
+    .p_resultat{
+        font-size: 20px;
+    }
+}
+
+.paragraphe,
+.p_felicitation {
+    font-size: 20px;
+}
+
+@media(min-width:600px) {
+    .paragraphe {
+        font-size: 25px;
+    }
+
+}
+
+@media(min-width:800px){
+    .p_felicitation{
+        display: flex;
+        margin: 0 110px;
+        justify-content: end;
+        
+    }
+}
+
+
+.cercle {
+    display: flex;
+    margin: auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: #FBB893;
+    box-shadow: 10px -5px #9B5D3A;
+}
+
+@media(min-width:800px){
+.cercle{
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+}
+}
+
+
+@media(min-width:800px){
+    .image_resultat{
+        width:45%;
+        display:flex;
+        margin:10px 10px;
+        float:left;  
+        padding-top: 5em; 
+    }
+}
+
+.button{
+    display: flex;
+    text-align: end;
+}

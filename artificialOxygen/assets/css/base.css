@@ -1,0 +1,117 @@
+/*** Styles de base ***/
+body {
+    margin: 0;
+}
+
+/* Images fluides */
+img {
+    max-width: 100%;
+}
+
+/* Bandeau supérieur de retour au portail */
+[role=banner] {
+    background-color: var(--couleur-principale);
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logoQuizTIM {
+    height: 35px;
+    padding: .5em;
+}
+
+.logoQuizTIM__typo {
+    fill: var(--couleur-svg-bandeau-superieur);
+}
+
+.logoQuizTIM:hover .logoQuizTIM__typo,
+.logoQuizTIM:focus .logoQuizTIM__typo {
+    fill: var(--couleur-svg-bandeau-superieur-hover);
+}
+
+/* LOGO DU QUIZ */
+
+.logo {
+
+    max-height: 270px;
+    margin-top: 20px;
+    padding-bottom: 30px;
+
+}
+
+/* IMAGE DE L'INTRODUCTION */
+
+.imgAccueil {
+    
+    height: 90px;
+    justify-content: center;
+    
+}
+
+/* IMAGE PRINCIPALE DE LA QUESTION */
+.imgQuestion {
+
+    max-height: 290px;
+    padding-top: 90px;
+    margin: 0 auto;
+}
+
+
+@media only screen and (min-width: 500px) {
+
+    .imgQuestion {
+
+        max-height: 260px;
+        padding-top: 110px;
+        margin: 0 auto;
+    }
+
+}
+
+@media only screen and (min-width: 630px) {
+
+    .imgQuestion {
+
+        max-height: 290px;
+        padding-top: 90px;
+        margin: 0 auto;
+    }
+
+}
+
+@media only screen and (min-width: 800px) {
+
+    .imgQuestion {
+
+        max-height: 270px;
+        padding-top: 120px;
+        margin: 0 auto;
+    }
+
+}
+
+@media only screen and (min-width: 1000px) {
+
+    .imgQuestion {
+
+        max-height: 310px;
+        padding-top: 90px;
+        margin: 0 auto;
+    }
+
+}
+
+/* Image des choix-réponses */
+
+.imgReponse {
+
+    display: inline-block;
+    height: 80px;
+    width: 80px;
+    background-color: white;
+    padding: 7px 0;
+    border-radius: 12px;
+}
+

@@ -1,0 +1,706 @@
+@charset "UTF-8";
+/**
+ * @author: alexandradias
+ */
+
+/* IMPORTER D'ABORD LES POLICES DE CARACTÈRES */
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100;400;700&family=Rubik:wght@700;900&display=swap');
+
+/**
+ * TABLE DES MATIERES
+ * @author DIAS DA ROCHA Alexandra - @TIMCSF
+ *
+ * Normalize (au lieu du reset)
+ * Utilitaires
+ * Typo
+ * Base
+ * grille
+
+ * Main
+ * Cache
+ * Accueil
+ * Form
+ ** Envoi formulaire
+ * Footer
+
+ * PARTIE REPONSES
+ ** reponsesQuestion
+ ** reponsesQuestionImages
+
+ * PARTIE SCORES
+ * RETROACTION
+ */
+
+
+/* IMPORTER LES FICHIERS CSS */
+@import url(normalize.css);
+@import url(utilitaires.css);
+@import url(typo.css);
+@import url(base.css);
+@import url(grille.css);
+
+/* AJOUTER UNE TABLE DES MATIÈRES POUR POUVOIR NAVIGUER LA CSS*/
+
+/* Main
+   ========================================================================== */
+   .blocMain{
+    margin: 0;
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+/* Cache
+   ========================================================================== */
+.js .cache{
+    display: none;
+}
+
+/* Accueil
+   ========================================================================== */
+.blocAccueil{
+    background-color: var(--couleur-bg-home);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+@media screen and (min-width: 600px) {
+    .blocAccueil{
+        /* min-height: 100vh; */
+    }
+}
+
+.blocAccueil div:nth-child(2){
+    display: grid;
+    grid-template-columns: 80%;
+    text-align: left;
+    justify-content: center;
+}
+@media screen and (min-width: 600px) {
+    .blocAccueil div:nth-child(2){
+        grid-template-columns: 70%;
+        justify-content: flex-end;
+        font-size: 2rem;
+    }
+}
+
+.blocAccueil div:nth-child(3){
+    display: grid;
+    grid-template-columns: 80%;
+    text-align: left;
+    justify-content: center;
+}
+@media screen and (min-width: 600px) {
+    .blocAccueil div:nth-child(3){
+        grid-template-columns: 46%;
+        justify-content: flex-end;
+        font-size: 2rem;
+    }
+}
+
+
+.blocAccueil figure{
+    margin: 0;
+}
+
+.blocAccueil input{
+    display: none;
+}
+
+.blocAccueil label{
+    display: grid;
+    grid-template-columns: 50%;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.blocAccueil__logo{
+    display: grid;
+    grid-template-columns: 90%;
+    justify-content: flex-end;
+    padding: 0;
+    margin: 20px 0;
+}
+@media screen and (min-width: 600px) {
+    .blocAccueil__logo{
+        grid-template-columns: 70%;
+        grid-area: logo;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .blocAccueil__zoneBouton{
+        grid-template-areas:
+        "texte bouton"
+    } 
+}
+
+@media screen and (min-width: 600px) {
+    .blocAccueil__zoneBouton div:nth-child(1){
+        grid-area: texte;
+    }
+}
+@media screen and (min-width: 600px) {
+    .blocAccueil__zoneBouton div:nth-child(2){
+        grid-area: bouton;
+        min-width: 350px;
+    }
+}
+
+.bouton__commencer{
+    background-color: transparent;
+    border: none;
+    width: 50%;
+    margin: 0 auto;
+    cursor: pointer;
+}
+@media screen and (min-width: 600px) {
+    .bouton__commencer{
+    width: 15%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    }
+}
+
+.bouton__commencer:hover{
+    border-left: solid 2px #EDE7DF;
+    border-left-style: dotted;
+}
+
+.ctnBouton{
+    width: 50%;
+    position: absolute;
+    /* right: 0; */
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+@media screen and (min-width: 600px) {
+    .ctnBouton{
+        width: 10%;
+        bottom: 0;
+        left: 100%;
+        transform: translate(-100%, 0);
+    }
+}
+
+.ctnBouton:hover{
+    border-left: solid 2px #EDE7DF;
+    border-left-style: dotted;
+}
+
+.ctnBouton button{
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.ctnBouton button img{
+    width: 200px;
+}
+
+/* .ctnBouton__bouton{
+    background-image: url(../images/btn/SVG/btn_verifier.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-height: 89px;
+}
+
+.ctnBouton__bouton:disabled{
+    background-image: url(../images/btn/SVG/btn_verifier_disabled.svg);
+} */
+
+/* Form
+   ========================================================================== */
+.blocForm{
+    display: grid;
+    grid-template-columns: 90%;
+    justify-content: center;
+}
+@media screen and (min-width: 600px) {
+    .blocForm {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* background-image: url(../images/btn/SVG/logoLesEnigmes.svg); */
+        /* background-size: 300px 150px; */
+        background-size: cover;
+        /* transform: rotate(-90deg); */
+    }
+}
+
+.question__fieldset{
+
+}
+@media screen and (min-width: 600px){
+    .question__fieldset{
+        /* border:solid red 2px; */
+    }
+}
+
+.questionBlocGrid1{
+
+}@media screen and (min-width: 600px){
+    .questionBlocGrid1{
+        /* border:solid red 2px; */
+        display: grid;
+        grid-template-columns: 200px 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+        ". titre titre photo1 photo1"
+        ". sousTitre sousTitre photo1 photo1";
+    }
+}
+
+.questionBlocGrid2{
+
+}@media screen and (min-width: 600px){
+    .questionBlocGrid2{
+        /* border:solid red 2px; */
+        min-height: 50vh;
+        display: grid;
+        grid-template-columns: 200px 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+        ". boutons photo2 photo2 ."
+        ". boutons photo2 photo2 btnVerifier";
+    }
+}
+
+.questionImages1 img{
+    margin: 0 0 50px 0;
+
+}@media screen and (min-width: 600px){
+    .questionImages1 img{
+        margin: 0;
+    }
+}
+
+.questionImages2 img{
+    margin: 50px 0 0 0;
+    
+}@media screen and (min-width: 600px){
+    .questionImages2 img{
+        margin: 0;
+    }
+}
+
+.question__retroaction--grid{
+
+}
+@media screen and (min-width: 600px){
+    .question__retroaction--grid{
+        display: flex;
+        align-items: center;
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+.blocForm fieldset{
+    border: none;
+    padding: 0 0 100px 0;
+    position: relative;
+}
+@media screen and (min-width: 600px) {
+    .blocForm fieldset{
+        padding: 0;
+    }
+}
+
+
+.blocForm figure{
+    width: 100%;
+    margin: 0;
+}
+
+@media screen and (min-width: 600px) {
+    .question__titre{
+        grid-area: titre;
+    }
+}
+
+.question__sousTitre{
+    font-family: var(--police-sous-titre);
+    font-size: 2rem;
+    grid-area: sousTitre;
+}
+@media screen and (min-width: 600px) {
+    .question__sousTitre{
+        font-size: 2.5rem;
+    }
+}
+
+.questionImages{
+    margin: 0 0 30px 0;
+}
+@media screen and (min-width: 600px) {
+    .questionImages1{
+        grid-area: photo1;
+        display: flex;
+        align-items: flex-end;
+    }
+}
+@media screen and (min-width: 600px) {
+    .questionImages2{
+        grid-area: photo2;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        margin: 0 0 0 20px;    
+        display: flex;
+        align-items: flex-end;
+    }
+}
+
+.questionImages img{
+    width: 100%;
+}
+
+
+.choixReponses__images{
+    /* width: 10%; */
+    
+}
+
+.choixReponses__images label{
+    cursor: pointer;
+    /* background-image: url(../images/btn/btn_size1_initial.svg);
+    background-size: contain;
+    background-repeat: no-repeat; */
+}
+
+.choixReponses{
+    padding: 0;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 100%;
+}
+@media screen and (min-width: 600px) {
+    .choixReponses{
+        grid-area: boutons;
+        align-content: center;
+    }
+}
+
+.choixReponses li{
+    /* width: 100%; */
+    justify-content: center;
+    text-decoration: none;
+    list-style: none;
+    background-image: url(../images/btn/btn_size1_initial.svg);
+    /* background-size: 300px 150px; */
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* border-block-start: solid var(--couleur-texte) 2px;
+    border-block-end: solid var(--couleur-texte) 10px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 60px; */
+    /* background-size: cover;
+    background-repeat: no-repeat; */
+    padding: 23px;
+    margin: 15px 2px;
+    text-align: center;
+    cursor: pointer;
+    min-width: 100%;
+}
+@media screen and (min-width: 600px) {
+    .choixReponses li{
+        padding: 17px;
+        /* margin: 10px; */
+    }
+}
+
+.choixReponses li:hover{
+    background-image: url(../images/btn/btn_size1_hover.svg);
+    /* color: var(--couleur-bravo);
+    border-block-start: solid var(--couleur-bravo) 2px;
+    border-block-end: solid var(--couleur-bravo) 10px; */
+    /* background-color: var(--couleur-bravo); */
+}
+.choixReponses li:focus{
+    background-image: url(../images/btn/btn_size1_focus.svg);
+    /* border-block-start: solid var(--couleur-bravo) 2px;
+    border-block-end: solid var(--couleur-bravo) 10px; */
+
+}
+.choixReponses li.active{
+    background-image: url(../images/btn/btn_size1_active.svg);
+    color: var(--couleur-bg-body);
+    /* background-color: var(--couleur-bravo);
+    border-block-start: solid white 2px;
+    border-block-end: solid white 10px; */
+}
+/* .active{
+    background-image: url(../images/btn/btn_size1_active.svg);
+    color: var(--couleur-bg-body);
+} */
+.choixReponses li:visited{
+    background-image: url(../images/btn/btn_size1_active.svg);
+    color: var(--couleur-bg-body);
+}
+
+/* Envoi formulaire */
+.form__confirmation--envoi{
+    display: grid;
+    grid-template-columns: 50%;
+    justify-content: center;
+    margin: 30px 0;
+}
+@media screen and (min-width: 600px) {
+    .form__confirmation--envoi{
+        /* border:solid yellow 2px; */
+        color:white;
+        display: grid;
+        grid-template-columns: 200px 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+        ". . . . ."
+        ". . . . btnVerifier";
+    }
+}
+
+.form__confirmation--envoi button{
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+@media screen and (min-width: 600px) {
+    .form__confirmation--envoi button{
+        grid-area: btnVerifier;
+        max-width: 200px;
+    }
+}
+
+
+
+/* Footer
+   ========================================================================== */
+.blocFooter{
+    background-color: var(--couleur-bg-body);
+    font-weight: 100;
+    font-size: 0.9rem;
+    display: grid;
+    grid-template-columns: 90%;
+    justify-content: center;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.blocFooter a{
+    color: var(--couleur-bravo);
+}
+
+
+
+/* PARTIE REPONSES
+   ========================================================================== */
+/* reponsesQuestion */
+.reponse__section{
+    display: none;
+}
+@media screen and (min-width: 600px){
+    .reponse__section{
+        /* border:solid red 2px; */
+    }
+}
+
+
+.reponseBlocGrid1{
+
+}@media screen and (min-width: 600px){
+    .reponseBlocGrid1{
+        /* border:solid pink 2px; */
+        display: grid;
+        grid-template-columns: 200px 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+        ". titre titre photo1 photo1"
+        ". photoReponseBravo1 photoReponseBravo1 photo1 photo1"
+        ". photoReponseBravo1 photoReponseBravo1 reponseTexte ."
+        ". photoReponseBravo1 photoReponseBravo1 reponseTexte btnVerifier";
+    }
+}
+
+/* reponsesQuestionImages */
+
+@media screen and (min-width: 600px) {
+    .reponseImagesBravo1{
+        grid-area: photoReponseBravo1;
+    }
+}
+
+
+.reponse__section{
+
+}
+@media screen and (min-width: 600px) {
+    .reponse__section{
+        grid-area: reponseTexte;
+    }
+}
+
+.reponse__section p{
+    margin: 20px 0;
+}
+
+.reponse__reponseGenerique{
+    font-family: var(--police-sous-titre);
+    font-size: 2rem;
+}
+@media screen and (min-width: 600px) {
+    .reponse__reponseGenerique{
+        grid-area: reponseTexte;
+        font-size: 3rem;
+    }
+}
+
+.reponse__reponse{
+    font-family: var(--police-sous-titre);
+    color: var(--couleur-bravo);
+    font-size: 2.5rem;
+}
+@media screen and (min-width: 600px) {
+    .reponse__reponse{
+        grid-area: reponseTexte;
+        font-size: 3rem;
+    }
+}
+
+.reponse__explication{
+    font-size: 1.8rem;
+    line-height: 3rem;
+}
+@media screen and (min-width: 600px) {
+    .reponse__explication{
+        font-size: 2rem;
+        line-height: 3rem;
+    }
+}
+
+/* PARTIE SCORES
+   ========================================================================== */
+.afficherResultat{
+    min-height: 80vh;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: start; */
+    background-image: url(../images/scores/score.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 90%;
+    margin: 0 auto;
+    /* padding: 0 0 0 150px; */
+}
+@media screen and (min-width: 600px) {
+    .afficherResultat{
+        min-height: 100vh;
+        justify-content: center;
+        width: 70%;
+    }
+}
+
+.resultat__section{
+    /* position: absolute;
+    top: 10%; */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+@media screen and (min-width: 600px) {
+    .resultat__sectiont{
+     
+    }
+}
+
+.div-resultat-txt{
+    text-align: center;
+    margin: 0 auto;
+
+}
+@media screen and (min-width: 600px) {
+    .div-resultat-txt {
+       
+    }
+}
+
+.p-resultat{
+    color: white;
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
+}
+@media screen and (min-width: 600px) {
+    .p-resultat{
+        font-size: 4rem;
+    }
+}
+
+/* RETROACTION
+   ========================================================================== */
+
+.question__retroaction{
+    /* padding: 400px 0 0 0; */
+}
+@media screen and (min-width: 600px) {
+    .question__retroaction{
+        /* border: solid red; */
+        min-width: 500px;
+        padding: 0 0 0 200px;
+        font-size: 2rem;
+        /* background-image: url(../images/reponses/bravo1point.svg); */
+        /* background-size: 300px 150px; */
+        background-size: contain;
+        background-repeat: no-repeat;
+        grid-area: retro;
+    }
+}
+
+.question__retroaction--ImageBravo{
+    background-image: url(../images/reponses/bravo1point.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* padding: 400px 0 0 0; */
+    color:var(--couleur-bravo);
+}
+@media screen and (min-width: 600px) {
+    .question__retroaction--ImageBravo{
+        padding: 0 0 350px 200px;
+    }
+}
+
+.question__retroaction--ImageDesole{
+    background-image: url(../images/reponses/desole0point.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    color:var(--couleur-desole);
+    padding: 0 0 100% 20%;
+}
+@media screen and (min-width: 600px) {
+    .question__retroaction--ImageDesole{
+        padding: 0 0 350px 200px;
+    }
+}
+
+
+.question__explication{
+    
+}
+@media screen and (min-width: 600px) {
+    .question__explication{
+        min-width: 400px;
+        grid-area: titre;
+        font-size: 2rem;
+    }
+}
+
+.displayFlex{
+    display: flex;
+}
+
+.gridTemplateRows{
+    grid-template-rows: auto;
+}

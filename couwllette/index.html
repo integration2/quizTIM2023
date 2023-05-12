@@ -5,9 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
     <title>Portugal - Quiz TIM</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/app.js" defer></script>
+
+    
 </head>
 
 <body>
@@ -33,7 +39,7 @@
         </a>
     </header>
 
-    <main id="contenu" class="conteneur">
+    <main id="contenu" class="conteneur" role="main">
         <!-- logo -->
         <div class="logo">
             <svg class="logo--signature" viewBox="0 0 322 55" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -91,7 +97,7 @@
             </svg>
         </div>
         <!-- introduction -->
-        <section class="introduction cache">
+        <section class="introduction cache" role="region">
             <h2 class="p-sous_titre">un pays à l'extrême sud-ouest de l'Europe</h2>
             <picture>
                 <source srcset="assets/images_optimisees/660/roya-ann-miller-TmB3wiXntxs-unsplash-660.jpg"
@@ -106,7 +112,7 @@
         </section>
 
         <!-- questionnaire -->
-        <form class="questionnaire">
+        <form class="questionnaire" action="index.html" role="form">
 
             <!-- question 1 -->
             <fieldset id="Q1" class="question">
@@ -282,7 +288,7 @@
     </main>
 
     <!-- pied de page -->
-    <footer>
+    <footer role="contentinfo">
         <p class="p_footer"> &#169; Cloé Ouellette, Intégration Multimédia, CSF 2023</p>
     </footer>
 

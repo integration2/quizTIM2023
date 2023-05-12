@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 337.62 530">
+  <defs>
+    <style>
+      .cls-1br2 {
+        fill: #ccc;
+      }
+
+      .cls-1br2, .cls-2br2, .cls-3br2 {
+        stroke: #3f4247;
+        stroke-miterlimit: 10;
+        stroke-width: 7px;
+      }
+
+      .cls-2br2 {
+        fill: #fff;
+      }
+
+      .cls-3br2 {
+        fill: #e6e6e6;
+      }
+    </style>
+  </defs>
+  <g id="pocheSang3">
+    <rect class="cls-3br2" x="3.5" y="43.77" width="330.62" height="405.26" rx="33.57" ry="33.57"/>
+    <path class="cls-2br2" d="m292.16,86.92H46.59c-7.59,0-13.8,6.43-13.8,14.29v302.05c0,7.86,6.21,14.29,13.8,14.29h67.87s0,75.03,0,75.03c0,5.02,3.97,9.14,8.82,9.14h12.2c4.85,0,8.82-4.11,8.82-9.14v-75.03s63.36,0,63.36,0v84.16s29.85,0,29.85,0v-84.16s54.63,0,54.63,0c7.59,0,13.8-6.43,13.8-14.29V101.2c0-7.86-6.21-14.29-13.8-14.29Z"/>
+    <rect class="cls-1br2" x="189.08" y="502.28" width="67.02" height="24.22" rx="9.07" ry="9.07"/>
+    <path class="cls-3br2" d="m238.98,43.73H101.27s0-18.27,0-18.27c0-4.33,25.45-21.96,30.57-21.96h75.38c5.11,0,31.76,17.63,31.76,21.96v18.27Z"/>
+    <rect class="cls-2br2" x="139.1" y="17.33" width="64.9" height="12.57" rx="5.87" ry="5.87"/>
+  </g>
+</svg>

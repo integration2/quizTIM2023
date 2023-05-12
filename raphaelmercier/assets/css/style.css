@@ -1,0 +1,136 @@
+@charset "UTF-8";
+/**
+ * @author: Raphael Mercier / raphaelmercier
+ */
+
+/* IMPORTER D'ABORD LES POLICES DE CARACTÈRES */
+
+/* IMPORTER LES FICHIERS CSS */
+@import url(normalize.css);
+@import url(utilitaires.css);
+@import url(base.css);
+
+/* AJOUTER UNE TABLE DES MATIÈRES POUR POUVOIR NAVIGUER LA CSS*/
+
+form{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+/*
+body{
+    background-image: url(../images/ballon2.png);
+    background-repeat: no-repeat;
+    background-size: 60%;
+}
+*/
+h1{
+    font-size: 2.5rem;
+    border-bottom: solid 2px rgb(14, 14, 14);
+    margin-bottom: .2rem;
+    margin-top: 0;
+    background-color: #fff;
+}
+
+h2{
+    text-align: center;
+}
+
+h3{
+    font-size: 1.5rem;
+}
+
+#description_titre{
+    font-family: 'Calibri', Courier, monospace;
+    font-size: 1.2rem;
+    margin-top: .2rem;
+}
+
+picture{
+    align-items: center;
+}
+
+fieldset {
+    border: none;
+}
+
+.introduction__image{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.introduction__accroche{
+    text-align: center;
+}
+
+.conteneur{
+    display: flex;
+    justify-content: center;
+}
+.choixReponses {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+}
+
+.choixReponses li label {
+    background-color: rgb(152, 152, 152);
+    color: #fff;
+    font-size: 1.5rem;
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+[type="radio"]:checked + label {
+    background-color: #0087d5;
+    color: #fff;
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease-in-out;
+}
+
+button[type="button"] {
+    background-color: #007FC7;
+    font-size: 1.2rem;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    cursor: pointer;
+    border-radius: 10px;
+    width: 13rem;
+    display: block;
+    margin: 0 auto;
+}
+
+
+
+button[type="submit"]:hover {
+    background-color: #005ea8;
+}
+
+[type="radio"]:checked+label.bonneReponse,
+[type="radio"]+label.bonneReponse {
+   background-color: rgb(48, 172, 32);
+}
+
+[type="radio"]:checked+label.mauvaiseReponse {
+   background-color: rgb(211, 38, 29);
+}
+
+
+
+.js .cache {
+    display: none;
+ }

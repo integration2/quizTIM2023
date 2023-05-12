@@ -1,0 +1,234 @@
+/*** Styles de base ***/
+body {
+    margin: 0;
+}
+
+/* Images fluides */
+img {
+    max-width: 100%;
+}
+
+/* Bandeau supérieur de retour au portail */
+[role=banner] {
+    background-color: var(--couleur-bandeau-superieur);
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logoQuizTIM {
+    height: 35px;
+    padding: .5em;
+}
+
+.logoQuizTIM__typo {
+    fill: var(--couleur-svg-bandeau-superieur);
+}
+
+.logoQuizTIM:hover .logoQuizTIM__typo,
+.logoQuizTIM:focus .logoQuizTIM__typo {
+    fill: var(--couleur-svg-bandeau-superieur-hover);
+}
+.intro {
+    background-image: url("../images/SVG/pattes.svg");
+    background-repeat: no-repeat;
+    
+}
+
+@media only screen and (min-width: 600px){
+.intro {
+    background-image: url("../images/SVG/pattes.svg");
+    background-repeat: no-repeat;
+    margin-left: 50px;
+    
+}
+}
+
+
+@media only screen and (min-width: 600px){
+.pIntro{
+        margin-left: 50px;
+    }
+}
+
+
+
+.dinoIntro {
+    margin-left: 100px;
+    width: 20%;
+}
+
+@media only screen and (min-width: 600px){
+.dinoIntro {
+    margin-left: 1100px;
+    width: 15%;
+}
+}
+
+
+button {
+    background-color: #96B58B;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    border-radius: 20px;
+    height: 50px;
+    font-size: 2.4rem;
+    margin-left: 50px;
+}
+
+@media only screen and (min-width: 600px){
+button {
+    background-color: #96B58B;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    border-radius: 20px;
+    margin-left: 500px;
+    height: 90px;
+    font-size: 2.4rem;
+}
+}
+
+
+
+
+fieldset {
+    width: 400px;
+    margin: auto;
+    }
+
+@media only screen and (min-width: 600px){
+fieldset {
+    width: 900px;
+    margin: auto;
+    }
+}
+
+
+.logo{
+    width: 50%;
+    margin-left: 50px;
+}
+
+@media only screen and (min-width: 600px){
+.logo{
+    width: 30%;
+}
+    }
+
+
+.dino {
+     width: 30%;
+    margin-left: 150px;
+}
+
+@media only screen and (min-width: 600px){
+.dino {
+    width: 20%;
+    }
+}
+
+.TQuestion {
+    margin-left: 100px;
+}
+
+@media only screen and (min-width: 600px){
+.TQuestion {
+    margin-left: 150px;
+}
+}
+
+
+.imagesQ {
+    width: 60%;
+}
+
+@media only screen and (min-width: 600px){
+.imagesQ {
+    width: 70%;
+    }
+}
+
+
+
+.ctnBouton__bouton {
+    background-color: #DE9560;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    border-radius: 20px;
+    margin-left: 50px;
+    height: 50px;
+
+}
+
+
+
+
+div.footer {
+    width: 100px;
+    width: 100%;
+    align-content: center;
+    text-align: center;
+    }
+
+@media only screen and (min-width: 600px){
+div.footer {
+    width: 300px;
+    width: 100%;
+    align-content: center;
+    text-align: center;
+}
+}
+
+
+
+/*grilles*/
+fieldset {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas:
+        "legend"
+        "choixReponses"
+        "imagesQ";   
+}
+
+@media only screen and (min-width: 600px) {
+    fieldset {
+        display: grid;
+        grid-template-columns: 50% auto;
+        grid-template-areas:
+        "legend legend"
+        "choixReponses imagesQ";
+    }
+}
+
+
+
+legend {
+    grid-area: legend;
+}
+
+.choixReponses__p {
+    grid-area: imagesQ;
+}
+
+.choixReponses__ul {
+    list-style: none;
+}
+
+.choixReponses {
+    grid-area: choixReponses;
+}
+
+.cache {
+    display: none;
+}
+
+.resultat  {
+    align-items: center;
+    text-align: center;
+    font-size: 2.4rem;
+}

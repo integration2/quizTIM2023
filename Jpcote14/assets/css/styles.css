@@ -1,0 +1,443 @@
+@charset "UTF-8";
+
+/**
+ Github = Jpcote14
+**/
+
+/* Importation des polices au tout début! */
+
+@import url("https://fonts.googleapis.com/css2?family=Vollkorn+SC:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap");
+
+/**
+ * @author COLLECTIF - @TIMCSF
+ *
+ * TABLE DES MATIERES
+ * Normalize
+ * Utilitaires
+ * Charte typographique
+ * Boutons
+ */
+
+/* Normalize
+   ========================================================================== */
+@import url(normalize.css);
+
+/* Utilitaires
+   ========================================================================== */
+@import url(utilitaires.css);
+
+/* Charte typographique
+   ========================================================================== */
+@import url(typo.css);
+
+/* Charte grilles
+   ========================================================================== */
+@import url(grille.css);
+
+/* Base
+   ========================================================================== */
+@import url(base.css);
+
+/* Le css du header est dans le dossier base.css!! */
+
+* {
+  list-style: none;
+}
+
+/* pour distinguer les elements blanc du bg */
+body {
+  background-color: white;
+  position: relative;
+}
+
+@media (min-width: 800px) {
+  header {
+    position: fixed;
+  }
+}
+
+.js .cacher {
+  display: none;
+}
+
+.js .ctnBoutonSubmit {
+  display: none;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.btn,
+.ctnBouton__bouton {
+  background-color: #0e0aa4;
+  color: white;
+  border-left: none;
+  border-bottom: none;
+  border-top: 3px black solid;
+  border-right: 3px black solid;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2.4rem;
+  margin: 4px 2px;
+  padding: 20px;
+  cursor: pointer;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn:hover {
+  background-color: #28348b;
+}
+
+.btn:active {
+  background-color: #1f1db6;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+}
+
+.accueil {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 799px) {
+  .accueil-gauche {
+    width: 100%;
+    height: 300px;
+    background-image: url("../images/background_accueil_1440.jpg");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+}
+.accueil-droite {
+  width: 100%;
+  display: flex;
+  height: auto;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 2rem 0 2rem;
+}
+.accueil-bienvenue {
+  width: 100%;
+  margin: 2rem 0 2rem 0;
+  font-family: "king_of_the_hill_2regular";
+  font-size: 2.2rem;
+  background-color: #4e4e48;
+  font-weight: normal;
+  text-align: center;
+  padding: 10px 3px 10px 3px;
+  color: white;
+  text-shadow: -4px 3px 0 black;
+  border-radius: 4px;
+}
+.sous-titre {
+  color: black;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.btnCommencerQuiz {
+  min-width: 70%;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 800px) {
+  .accueil {
+    width: 100%;
+    height: 90vh;
+    flex-direction: row;
+  }
+
+  .accueil-gauche {
+    width: 60%;
+    background-image: url("../images/background_accueil_1440.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .accueil-droite {
+    width: 60%;
+    justify-content: space-between;
+  }
+
+  .accueil-texte {
+    width: 100%;
+  }
+
+  .accueil-bienvenue {
+    width: 100%;
+    font-size: 3.2rem;
+  }
+  .btnCommencerQuiz {
+    margin-bottom: 50px;
+  }
+}
+
+@font-face {
+  font-family: "king_of_the_hill_2regular";
+  src: url("../../../02_Originaux/police/kingOfTheHill2/kingofthehill2-webfont.woff2") format("woff2"),
+    url("../../../02_Originaux/police/kingOfTheHill2/kingofthehill2-webfont.woff") format("woff"),
+    url("../../../02_Originaux/police/kingOfTheHill2/kingOfTheHill2.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "cartoonregular";
+  src: url("../../../02_Originaux/police/cartoon/cartoon_regular-webfont.woff2") format("woff2"),
+    url("../../../02_Originaux/police/cartoon/cartoon_regular-webfont.woff") format("woff"),
+    url("../../../02_Originaux/police/cartoon/Cartoon_Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+form {
+  width: fit-content;
+}
+
+/* a retravailler pour le changement de width */
+@media (min-width: 864px) {
+  form {
+    width: 70%;
+    margin: 0 15% 0 15%;
+    padding-top: 100px;
+    background-color: white;
+  }
+}
+
+fieldset {
+  padding: 0 2rem 0 2rem;
+  margin: 0;
+  border: none;
+  text-align: center;
+}
+
+.conteneur-question {
+  width: 100%;
+  font-family: "cartoonregular";
+  color: #db1930;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+}
+
+.nom-question {
+  color: #db1930;
+}
+
+.img-fee {
+  width: 48px;
+  height: 48px;
+}
+.nom-question {
+  font-family: "cartoonregular";
+  font-size: 2.4rem;
+  margin-top: 0px;
+}
+
+.img-question {
+  width: 100%;
+}
+@media (min-width: 481px) and (max-width: 863px) {
+  .img-question {
+    width: 70%;
+  }
+}
+/* ---------- choix de reponse ---------- */
+@media (max-width: 863px) {
+  .background_fixe-boule,
+  .background_fixe-henri {
+    display: none;
+  }
+}
+
+@media (min-width: 864px) {
+  .background_fixe-henri {
+    position: fixed;
+    width: 15%;
+    height: 100vh;
+    background-image: url("../images/bg_fixe-henri.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 50px;
+    left: 0;
+    z-index: 0;
+  }
+
+  .background_fixe-boule {
+    position: fixed;
+    top: 50px;
+    left: 85%;
+    width: 15%;
+    height: 100vh;
+    background-image: url("../images/bg_fixe-boule.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+  }
+}
+
+.choix-reponse-conteneur {
+  margin-bottom: 80px;
+}
+
+.choix-reponse {
+  width: 180px;
+  text-align: center;
+  color: white;
+  background-color: #0e0aa4;
+  border-radius: 12px;
+}
+
+.lettre-choix-reponse {
+  margin: 0px;
+  padding: 10px 0 10px 0;
+}
+
+.img-reponse {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+}
+
+#tray,
+#greg {
+  object-position: top;
+}
+
+.nom-choix-reponse {
+  margin: 0 0 5px 0;
+}
+
+input[type="radio"]:hover + label {
+  background-color: rgb(214, 81, 81);
+}
+
+input[type="radio"]:checked + label {
+  background-color: red;
+}
+
+input,
+select {
+  background: red;
+  padding: 10px;
+  padding-left: 5px;
+  font-size: 14px;
+  border-radius: 50px;
+  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+}
+
+/* ---------- section question ---------- */
+
+.numero-question {
+  margin: 0;
+}
+
+.picture-question {
+  display: flex;
+  justify-content: center;
+}
+
+/* @media (min-width: 481px) and (max-width: 863px) { */
+.choix-reponse-conteneur {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 7%;
+  margin-right: 7%;
+  padding: 0;
+}
+
+.choix-reponse {
+  width: 180px;
+  text-align: center;
+  color: white;
+  background-color: #0e0aa4;
+  border-radius: 12px;
+  margin: 15px 5px 0 0;
+}
+
+@media (min-width: 864px) {
+  .choix-reponse-conteneur {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-left: 0;
+  }
+  .img-question {
+    width: 70%;
+  }
+}
+
+/* --------- retroaction  ---------- */
+.question__retroaction {
+  text-align: center;
+  background-color: green;
+  font-weight: bold;
+  font-size: 2.4rem;
+}
+.question__explication {
+  text-align: left;
+}
+
+/*  ---------- section-score ---------- */
+
+.img-score {
+  display: block;
+  margin: 0;
+  width: 100%;
+}
+
+@media (min-width: 864px) {
+  .section-score {
+    margin: 0 15% 0 15%;
+    height: 75vh;
+  }
+  .img-score {
+    display: none;
+  }
+}
+
+/* ---------- footer ---------- */
+
+footer {
+  width: 100%;
+  padding-top: 10px;
+  position: relative;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  font-size: 1.2rem;
+  background-color: #0e0aa4;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 864px) {
+  footer {
+    flex-direction: row;
+  }
+}
+
+.logo-footer {
+  width: 120px;
+}
+
+@media (min-width: 864px) {
+  .logo-footer {
+    position: relative;
+    right: 200px;
+  }
+}

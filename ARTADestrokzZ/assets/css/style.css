@@ -1,0 +1,420 @@
+@charset "UTF-8";
+/**
+ * @author: ARTADestrokzZ
+ */
+
+/* IMPORTER D'ABORD LES POLICES DE CARACTÈRES */
+
+/* IMPORTER LES FICHIERS CSS */
+@import url(normalize.css);
+@import url(utilitaires.css);
+@import url(base.css);
+@import url(typo.css);
+
+/* AJOUTER UNE TABLE DES MATIÈRES POUR POUVOIR NAVIGUER LA CSS*/
+
+/* interactivité */
+
+ .js .cache {
+    display: none;
+ }
+ 
+ .js .ctnBoutonSubmit {
+    display: none;
+ }
+
+ .logo_holder{
+    width: 60%;
+    margin-left: 22%;
+    margin-top: 2.9%;
+
+}
+
+fieldset{
+    border: 0;
+}
+
+.image_accueil{
+    float: left;
+    width: 35%;
+    margin-left: 10%;
+    
+}
+
+.image_accueil_image{
+    border-radius: 50%;
+}
+
+.texte_accueil{
+    float: right;
+    padding-top: 3%;
+    width: 30%;
+    margin-right: 15%;
+    font-size: 50%;
+}
+
+.commencer{
+    width: 60%;
+    margin-right: 0%;
+    background-color: rgb(0, 0, 0);
+    font-size: 80%;
+    padding: 3%;
+    transition: background-color 1s;
+}
+
+.commencer:hover{
+  background-color:gray; 
+  box-shadow:none;
+  position:relative;
+  left:4px;
+  top:3px;
+}
+
+legend{
+    text-align: center;
+}
+
+.img_question{
+    border-radius: 10%;
+}
+
+.choixReponses1{
+    display: grid;
+    grid-gap: 2em;
+    grid-template-areas:
+    "Q1A  Q1B"
+    "Q1C  Q1D";
+}
+
+.choixReponses2{
+    display: grid;
+    grid-gap: 2em;
+    margin-right: 10%;
+    grid-template-areas:
+    "Q2A  Q2B"
+    "Q2C  Q2D";
+}
+
+.choixReponses3{
+    display: grid;
+    grid-gap: 2em;
+    grid-template-areas:
+    "Q3A  Q3B"
+    "Q3C  Q3D";
+}
+
+.bonnesReponses{
+    border-style: solid;
+    border-color: #54FF6F;
+    border-width: 2px;
+}
+
+.mauvaisesReponses{
+    border-style: solid;
+    border-color: #FF3131;
+    border-width: 2px;
+}
+
+li{
+    color: white;
+    font-size: 80%;
+    list-style-type: none;
+}
+
+label{
+    padding: 5px;
+    margin-left: 0%;
+    background-color: rgb(74, 74, 74);
+    border-radius: 20px;
+    width: 100%;
+    display: block;
+}
+
+input:checked + label{
+    border-style: solid;
+    border-color: #5EBBFF;
+    border-width: 2px;
+}
+
+.valide{
+    width: 40%;
+    margin-right: 0%;
+    background-color: black;
+    transition: background-color 1s;
+}
+
+.valide:hover{
+  background-color:gray; 
+  box-shadow:none;
+  position:relative;
+  left:4px;
+  top:3px;
+}
+
+.ctnBouton__bouton{
+    width: 45%;
+    margin-right: 20%;
+    background-color: black;
+    transition: background-color 1s;
+}
+
+.ctnBouton__bouton:hover{
+  background-color:gray; 
+  box-shadow:none;
+  position:relative;
+  left:4px;
+  top:3px;
+}
+
+.resultat{
+    font-size: 150%;
+}
+
+.image_resultat_image{
+    border-radius: 50%;
+}
+
+.resultat_debut{
+    font-size: 50%;
+}
+
+.note{
+    font-size: 80%;
+}
+
+.retour{
+    width: 60%;
+    margin-right: 0%;
+    background-color: black;
+    transition: background-color 1s;
+}
+
+.retour:hover{
+  background-color:gray; 
+  box-shadow:none;
+  position:relative;
+  left:4px;
+  top:3px;
+}
+
+.texte_footer{
+    font-size: 50%;
+}
+
+@media(min-width:600px) {
+    .logo_holder{
+        width: 50%;
+        margin-left: 32%;
+        margin-top: 0.9%;
+    }
+    
+    .image_accueil{
+        float: left;
+        width: 35%;
+        margin-left: 10%;
+        margin-top: 8%;
+        
+    }
+    
+    .image_accueil_image{
+        border-radius: 50%;
+    }
+    
+    .texte_accueil{
+        float: right;
+        padding-top: 3%;
+        width: 30%;
+        margin-right: 15%;
+        font-size: 70%;
+    }
+    
+    .commencer{
+        width: 47%;
+        margin-right: 13%;
+        background-color: rgb(0, 0, 0);
+    }
+    
+    legend{
+        text-align: center;
+    }
+    
+    .choixReponses1{
+        display: grid;
+        grid-gap: 2em;
+        grid-template-areas:
+        "Q1A  Q1B"
+        "Q1C  Q1D";
+    }
+    
+    .choixReponses2{
+        display: grid;
+        grid-gap: 2em;
+        margin-right: 10%;
+        grid-template-areas:
+        "Q2A  Q2B"
+        "Q2C  Q2D";
+    }
+    
+    .choixReponses3{
+        display: grid;
+        grid-gap: 2em;
+        grid-template-areas:
+        "Q3A  Q3B"
+        "Q3C  Q3D";
+    }
+    
+    button{
+        width: 70%;
+        padding: 1.5%;
+        margin-left: 12%;
+        border-radius: 20px;
+        color: white;
+        background-color: rgb(74, 74, 74);
+        font-size: 80%;
+    }
+    
+    .valide{
+        width: 37%;
+        margin-right: 13%;
+        margin-top: 5%;
+        background-color: black;
+        font-size: 80%;
+    }
+    
+    .resultat{
+        font-size: 150%;
+        margin-top: 0%;
+    }
+    
+    .image_resultat_image{
+        border-radius: 50%;
+    }
+    
+    .texte_resultat{
+        font-size: 100%;
+        margin-top: 0%;
+    }
+    
+    .retour{
+        width: 47%;
+        margin-right: 13%;
+        background-color: black;
+        font-size: 100%;
+        margin-top: 5%;
+    }
+
+    .texte_footer{
+        font-size: 60%;
+    }
+}
+
+@media(min-width:800px) {
+    .logo_holder{
+        width: 35%;
+        margin-left: 32%;
+        margin-top: 0.9%;
+    }
+
+    .image_accueil{
+        float: left;
+        width: 30%;
+        margin-left: 10%;
+        
+    }
+    
+    .image_accueil_image{
+        border-radius: 50%;
+    }
+    
+    .texte_accueil{
+        float: right;
+        padding-top: 5%;
+        margin-top: 7%;
+        width: 40%;
+        margin-right: 15%;
+        font-size: 100%;
+    }
+    
+    .commencer{
+        width: 30%;
+        margin-right: 23%;
+        background-color: rgb(0, 0, 0);
+        font-size: 100%;
+        padding: 2%;
+    }
+    
+    legend{
+        text-align: center;
+    }
+    
+    .choixReponses1{
+        display: grid;
+        grid-gap: 2em;
+        grid-template-areas:
+        "Q1A  Q1B"
+        "Q1C  Q1D";
+    }
+    
+    .choixReponses2{
+        display: grid;
+        grid-gap: 2em;
+        margin-right: 10%;
+        grid-template-areas:
+        "Q2A  Q2B"
+        "Q2C  Q2D";
+    }
+    
+    .choixReponses3{
+        display: grid;
+        grid-gap: 2em;
+        grid-template-areas:
+        "Q3A  Q3B"
+        "Q3C  Q3D";
+    }
+    
+    button{
+        width: 50%;
+        padding: 1.5%;
+        margin-left: 22%;
+        border-radius: 20px;
+        color: white;
+        background-color: rgb(74, 74, 74);
+        font-size: 100%;
+    }
+    
+    .valide{
+        width: 27%;
+        margin-right: 22%;
+        background-color: black;
+        font-size: 100%;
+    }
+    
+    .resultat{
+        font-size: 170%;
+    }
+    
+    .image_resultat_image{
+        width: 30%;
+        border-radius: 50%;
+    }
+    
+    .texte_resultat{
+        font-size: 150%;
+    }
+    
+    .retour{
+        width: 27%;
+        margin-right: 23%;
+        background-color: black;
+        font-size: 100%;
+    }
+
+    .texte_footer{
+        font-size: 80%;
+    }
+}
+
+footer{
+    background-color: black;
+    padding-bottom: 3%;
+}

@@ -22,11 +22,19 @@ const objJSON = {
         "Q3A"
     ],
     "messages": {
-        "resultatsDebut": "Vous avez obtenu un résultat de",
-        "note0": "Vous auriez pu faire mieux. Je vous suggère ..",
-        "note33": "Vous auriez pu faire mieux. Je vous suggère ..",
-        "note66": "Bravo, vous avez une bonne connaissance générale de ...",
-        "note100": "Félicitations, vous êtes un fin connaisseur !"
+        "resultatsDebut": {
+            "mauvaiseNote": "Ouch! Vous avez eu",
+            "bonneNote": "Félicitation! Vous avez eu"
+        },
+        "note0": "C'est pas grave, ça arrive. Si vous êtes plus intéressé, vous pouvez lire les livres officiels de DnD, ou même regarder des vidéos en ligne. Je vous suggère grandement d'en apprendre plus, le jeu il est super intéressant et tout le monde peut y jouer.",
+        "note33": "C'est pas grave, ça arrive. Si vous êtes plus intéressé, vous pouvez lire les livres officiels de DnD, ou même regarder des vidéos en ligne. Je vous suggère grandement d'en apprendre plus, le jeu est super intéressant et tout le monde peut y jouer.",
+        "note66": "Bravo, vous avez de bonnes connaissances générales de dungeons et dragon. Y avez vous déjà joué?",
+        "note100": "Vous êtes un fin connaisseur !"
+    },
+    "captionQuestion": {
+        "Q1": ["Le d6", "Le d8", "Le d10", "Le d20"],
+        "Q2": ["Artificier", "Ranger", "Shaman", "Druide"],
+        "Q3": ["Beholder", "Tarrasque", "Mimic", "Lich"]
     }
 };
 
@@ -146,6 +154,16 @@ const quiz = {
         let JSONbonneReponse = `Q${this.intNoQuestion+1}`
         let JSONExplication = objJSON.explications[JSONbonneReponse]
 
+        // Si la caption était vide lors de la question ajouter la caption pour la rétroaction
+        for (let i = 0; i < arrQuestions.length; i++) {
+        const element = arrQuestions[i];
+            let refCaptionReponse = document.querySelector(`#${element.id}+label .caption`)
+                
+            if (refCaptionReponse.innerHTML == '') {
+                refCaptionReponse.innerHTML = objJSON.captionQuestion[`Q${this.intNoQuestion+1}`][i]
+            }
+        }
+
         // Ajouter l'explication
         refRetroTexte.innerText = JSONExplication
         // Ajouter innerHTML du input de la bonne réponse dans la rétroaction
@@ -235,11 +253,22 @@ const quiz = {
 
         // Si le nombres de bonnes réponses est plus que 1
         if (this.intNbBonnesReponses > 1) {
-            refResultat.innerText = `Félicitation! Vous avez eux ${this.intNbBonnesReponses} bonnes réponses sur ${this.intNbQuestions}.`
+            refResultat.innerText = `${objJSON.messages.resultatsDebut.bonneNote} ${this.intNbBonnesReponses} bonnes réponses sur ${this.intNbQuestions}.`
 
+            if (this.intNbBonnesReponses == 2) {
+                refResultatText.innerText = objJSON.messages.note66
+            } else {
+                refResultatText.innerText = objJSON.messages.note100
+            }
             // Si le nombres de bonnes réponses est moins ou égal que 1
         } else {
-            refResultat.innerText = `Ouch! Vous avez eu ${this.intNbBonnesReponses} bonne réponse sur ${this.intNbQuestions}.`
+            refResultat.innerText = `${objJSON.messages.resultatsDebut.mauvaiseNote} ${this.intNbBonnesReponses} bonne réponse sur ${this.intNbQuestions}.`
+            
+            if (this.intNbBonnesReponses == 0) {
+                refResultatText.innerText = objJSON.messages.note0
+            } else {
+                refResultatText.innerText = objJSON.messages.note33
+            }
         }
         
 
@@ -249,7 +278,7 @@ const quiz = {
 
 
 
-quiz.refCtnBoutonSubmit.addEventListener('click', function(e){
+document.querySelector('form').addEventListener('submit', function(e){
     // Prevent Default du bouton submit
     e.preventDefault()
     // Afficher le resultat lors du clique du bouton submit

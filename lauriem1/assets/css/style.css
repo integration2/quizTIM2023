@@ -1,0 +1,324 @@
+@charset "UTF-8";
+/**
+ * @author: Laurie Martineau
+ */
+
+/* IMPORTER D'ABORD LES POLICES DE CARACTÈRES */
+@import url('https://fonts.googleapis.com/css2?family=Manrope&family=Playfair+Display&display=swap');
+/* IMPORTER LES FICHIERS CSS */
+@import url(normalize.css);
+@import url(utilitaires.css);
+@import url(base.css);
+@import url(typo.css);
+
+/* AJOUTER UNE TABLE DES MATIÈRES POUR POUVOIR NAVIGUER LA CSS*/
+
+.js .cache {
+    display: none;
+}
+ 
+.js .boutonRésultat {
+    display: none;
+}
+
+.cache {
+    display: none;
+}
+
+fieldset {
+    border: none;
+}
+
+.ChoixReponses {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.imgCarte {
+    display: flex;
+    justify-content: center;
+}
+
+.imgQ {
+    display: inline-block;
+    padding-top: 2.5em;
+    padding-bottom: 2em;
+}
+
+h3 {
+    text-align: center;
+    border: solid 3px black;
+    border-radius: 25px;
+    padding: 5%;
+}
+
+label {
+    position: relative;
+    display: block;
+    text-align: center;
+
+}
+
+.ChoixReponses label span {
+    display: block;
+    /*width: 10em;*/
+    width: 50%;
+    margin: auto;
+    border: solid 2px black;
+    border-radius: 20px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+body {
+    background-image: url(../images/DegradeFond.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.question {
+    margin-top: 2em;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 4px solid black;
+    border-radius: 40px;
+    background-color: white;
+}
+
+.question .rectangle {
+    height: 50px;
+    border-bottom: 4px solid black;
+    border-radius: 35px 35px 0 0;
+    background-color: #4DB857;
+    max-width: 100%;
+}
+
+
+.boutonRésultat {
+    margin-top: 1em;
+    background: linear-gradient(90deg, #4DB857 -11.67%, rgba(77, 184, 87, 0) 131.67%);
+    border-radius: 20px;
+
+}
+
+/***************************** Footer ************************************/
+.footer {
+    text-align: center;
+    background-color: #A2D390;
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+a:link,
+a:visited {
+    color: #0b0b8e;
+    text-decoration: none;
+}
+
+a:hover,
+a:active {
+    color: rgb(60, 60, 60);
+}
+
+/***************************** Accueil **********************************/
+.logo {
+    width: 30%;
+    margin-left: 2%;
+}
+
+.texteAccueil {
+    text-align: center;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    border-radius: 30px;
+    padding: 5%;
+}
+
+.texteCommencer {
+    display: block;
+    text-align: center;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    border-radius: 20px;
+    padding: 2%;
+}
+
+.bouton {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+    border: none;
+}
+.iconePlanete {
+    text-align: center;
+}
+
+.iconePlanete:hover {
+    animation-name: spin;
+    animation-duration: 2s;
+}
+
+.texteCommencer::after {
+    content: url(../images/fleche.svg);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(359deg)
+    }
+}
+/************************** Style des boutons ajoutés par le JavaScript ************************/
+.ctnBouton__bouton {
+    margin-left: 2rem;
+    color: rgb(0, 0, 0);
+    border: solid green;
+    background-color: transparent;
+}
+
+.ctnBouton__bouton:hover {
+    color: rgb(0, 0, 0);
+    border: solid green;
+    background-color: #4DB857;
+  }
+
+.ctnBouton__bouton:disabled,
+.ctnBouton__bouton[disabled]{
+    color: rgb(126, 126, 126);
+    border: solid grey;
+    background-color: rgb(218, 218, 218);
+  }
+
+/************************** Effets Questions Survol, Hover *****************************/
+
+input[type="radio"]:checked + label span{
+    color: rgb(56, 85, 180);
+    border: 2px solid rgb(57, 126, 51);
+}
+
+.ChoixReponses label span:hover {
+    color: rgb(33, 135, 19);
+    border: 2px solid rgb(31, 122, 19);
+}
+
+.ChoixReponses li input[type="radio"]:focus {
+    box-shadow: 10px 10px rgb(57, 126, 51);
+}
+/*************************** Rétroactions ******************************/
+
+.bonneReponse {
+    color: #4DB857;
+    border: 2px solid #4DB857;
+    border-radius: 4px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.432);
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.mauvaiseReponse {
+    color: #b84d4d;
+    border: 2px solid #b84d4d;
+    border-radius: 4px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.432);
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+/********************************** Tablette *****************************************/
+
+@media(min-width:600px) {
+    .ChoixReponses label span {
+        display: block;
+        margin-left: 0;
+        border: solid 2px black;
+        border-radius: 20px;
+    }
+}
+
+@media(min-width:600px) {
+    legend {
+       
+        
+    }
+}
+
+
+@media(min-width:600px) {
+    label {
+        display: flex;
+    }
+}
+
+@media(min-width:600px) {
+    .ChoixReponses .imgQ{
+        display: block;
+        margin-left: auto;
+        
+    }
+}
+
+@media(min-width:600px) {
+    h3 {
+        padding: 2% 4px 2%;
+        width: 400px;
+        height: 60px;
+        font-size: 20px;
+    }
+}
+
+/*************************** Écran large de table *************************/
+
+@media(min-width:800px) {
+    h3 {
+        box-sizing: border-box;
+        text-align: center;
+        border: solid 2px black;
+        border-radius: 25px;
+        margin-top: 10rem;
+    }
+}
+
+
+@media(min-width:800px) {
+    legend {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 4rem;
+    }
+}
+
+@media(min-width:800px) {
+    legend picture {
+        margin-top: 1rem;
+    }
+}
+
+
+@media(min-width:800px) {
+    .ChoixReponses label {
+        display: flex;
+    }
+}
+
+
+@media(min-width:800px) {
+   picture {
+    width: 50%;
+    text-align: left;
+    }
+}

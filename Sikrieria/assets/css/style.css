@@ -1,0 +1,146 @@
+@charset "UTF-8";
+/**
+ * @author: Sarah DUfour OU Sikrieria
+    Version 1.01
+ */
+
+/* IMPORTER D'ABORD LES POLICES DE CARACTÈRES */
+
+/* IMPORTER LES FICHIERS CSS */
+@import url(normalize.css);
+@import url(utilitaires.css);
+@import url(base.css);
+@import url(typo.css);
+@import url(grille.css);
+/* @import url(grille.css); */
+
+/* AJOUTER UNE TABLE DES MATIÈRES POUR POUVOIR NAVIGUER LA CSS*/
+
+/* LOGO */
+
+/* MAIN */
+
+body {
+    background-image: url("../images/papyrus.webp");
+    background-repeat: repeat;
+}
+
+.js .cache {
+    display: none;
+}
+
+.js .ctnBoutonSubmit {
+    display: none;
+}
+
+/* INTRODUCTION */
+h1 {
+    text-align: center;
+}
+
+.logo {
+    align-content: center;
+}
+
+.introduction {
+text-align: center;
+padding: 30px;
+}
+
+.introduction__p {
+text-align: center;
+}
+
+/* SECTION QUESTION */
+
+legend {
+    outline-style: none;
+    display: flex;
+}
+
+fieldset {
+    display: block;
+    border: none;
+}
+
+.question__etape {
+    background-image: url(../images/sandpaper.webp);
+    border-radius: 25px;
+    background-image: repeat;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+}
+
+
+.question {
+    text-align: center;
+}
+.question__entete{
+    background-image: url(../images/sandpaper.webp);
+    border-radius: 40px;
+    align-items: center;
+}
+.question__h3 {
+    padding-left: 25px;
+}
+.question__entete img {
+    width: 50%;
+    border-radius: 20px;
+}
+.question__li {
+    list-style: none;
+    padding: 25px;
+}
+
+/* input[type=radio] + label {
+    background-color: #6E829B;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px;
+}
+input[type=radio]:hover +label {
+    background-color: burlywood;
+    transition: 0.5s;
+}
+input[type=radio]:checked +label {
+    background-color: red;
+    transition: 0.3s;
+} */
+
+.js .question__li {
+    list-style: none;
+    padding: 150px;
+    background-image: url(../images/SVG/scroll.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 40%;
+}
+
+
+@media (min-width: 800px) {
+    .js .question__li {
+        background-size: auto 75%; 
+    }
+}
+.js .question__li:hover {
+    background-image: url(../images/SVG/Miaw=Scroll_Survol.svg);
+}
+
+/* SECTION RETRO-ACTION */
+.resultat__final {
+    text-align: center;
+}
+
+/* FOOTER */
+footer {
+    background-color: #6E829B;
+    padding-bottom: 150px;
+}
+.copyright {
+    padding-top: 150px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+/* VARIA */
